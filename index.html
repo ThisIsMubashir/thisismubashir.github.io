@@ -1,40 +1,237 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/white.css">
+	<title>reveal.js</title>
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Coming Soon</section>
-				<section>Mubashir Hussain</section>
-			</div>
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/white.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<h2>Introduction to JavaScript</h2>
+				<h4>Mubashir Hussain</h4>
+				<p><a href="http://thisismubashir.github.io/">Lecture Slides</a>
+				
+				
+			</section>
+
+			<section>
+				<section data-markdown data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
+					<textarea data-template>
+					## Revision Question
+					What will happen in this case?
+					
+					```
+						<p style="color green">text</p>
+					```
+					
+					* a) make that specific paragraph green
+					* b) error
+					* c) blank screen
+					* d) none of the above
+<aside class='notes'>
+</aside>
+					</textarea>
+				</section>
+				
+				<section data-markdown data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
+					<textarea data-template>
+					## Answer
+					
+					Answer: **d)**
+
+					* Text will be displayed without style
+					* formatting (i.e., ‘Text’) – as the ‘colon :’ is missing
+<aside class='notes'>
+</aside>
+					</textarea>
+				</section>
+			</section>
+			
+			
+			
+			<section>
+				<section data-markdown data-transition="slide" data-background="#11533c" data-background-transition="zoom">
+					<textarea data-template>
+					## Revision Question
+					What is the Form attribute type for hiding data:
+					
+					* a) secret
+					* b) blank
+					* c) hidden
+					* d) passive
+					* e) mask
+<aside class='notes'>
+</aside>
+					</textarea>
+				</section>
+				
+				<section data-markdown data-transition="slide" data-background="#11533c" data-background-transition="zoom">
+					<textarea data-template>
+					## Answer
+					
+					Answer: **c) hidden**
+					
+					```
+					<input type="hidden" name="pagename" value="10" />
+					```
+<aside class='notes'>
+</aside>
+					</textarea>
+				</section>
+			</section>
+			
+			<section>
+				<h3>Introduction and History</h3>
+
+				<section>JavaScript is the most popular and widely used client-side scripting language</section>
+				<section>JavaScript is designed to add interactivity and dynamic effects to web pages.</section>
+				<section> JavaScript was originally developed as <span style="color:red;">LiveScript by Netscape</span>
+					in the mid <span style="color: red;">1990s</span>.
+				</section>
+				<section>
+					It was later renamed to JavaScript in 1995
+				</section>
+				<section>
+					<ul>
+						<li>JavaScript is officially maintained by ECMA <span style="color: purple;">(European Computer
+								Manufacturers Association)</span> as
+							ECMAScript.</li><br>
+						<li>ECMAScript 6 (or ES6) is the latest major version of the ECMAScript standard.</li>
+					</ul>
+				</section>
+
+			</section>
+			<section>
+				<h3>
+					Client-Side Scripting
+				</h3>
+				<img src="images/Lesson5-clientSideScripting.png" alt="">
+			</section>
+			<section>
+				<h3>Advantages of Client-Side Scripting</h3>
+				<section data-auto-animate>
+					<p>Processing can be offloaded from the server</p>
+				</section>
+				<section data-auto-animate>
+					<p>Processing can be offloaded from the server</p>
+					<p style="color:green;">Reducing the load on the server</p>
+				</section>
+				<section data-auto-animate>
+					<p>The browser can respond more rapidly to user events</p>
+				</section>
+				<section data-auto-animate>
+					<p>The browser can respond more rapidly to user events</p>
+					<p style="color:green;">Improves the user
+						experience</p>
+				</section>
+				<section data-auto-animate>
+					<p>Interact with the downloaded HTML</p>
+				</section>
+				<section data-auto-animate>
+					<p>Interact with the downloaded HTML</p>
+					<p style="color:green;">Creating experience like desktop software.</p>
+				</section>
+			</section>
+			<section>
+				<h3>Disadvantages of Client-Side Scripting</h3>
+				<section>
+					<p style="color: red;">No guarantee that the client has JavaScript enabled</p>
+				</section>
+				<section>
+					<p style="color: red;">What works in one browser, may generate an error in another</p>
+				</section>
+				<section>
+					<p style="color: red;">JavaScript-heavy web applications can be complicated to debug and maintain
+					</p>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h3>Where does JavaScript go?</h3>
+				</section>
+				<section>
+					<h3>Inline JavaScript</h3><br>
+					<pre data-template=""><code data-line-numbers><a href="JavaScript:OpenWindow();">more info</a>
+
+<input type="button" onClick="alert('Are you sure?');" />
+					</code></pre>
+				
+				</section>
+				<section>
+					<h3>Internal JavaScript</h3><br>
+					<pre data-template=""><code data-line-numbers><script type="text/javascript">
+					/* A JavaScript Comment */
+					alert("Hello World!");
+</script>
+					</code></pre>
+				
+				</section>
+				<section>
+					<h3>External JavaScript</h3><br>
+					<pre data-template=""><code data-line-numbers><script type="text/javascript" src="greeting.js"></script>
+					</code></pre>
+			
+					<pre data-template=""><code data-line-numbers>/* A "greeeting.js" JavaScript Comment */
+
+alert("Hello World!");
+					</code></pre>
+					
+				</section>
+			</section>
 		</div>
+	</div>
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script src="plugin/search/search.js"></script>
+	<script src="plugin/zoom/zoom.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+			progress: true,
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealSearch, RevealZoom]
+		});
+	</script>
+
+<script src='plugin/codepanel/codepanel.js'></script>
+<script>
+// setupcodepanel(0, 'https://jsitor.com/'); 
+ setupcodepanel(1, 'https://liveweave.com/');
+// setupcodepanel(2, 'https://onecompiler.com/nodejs/');
+// setupcodepanel(3, 'https://codesandbox.io/');
+// setupcodepanel(4, 'https://glitch.com');
+// //setupcodepanel(5, 'https://webmakerapp.com/app/');
+
+</script>
+
+
+<div style="display: block; position: fixed; bottom: 6px; left: 6px; margin-left: 0px; z-index: 200000;background-color:white;">
+	<a title='Table of Contents' href="#/0"><img src="images/homeicon.png" height="20px"></a>
+</div>
+
+<div style="display: block; position: fixed; bottom: 6px; left: 35px; margin-left: 0px; z-index: 200000;background-color: white;">
+	<a href='javascript:void(0)' title='liveweave.com' onclick="togglecodepanel(1);"><img src="images/webcode.webp" height="20px"></a>
+</div>
+
 	</body>
 </html>
