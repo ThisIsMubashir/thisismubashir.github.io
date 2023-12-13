@@ -21,10 +21,24 @@
 		<div class="slides">
 			<section>
 				<h2>Introduction to JavaScript</h2>
-				<h4>Mubashir Hussain</h4>
-				<p><a href="http://thisismubashir.github.io/">Lecture Slides</a>
+				<p><a href="http://thisismubashir.github.io/">Mubashir Hussain</a>
+				<p style="font-size: 0.7em;">Original Source <a href="https://f28wp.github.io/">F28WP WEB PROGRAMMING
+					2020-2021</a></p>
 				
 				
+			</section>
+			<section data-markdown style="text-align: left;">
+				<textarea data-template>
+					## Overview
+
+					* What is Javascript?
+					* Java vs Javascript
+					* Javascript syntax
+					* Examples
+					* Questions and Discussion
+<aside class='notes'>
+</aside>
+				</textarea>
 			</section>
 
 			<section>
@@ -92,7 +106,20 @@
 					</textarea>
 				</section>
 			</section>
-			
+			<section data-markdown style="text-align: left;">
+				<textarea data-template>
+					## Javascript vs Java 
+					
+					* Javascript is different from Java
+					  - **similar syntax**
+						- both descend from C
+					  - JavaScript is **dynamically typed**
+					* Name was primarily taken as a **marketing** decision 
+					
+<aside class='notes'>
+</aside>
+				</textarea>
+			</section>
 			<section>
 				<h3>Introduction and History</h3>
 
@@ -172,9 +199,11 @@
 				</section>
 				<section>
 					<h3>Internal JavaScript</h3><br>
-					<pre data-template=""><code data-line-numbers><script>
-					/* A JavaScript Comment */
-					alert("Hello World!");</script>
+					<pre data-template=""><code data-line-numbers>&lt;script&gt;
+	/* A JavaScript Comment */
+	alert("Hello World!");
+&lt;/script&gt;
+
 					</code></pre>
 				
 				</section>
@@ -190,6 +219,1088 @@ alert("Hello World!");
 					
 				</section>
 			</section>
+			<section data-markdown>
+				<textarea data-template>
+				## Hello form JavaScript	
+				```
+				<body>
+					<script type="text/javascript">
+					<!--
+						document.write("<h1>Hello, world!</h1>");  
+					//-->
+					</script> 
+				</body>
+				```
+				</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						## More about JavaScript
+
+						* JavaScript is an object-oriented, **dynamically typed** scripting language.
+
+						* JavaScript is case-sensitive. 
+						
+						* JavaScript supports single-line as well as multi-line comments.
+						 Single line comment (//)
+						Multiline comment (/* */)
+						
+					</textarea>
+				</section>
+			<section>
+				<section data-markdown>
+					<textarea data-template="">
+						## Variables in JavaScript
+				</textarea>
+				</section>
+				<section data-auto-animate data-markdown>
+					<textarea data-template>
+						Often (very often) in programming, we need to temporarily store information.
+					</textarea>
+				</section>
+				<section data-auto-animate data-markdown>
+					<textarea data-template>
+						Often (very often) in programming, we need to temporarily store information.
+						
+						In JavaScript, a **variable is a name given to a memory location** that is used to store any type of data
+						![Variable example](images/variables.png)
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						* There are two ways of declaring variable:
+							* Using **var** keyword
+							* Using **let** keyword
+
+						* One way to declare constant
+							* Using **const** keyword
+
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						![VariablesAndConst](images/varCode.png)
+					</textarea>
+				</section>
+			</section>
+
+
+			<section data-markdown style="text-align: left;">
+				<textarea data-template>
+					## JavaScript Syntax
+
+					JavaScript data types
+					
+					* **string** sequence of 16 bit UTF-16 characters	
+					* **number** type of double precision 64 bit IEEE format number	
+					* **boolean** type having value of true or false	
+					* **function** declaration 
+					
+					-- These 2 types cannot contain values
+					
+					* **undefined** sole value possessed by unassigned variables
+					* **null** value denoting intentional lack of a value
+
+					-- Everything else is an object 
+					
+<aside class='notes'>
+</aside>
+				</textarea>
+			</section>
+			
+						
+			<section data-markdown style="text-align: left;">
+				<textarea data-template>
+					## JavaScript Syntax
+
+					The **typeof** operator is used to get the data type (**returns a string**) of its operand
+
+					```
+					  typeof(4+7);     //returns number
+					  typeof("47");    //returns string
+					```
+					
+					Six possible values that **typeof** returns: object, boolean, function, number, string, and undefined
+<aside class='notes'>
+</aside>
+				</textarea>
+			</section>
+			
+			
+			
+			
+			<section>
+				<section data-markdown data-transition="slide" data-background="#11533c" data-background-transition="zoom">
+					<textarea data-template>
+					## Revision Question
+					Which primitive type represents integers in Javascript?
+					
+					* a) int
+					* b) integer
+					* c) number
+					* d) double
+					* e) var
+<aside class='notes'>
+</aside>
+					</textarea>
+				</section>
+				
+				<section data-markdown data-transition="slide" data-background="#11533c" data-background-transition="zoom">
+					<textarea data-template>
+					## Answer
+					
+					Answer: **c) number**
+<aside class='notes'>
+</aside>
+					</textarea>
+				</section>
+			</section>
+			
+			
+
+		
+			<section data-markdown style="text-align: left;">
+				<textarea data-template>
+					## JavaScript Syntax
+
+
+					Variables are **case-sensitive** identifiers that
+					* start with alphabetic letter, underscore or dollar sign
+					* contain only alphanumerics, dollar signs and underscore
+					* have no type - type belongs to their value
+	
+<aside class='notes'>
+</aside>
+				</textarea>
+			</section>
+
+
+			<section data-markdown style="text-align: left;">
+				<textarea data-template>
+					## JavaScript Syntax
+
+					* Keyword **var** declares variables with scope of function they’re in.
+					* In ES6+ let and const declare **block-scoped** variables.
+					* **let** variables can’t be redeclared in scope. var variables can.
+					* **const** variables can index loops but can’t be reassigned values.
+					```js
+					  var i, number_of_hits = 0, done = true, fruit = "yoghurt";
+					  let ID = Symbol();
+					  const pi = Math.PI;
+					```
+					* Undeclared variable has global scope unless declared after use.
+
+<aside class='notes'>
+</aside>
+				</textarea>
+			</section>
+			
+			<section>
+				<section data-markdown data-transition="slide" data-background="#11533c" data-background-transition="zoom">
+					<textarea data-template>
+					## Question
+					Javascript variable identifiers are case-sensitive?
+					
+					* a) true
+					* b) false
+<aside class='notes'>
+</aside>
+					</textarea>
+				</section>
+				
+				<section data-markdown data-transition="slide" data-background="#11533c" data-background-transition="zoom">
+					<textarea data-template>
+					## Answer
+					
+					Answer: **a) true**
+					
+					```
+					var Cat;
+					var cat;
+					```
+<aside class='notes'>
+</aside>
+					</textarea>
+				</section>
+			</section>
+			
+			
+			
+			
+			<section data-markdown style="text-align: left;">
+				<textarea data-template>
+					## JavaScript Statements 
+
+					----
+					
+					* JavaScript statements are composed of
+					  - **comments** single start with "//", multiline inside "/\*" and "\*/"
+					  - expressions compounds of values, variables and operators
+					  - **keywords** reserved words like "function", "var", "new" etc.
+					  - operators (see next slide)
+					  - values primitive values and objects
+					  - variables identifiers
+<aside class='notes'>
+</aside>
+				</textarea>
+			</section>
+			
+			<section data-markdown style="text-align: left;">
+				<textarea data-template>
+					## Expressions
+
+					* Expressions can contain various types of operators
+					* Operators:
+					```java
+					  - arithmetic +, -, *, /, % 3+4-6/7*8
+					  - assignment =, =+, =*, =/, =- E=M*C*C
+					  - bitwise &, ˆ, |, <<, >> 15 ˆ 9
+					  - comparison >, >=, <, ==, !=, === x>y+z
+					  - logical &&, ||, ! age >= 0 && age < 120
+					  - string + "Let there" + " be light!"
+					  - conditional cond ? val1 : val2 age > 17 ? "adult" : "minor"
+					```
+<aside class='notes'>
+</aside>
+				</textarea>
+			</section>
+			
+			
+			<section>
+				<section data-markdown data-transition="slide" data-background="#77533c" data-background-transition="zoom">
+					<textarea data-template>
+					## Question
+					What does the following Javascript output?
+					
+					```js
+					var a = 22;
+					a *= 3;
+					alert( a );
+					```
+<aside class='notes'>
+</aside>
+					</textarea>
+				</section>
+				
+				<section data-markdown data-transition="slide" data-background="#77533c" data-background-transition="zoom">
+					<textarea data-template>
+					## Answer
+					
+					Answer: **66**
+<aside class='notes'>
+</aside>
+					</textarea>
+				</section>
+			</section>
+			
+			
+			
+			<section data-markdown style="text-align: left;">
+				<textarea data-template>
+					## Special Identifiers
+
+					* JavaScript has a few special identifiers including
+					  - **NaN** Not a Number - special IEEE for mat value
+					  - **Infinity** positive infinity number value
+					* JavaScript has **built-in objects** incl. Array, Date, Math, Regexp, String
+					
+<aside class='notes'>
+</aside>
+				</textarea>
+			</section>
+			
+			<section data-markdown style="text-align: left;">
+				<textarea data-template>
+					## JavaScript Control Structures
+
+					* JavaScript supports various programming language control structures:
+					  - **conditionals** if, if else, switch
+					  - **loops** for, for of, for in, do while, while
+					  - **functions** with arguments that return a value
+<aside class='notes'>
+</aside>
+				</textarea>
+			</section>
+
+			<section data-markdown style="text-align: left;">
+				<textarea data-template>
+					## Examples of **conditional** expressions
+
+					```
+					if ( s.length > 10 ) {
+						s=s.substring(0, 10);
+					} else {
+						s=s.trim();
+					}
+					
+					switch ( Math.floor(Math.random()*3) ) {
+						case 1: col = "red";
+						break;
+						case 2: col = "blue";
+						break;
+						default: col = "green";
+					}
+					```
+<aside class='notes'>
+</aside>
+				</textarea>
+			</section>
+			
+
+			<section data-markdown style="text-align: left;">
+				<textarea data-template>
+					### Examples of **for loops**
+
+					* for loop
+
+					```
+					let sum = 0;
+					let arr = [1, 2, 3, 5, 7, 11, 13];
+					for (let i=0; i<arr.length; i++) { // classic loop
+						sum += arr[i];
+					}
+					
+					
+					for (let item of arr) { sum += item; } // loop over collection
+					
+					
+					var car = { make: "Ford", model: "Focus", year: 2017 };
+					for (var p in car) { // enumerable properties loop
+						if ( isNaN(car[p]) ) car[p] = car[p].toUpperCase();
+					}
+					```
+<aside class='notes'>
+</aside>
+				</textarea>
+			</section>
+
+
+			<section data-markdown style="text-align: left;">
+				<textarea data-template>
+					### Examples of **loops** 
+					
+					* do while 
+					* while
+					
+					```
+					do {
+						var j = page.indexOf("=", j);
+						if ( j != -1 )
+							s += page.substring(j, j + 2);
+					} while ( j != -1 && j < len );
+					
+					
+					var count = 0;
+					while ( (i = page.indexOf("href=", i)) != -1 ) {
+						count++;
+					}
+					```
+<aside class='notes'>
+</aside>
+				</textarea>
+			</section>
+			
+			
+			<section>
+				<section data-markdown data-transition="slide" data-background="#11533c" data-background-transition="zoom">
+					<textarea data-template>
+					## Question
+					What does the following Javascript code output?
+					
+					```js
+					let sum = 0;
+					let arr = [1, 2, 3];
+					for (let i=1; i<arr.length; i++) { // classic loop
+						sum += arr[i];
+					}
+					alert( sum );
+					```
+<aside class='notes'>
+</aside>
+					</textarea>
+				</section>
+				
+				<section data-markdown data-transition="slide" data-background="#11533c" data-background-transition="zoom">
+					<textarea data-template>
+					## Answer
+					
+					Answer: **5**
+					
+					```
+					Loop starts at `1' and sums the array values
+					```
+<aside class='notes'>
+</aside>
+					</textarea>
+				</section>
+			</section>
+			
+			<section>
+			<h2>Example</h2>
+			<iframe data-src="https://jsfiddle.net/thisismubashir/xvk8p2og/3/embedded/js,result/"  width="80%" height="500px" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
+			</section>
+			
+
+			
+
+			<section data-markdown style="text-align: left;">
+				<textarea data-template>
+					## JavaScript Functions 
+
+					* JavaScript functions are first class objects where
+					  - **function keyword** has **optional name**
+					  - **arguments** are enclosed in ( ... )
+						- arguments are passed by value
+						- arguments may pass objects (e.g. functions) by reference
+					  - body in **{ ... }**
+
+					```
+					function fn ( optionalParams ) { ... }
+					```
+<aside class='notes'>
+</aside>
+				</textarea>
+			</section>
+			
+			
+			<section data-markdown style="text-align: left;">
+				<textarea data-template>
+					## JavaScript Functions 
+
+					* Suppose isFruit() is declared in **fruit.js**:
+					```
+						function isFruit(x) {
+							if ( x == "apple" || x == "fig" || x == "pear" ) 
+							{ return true; }			
+							return false;
+						}
+					```
+
+					* Function can be used by loading its definition and invoking it:
+					```
+					jjs> load("fruit.js")
+					```
+<aside class='notes'>
+</aside>
+				</textarea>
+			</section>
+			
+			<section data-markdown style="text-align: left;">
+				<textarea data-template>
+					## JavaScript Functions 
+
+					* **Anonymous** functions are defined inline and may be assigned to a name
+					  - passed as argument in a function call
+					  - **self-invoked** i.e. applied inline to arguments
+					
+					* Examples would be
+					
+					```js
+						anon = function() { print('I am anonymous'); }
+						anon();
+					```
+					
+					```js
+						invoke = function(fn, arg) { print(fn(arg)); }
+						invoke(function(i) {return i+1;}, 5 );
+					```
+<aside class='notes'>
+</aside>
+				</textarea>
+			</section>
+
+
+			<section data-markdown style="text-align: left;">
+				<textarea data-template>
+					## JavaScript Functions 
+
+					```
+						(function(s) { print('Say ', s); })("Hello")
+					```
+					
+					* Builtin functions 
+					  - Example, builtin objects like Math support standard functions like
+
+					```
+						Math.random()
+					```
+<aside class='notes'>
+</aside>
+				</textarea>
+			</section>
+			
+			<section data-markdown style="text-align: left;">
+				<textarea data-template>
+					## JavaScript String Handling
+					
+					Why is string handling important?
+<aside class='notes'>
+</aside>
+				</textarea>
+			</section>
+			
+
+			<section data-markdown style="text-align: left;">
+				<textarea data-template>
+				## JavaScript String Handling
+					
+				Methods and properties for handling strings include
+				
+				* **charAt(N)** 	   returns character at index N
+				* **indexOf(S)** 	   returns index of S in string
+				* **lastIndexOf(S)**   returns last index of S in string
+				* **length** 		   property stor ing length of string
+				* **split(S)** 		   returns array of substr ings separated by S
+				* **substring(M)**    returns substr ing from index to end
+				* **substring(M, N)** returns substr ing between given indices
+				* **toLowerCase()**    maps all letters to lower case
+				* **toUpperCase()**    maps all letters to upper case
+				* **trim()** 		   removes whitespace from both ends of string
+				
+<aside class='notes'>
+</aside>
+				</textarea>
+			</section>
+			
+							
+			<section>
+				<section data-markdown data-transition="slide" data-background="#77533c" data-background-transition="zoom">
+					<textarea data-template>
+					## Question
+					How would you concatenate two Javscript strings?
+					
+					```js
+					var a = "cat";
+					var b = "bat";
+					// how to combine them into a new string "catbat"?
+					```
+<aside class='notes'>
+</aside>
+					</textarea>
+				</section>
+				
+				<section data-markdown data-transition="slide" data-background="#77533c" data-background-transition="zoom">
+					<textarea data-template>
+					## Answer
+					
+					Answer: **a + b**
+					
+					Note there is also:
+					
+					```js
+					str.concat(string2, string3, string4,......, stringN)
+					```
+<aside class='notes'>
+</aside>
+					</textarea>
+				</section>
+			</section>
+			
+			
+			<section>
+			<h2>Example function in url.js shows how to <b>normalise a URL</b>:</h2>
+			<iframe data-src="https://jsfiddle.net/f28wp/z2j4uav7/1/embedded/js,result/"  width="80%" height="500px" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
+			</section>
+			
+<!--
+			<section data-markdown style="text-align: left;">
+				<textarea data-template>
+				Example function in url.js shows how to **normalise a URL**: 
+
+				```
+				function normaliseURL(url) {
+				  url = url.trim();
+				  if ( url.length == 0 ) return "";
+				  var i = url.indexOf("://");
+				  var j = url.indexOf("/", i + 3);
+				  var access_method = "";
+				  var hostname = "";
+				  if ( i != -1 ) {
+					access_method = url.substring(0, i).toLowerCase() + "://";
+					if ( j != -1 )
+						hostname = url.substring(i + 3, j).toLowerCase();
+				  } else {
+					j=0;
+				  }
+				  return access_method + hostname + url.substring(j);
+				}
+
+				```
+				
+				```
+				normaliseURL(readLine("URL? "))
+				URL? Http://WWW.NEXT.COM/HomePage.asp
+				http://www.next.com/HomePage.asp
+
+				```
+<aside class='notes'>
+</aside>
+				</textarea>
+			</section>
+-->
+
+			
+			<section data-markdown style="text-align: left;">
+				<textarea data-template>
+				## JavaScript Arrays 
+				
+				* JavaScript Array is created using Array built-in
+				
+				```js
+				var cars = new Array();
+				cars[0] = "Honda Civic";
+				cars[1] = "Ford Focus";
+				cars[2] = "Fiat Punto";
+				```
+				
+				* Same array can also be created by either of
+				
+				```js
+				cars = new Array("Honda Civic", "Ford Focus", "Fiat Punto"); 
+				cars = ["Honda Civic", "Ford Focus", "Fiat Punto"];
+				```
+<aside class='notes'>
+</aside>
+				</textarea>
+			</section>
+			
+			<section data-markdown style="text-align: left;">
+				<textarea data-template>
+				## JavaScript Arrays 
+				
+				* Useful properties for an Array include:
+				  - **length** number of elements
+				  - prototype property allowing Array object to be extended
+
+				```
+				var cars = [ "Honda Civic", "Ford Focus", "Fiat Punto" ]
+				cars.length
+				> 3
+				```
+				
+				```
+				Array.prototype.make = function(i) {return this[i].split(" ")[0]}
+				cars.make(0)
+				> Honda
+				```
+<aside class='notes'>
+</aside>
+				</textarea>
+			</section>
+
+
+			<section>
+				<section data-markdown data-transition="slide" data-background="#88533c" data-background-transition="zoom">
+					<textarea data-template>
+					## Question
+					What does the following Javascript code output?
+					
+					```js
+					let arr = ['a', 2, 'c'];
+					alert( arr[9] );
+					```
+<aside class='notes'>
+</aside>
+					</textarea>
+				</section>
+				
+				<section data-markdown data-transition="slide" data-background="#88533c" data-background-transition="zoom">
+					<textarea data-template>
+					## Answer
+					
+					Answer: **undefined**
+					
+					```
+					array is out of bounds 0 to 2
+					```
+<aside class='notes'>
+</aside>
+					</textarea>
+				</section>
+			</section>
+			
+			
+
+
+			<section data-markdown style="text-align: left;">
+				<textarea data-template>
+				## JavaScript Arrays 
+				
+				**Useful** functions for an Array include
+				* **indexOf**(element) index of element
+				* **push**(element) add element to end and return new length
+				* **splice**(i, n, a, ..., k) replace n elements from index i with a ... k
+
+<aside class='notes'>
+</aside>
+				</textarea>
+			</section>
+
+			<section data-markdown style="text-align: left; font-size:90%;">
+				<textarea data-template>
+				## JavaScript Arrays Example
+				
+				```js
+				var cars = [ "Honda Civic", "Ford Focus", "Fiat Punto" ]
+				cars.indexOf("Fiat Punto")
+				> 2
+				
+				["a", "b", "c", "a"].lastIndexOf("a")
+				> 3
+				
+				cars.push("Fiat Tipo")
+				> 4
+				
+				cars.splice(1, 2, "Rolls Royce")
+				> Ford Focus,Fiat Punto
+				
+				cars
+				> Honda Civic,Rolls Royce,Fiat Tipo
+				```
+<aside class='notes'>
+</aside>
+				</textarea>
+			</section>
+
+			<section data-markdown style="text-align: left;">
+				<textarea data-template>
+				## JavaScript Arrays 
+				
+				* In 2011 3 builtin functions were added to **simplify array** handling.
+				* Each applies a function to array elements to implement their effect.
+				 - **filter()** selects out array elements meeting a condition
+				 - **map()** applies function to each array element
+				 - **reduce()** applies accumulator/concatenator across array elements
+				 
+<aside class='notes'>
+</aside>
+				</textarea>
+			</section>
+
+			<!--
+				General for m of filter()
+				 - array.filter(function(elem, index, array) { ... }, thisArg);
+				 - elem is element in array with current index.
+				 - thisArg is optional object nameable by this in callback.
+				-->
+				
+				
+			<section data-markdown style="text-align: left;">
+				<textarea data-template>
+				## JavaScript Arrays 
+				
+				* **Duplicate** elements in array can be removed by filter() thus:
+				
+				```js
+				var bag = [4, 1, 4, 7, 1, 2]
+				bag.filter(function(e, i, ar) { return i === ar.indexOf(e); })
+				
+				> 4,1,7,2
+				```
+				
+				* **map()** has same general syntax as filter() operation.
+
+<aside class='notes'>
+</aside>
+				</textarea>
+			</section>
+
+			<!--
+			<section data-markdown style="text-align: left;">
+				<textarea data-template>
+				## JavaScript Arrays 
+				
+				* Example, Centigrade temperatures can be converted to Fahrenheit by
+				```
+				var cent = [-40, 0, 35, 100];
+				cent.map(function(c) { return Math.round(9 * c / 5) + 32; });
+				> -40,32,95,212
+				```
+				* 2 argument general for m of reduce()
+				```
+				array.reduce(function(prevVal, initial) { ... }, initial);
+				```
+				  - prevValue is cumulative value returned by each callback.
+				  - initial is optional object used as prevVal by first callback.
+				* Elements of list can be summed by
+				```
+				var squares = [1, 4, 9, 16];
+				squares.reduce(function(prev, i) { return prev + i; }, 0);
+				>30
+				```
+				</textarea>
+			</section>
+			-->
+
+			<section data-markdown style="text-align: left;">
+				<textarea data-template>
+				## JavaScript **Objects**
+				
+				* JavaScript objects are property **collections** that
+				 - are **non-primitive** values
+				 - have prototypes that are also objects
+				 - inherit their properties and methods from their prototype
+				* **All** objects **inherit from prototype** called Object.prototype
+<aside class='notes'>
+</aside>
+				</textarea>
+			</section>
+			
+			
+			<section data-markdown style="text-align: left;">
+				<textarea data-template>
+				## JavaScript Object **Examples**
+				
+				* Create an object with new keyword and assign properties to it:
+				```js
+				vehicle = new Object();
+				vehicle.make = "Ford";
+				vehicle.model = "Focus";
+				vehicle.year = 2012;
+				```
+				
+				* Vehicle can also be declared and initialised **directly**
+				```js
+				vehicle = { make: "Ford", model: "Focus", year: 2012 };
+				```
+<aside class='notes'>
+</aside>
+				</textarea>
+			</section>
+			
+			
+			<section data-markdown style="text-align: left;">
+				<textarea data-template>
+				## JavaScript Object **Examples**
+				
+				* **Associative array syntax** in JavaScript can also create vehicle
+				```js
+				vehicle["make"] = "Ford";
+				vehicle["model"] = "Focus";
+				vehicle["year"] = 2012;
+				```
+				* Object prototype is standardly created by a constructor function.
+				
+				 - **car.js** defines a constructor for object instances
+				 ```js
+				function car(make, model, year) {
+				this.make = make;
+				this.model = model;
+				this.year = year;
+				}
+				```
+				
+				- that can be used with new keyword in expressions such as
+				```js
+				vehicle = new car("lamborghini", "gallardo", 2013);
+				```
+<aside class='notes'>
+</aside>
+				</textarea>
+			</section>
+
+			
+			<section data-markdown style="text-align: left;">
+				<textarea data-template>
+				## JavaScript Object 
+				
+				* Object’s properties can be listed by (e.g., getProps.js)
+
+				```js
+				function getProps(obj) {
+				var props = [];
+				for (var p in obj) { props.push(p); }
+				return props;
+				}
+				```
+				
+				* Car prototype can be **dynamically** changed to set default values
+
+<aside class='notes'>
+</aside>
+				</textarea>
+			</section>
+
+
+<!-- remove example - make into online frame instead - for students can interact with.
+			<section data-markdown style="text-align: left;">
+				<textarea data-template>
+				## JavaScript Object **Example**
+				
+				```js
+				load("car.js")
+				load("getProps.js")
+				v=new car("porsche", 911, 2016)
+				> [object Object]
+				getProps(v)
+				> make,model,year
+				car.prototype.colour = "blue"
+				> blue
+				getProps(v)
+				> make,model,year,colour
+				getProps(v).map(function(e){return v[e];})
+				> porsche,911,2016,blue
+				wheels = new car("Jaguar", "E-type", 1961)
+				> [object Object]
+				wheels.colour
+				> blue
+				delete wheels.year
+				> true
+				getProps(wheels)
+				> make,model,colour
+
+				```
+<aside class='notes'>
+</aside>
+				</textarea>
+			</section>
+-->
+
+
+			<section data-markdown style="text-align: left;">
+				<textarea data-template>
+				## JavaScript Object 
+				
+				* **Functions** can be **added** to object prototype as follows
+				```
+				car.prototype.name = function() { return this.make + " " +
+				this.model;}
+				wheels.name() // invoke
+				> Jaguar E-type
+				```
+
+				* Keyword this refers to object that owns JavaScript it occurs in
+				  - in function this refers to object that owns function
+				  - in object this refers to object itself
+				* Global object has some useful meta-programming functions
+				  - eval() evaluates string argument and executes it as code
+				  - isNaN() determines whether argument is not a number
+<aside class='notes'>
+</aside>
+				</textarea>
+			</section>
+
+
+			<section data-markdown style="text-align: left;">
+				<textarea data-template>
+				## JavaScript Object (**class**)
+				
+				ES 6 introduced **class notation** to JavaScript where
+				* classes are syntactic sugar over **prototype-based objects**
+				* no new object-oriented model is introduced
+				
+				Example class declaration **circle.js** can define a class function
+				```js
+				class Circle {
+				constructor(radius, x, y) { this.radius = radius;
+				this.x = x; this.y = y; }
+				area() { return Math.PI * Math.pow(this.radius, 2); }
+				static info() { console.log("I know about circles"); }
+				}
+				```
+				
+				* A class expression (with/without a name) can also define it
+				```js
+				var ring = class Circle { ... }
+				```
+<aside class='notes'>
+</aside>
+				</textarea>
+			</section>
+
+
+			<section data-markdown style="text-align: left;">
+				<textarea data-template>
+				## JavaScript Object **Example**
+				
+				* First version of class
+				```
+				Circle.info()
+				> I know about circles
+				let ring = new Circle(10, 0, 0)
+				ring.area()
+				> 314.1592653589793
+				```
+				
+				* **nicecircle.js** shows how ES 6+ classes can be **subclassed**
+				```
+				class NiceCircle extends Circle {
+					constructor(radius, colour) {
+					super(radius, 0, 0);
+					this.colour = colour;
+					} }
+				```
+<aside class='notes'>
+</aside>
+				</textarea>
+			</section>
+
+
+			<section data-markdown style="text-align: left;">
+				<textarea data-template>
+				## JavaScript Object **Example**
+				
+				* **Extended** version of class
+				  - nicecircle.js shows how ES 6+ classes can be subclassed
+				```
+				class NiceCircle extends Circle {
+					constructor(radius, colour) {
+					super(radius, 0, 0);
+					this.colour = colour;
+					} }
+				```
+				
+				* In derived classes **super()** must be called before this.
+				```
+				var hoop = new NiceCircle(12, "red")
+				hoop.area()
+				> 452.3893421169302
+				```
+<aside class='notes'>
+</aside>
+				</textarea>
+			</section>
+
+
+
+
+
+
+
+
+			<section data-markdown style="text-align: left;">
+				<textarea data-template>
+					## Summary
+					* Understand Javascript (**Basics**)
+
+					* JavaScript is a **weakly typed**, object-based (prototypes)  language, standardised as ECMAScript
+					
+
+					* JavaScript has a C-like syntax, is multi-threaded, **supports arrays, functions, objects** and typical procedural control structures. 
+					
+					* Primitive types are booleans, numbers, strings, symbols, null and undefined. Everything else is an object.
+<aside class='notes'>
+</aside>
+				</textarea>
+			</section>
+			
+			
+			<section data-markdown style="text-align: left;">
+				<textarea data-template>
+					## To do this week ...
+					* Read over the lectures
+					* Review the revision questions 
+					* Work through tutorial practicals 
+					* Browse ECMAScript 2018 **Language Specification**
+					<a href='http://www.ecma-international.org/ecma-262/9.0/'>(LINK)</a>
+					* **Experiment** (get into good habits) 
+<aside class='notes'>
+</aside>
+				</textarea>
+			</section>		
+
+
+
 		</div>
 	</div>
 
@@ -208,19 +1319,17 @@ alert("Hello World!");
 			progress: true,
 
 			// Learn about plugins: https://revealjs.com/plugins/
-			plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealSearch, RevealZoom]
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealSearch, RevealZoom],
+
+			markdown: {
+    smartypants: true
+  }
 		});
 	</script>
 
 <script src='plugin/codepanel/codepanel.js'></script>
 <script>
-// setupcodepanel(0, 'https://jsitor.com/'); 
  setupcodepanel(1, 'https://liveweave.com/');
-// setupcodepanel(2, 'https://onecompiler.com/nodejs/');
-// setupcodepanel(3, 'https://codesandbox.io/');
-// setupcodepanel(4, 'https://glitch.com');
-// //setupcodepanel(5, 'https://webmakerapp.com/app/');
-
 </script>
 
 
@@ -228,9 +1337,10 @@ alert("Hello World!");
 	<a title='Table of Contents' href="#/0"><img src="images/homeicon.png" height="30px"></a>
 </div>
 
-<div style="display: block; position: fixed; bottom: 6px; left: 35px; margin-left: 0px; z-index: 200000;background-color: white;">
+<div style="display: block; position: fixed; bottom: 6px; left: 45px; margin-left: 0px; z-index: 200000;background-color: white;">
 	<a href='javascript:void(0)' title='liveweave.com' onclick="togglecodepanel(1);"><img src="images/webcode.webp" height="30px"></a>
 </div>
+
 
 	</body>
 </html>
