@@ -25,6 +25,9 @@
   { "code": "KOI-UG-DLD", "name": "Digital Logic Design", "level": "UG", "institution": "King's Own Institute", "topics": ["Combinational + sequential logic"], "languages": ["VHDL"], "years": ["2020-2024"] },
   { "code": "KOI-UG-CABCT", "name": "Computer Architecture & Basic Circuit Theory", "level": "UG", "institution": "King's Own Institute", "topics": ["CPU design", "Circuit basics"], "years": ["2020-2024"] },
   { "code": "KOI-UG-ITP", "name": "Information Technology Project", "level": "UG", "institution": "King's Own Institute", "topics": ["Industry-linked capstone", "PM"], "years": ["2020-2024"] },
+  { "code": "KOI-UG-FT", "name": "Functional Thinking", "level": "UG", "institution": "King's Own Institute", "topics": ["Functional programming", "Logic"], "years": ["2020-2024"] },
+  { "code": "KOI-UG-CSA", "name": "Computer Systems and Architecture", "level": "UG", "institution": "King's Own Institute", "topics": ["System design", "CPU architecture", "Memory"], "years": ["2020-2024"] },
+  { "code": "KOI-UG-UDM", "name": "User and Data Modeling", "level": "UG", "institution": "King's Own Institute", "topics": ["UML", "Data modelling", "Requirements"], "years": ["2020-2024"] },
 
   { "code": "VIT-PG-SEM", "name": "Software Engineering Methodologies", "level": "PG", "institution": "Victorian Institute of Technology", "topics": ["Agile", "Requirements"], "years": ["2020-2022"] },
   { "code": "VIT-PG-CYB", "name": "Applied Cyber Security", "level": "PG", "institution": "Victorian Institute of Technology", "years": ["2020-2022"] },
