@@ -17,7 +17,7 @@ export default async function PublicationsPage() {
       <SectionHeading
         eyebrow="Research"
         title="Publications"
-        description={`IEEE journals and conferences, Springer/World Scientific chapters. ${pubs.length} publications listed; filterable by year, type, and free-text search.`}
+        description="IEEE journals and conferences, Springer and World Scientific chapters."
       />
       {pubs.length === 0 ? (
         <p className="rounded-lg border border-dashed border-ink-200 p-6 text-center text-sm text-ink-500 dark:border-ink-700 dark:text-ink-300">

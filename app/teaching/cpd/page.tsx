@@ -32,7 +32,7 @@ export default async function CpdPage() {
       <SectionHeading
         eyebrow="Teaching"
         title="Continuing professional development"
-        description={`${entries.length} courses & workshops completed.`}
+        description="Courses, workshops, and certifications completed."
       />
 
       {entries.length === 0 ? (
