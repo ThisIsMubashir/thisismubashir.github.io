@@ -9,7 +9,6 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
-import { Badge } from '@/components/ui/badge';
 
 export const metadata = buildMetadata({
   title: 'CPD',
@@ -17,16 +16,23 @@ export const metadata = buildMetadata({
   path: '/teaching/cpd',
 });
 
+function formatMonthYear(dateStr?: string): string {
+  if (!dateStr) return '—';
+  const [year, month] = dateStr.split('-');
+  if (!month) return year;
+  const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  return `${monthNames[parseInt(month, 10) - 1]} ${year}`;
+}
+
 export default async function CpdPage() {
   const entries = await getCpdEntries();
-  const totalHours = entries.reduce((sum, e) => sum + (e.hours ?? 0), 0);
 
   return (
     <>
       <SectionHeading
         eyebrow="Teaching"
         title="Continuing professional development"
-        description={`${entries.length} courses & workshops completed, ${totalHours.toFixed(1)} CPD hours logged. Updated continually via Sanity once wired up.`}
+        description={`${entries.length} courses & workshops completed.`}
       />
 
       {entries.length === 0 ? (
@@ -40,8 +46,6 @@ export default async function CpdPage() {
               <TableHeader>Title</TableHeader>
               <TableHeader>Provider</TableHeader>
               <TableHeader>Date</TableHeader>
-              <TableHeader>Hours</TableHeader>
-              <TableHeader>Certificate</TableHeader>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -49,24 +53,7 @@ export default async function CpdPage() {
               <TableRow key={e.slug}>
                 <TableCell className="font-medium">{e.title}</TableCell>
                 <TableCell>{e.provider}</TableCell>
-                <TableCell>{e.dateCompleted?.slice(0, 10)}</TableCell>
-                <TableCell>{e.hours}</TableCell>
-                <TableCell>
-                  {e.certificateUrl ? (
-                    <a
-                      href={e.certificateUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-brand-700 dark:text-brand-300"
-                    >
-                      View
-                    </a>
-                  ) : e.certificateReceived ? (
-                    <Badge tone="success">Received</Badge>
-                  ) : (
-                    '—'
-                  )}
-                </TableCell>
+                <TableCell>{formatMonthYear(e.dateCompleted)}</TableCell>
               </TableRow>
             ))}
           </TableBody>
