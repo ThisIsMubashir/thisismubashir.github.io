@@ -1,0 +1,107 @@
+[
+  {
+    "slug": "getting-started-myplace-2025",
+    "title": "Getting Started With MyPlace",
+    "provider": "University of Strathclyde",
+    "dateCompleted": "2025-09-09",
+    "hours": 12,
+    "certificateReceived": true,
+    "notes": "Strathclyde's institutional VLE — covers course setup, gradebook, accessibility."
+  },
+  {
+    "slug": "cybersecurity-awareness-2025",
+    "title": "Cybersecurity Awareness (Bahrain Campus)",
+    "provider": "University of Strathclyde Glasgow & MetaCompliance",
+    "dateCompleted": "2025-09-08",
+    "hours": 1,
+    "certificateReceived": true
+  },
+  {
+    "slug": "ohs-induction-part-1-2025",
+    "title": "Occupational Health and Safety Induction Part 1",
+    "provider": "University of Strathclyde",
+    "dateCompleted": "2025-09-09",
+    "hours": 5,
+    "certificateReceived": true
+  },
+  {
+    "slug": "cc-security-governance-2025",
+    "title": "Certified in Cybersecurity (CC): Security Governance, Policies, and Procedures",
+    "provider": "SkillSoft (ACS)",
+    "dateCompleted": "2025-09-10",
+    "hours": 0.5,
+    "certificateReceived": true
+  },
+  {
+    "slug": "mental-health-stress-2025",
+    "title": "Mental Health: Stress Awareness",
+    "provider": "British Safety Council",
+    "dateCompleted": "2025-09-25",
+    "hours": 0.75,
+    "certificateReceived": true
+  },
+  {
+    "slug": "sexual-harassment-2025",
+    "title": "Sexual Harassment Awareness",
+    "provider": "University of Strathclyde & MARSHALL",
+    "dateCompleted": "2025-10-01",
+    "hours": 0.5,
+    "certificateReceived": true
+  },
+  {
+    "slug": "insiders-outsiders-micro-behaviours-2025",
+    "title": "Insiders and Outsiders — How Micro-Behaviours Affect the Workplace",
+    "provider": "University of Strathclyde & MARSHALL",
+    "dateCompleted": "2025-10-08",
+    "hours": 1.5,
+    "certificateReceived": true
+  },
+  {
+    "slug": "diversity-learning-teaching-2025",
+    "title": "Diversity in Learning and Teaching",
+    "provider": "University of Strathclyde & MARSHALL",
+    "dateCompleted": "2025-10-09",
+    "hours": 1.5,
+    "certificateReceived": true
+  },
+  {
+    "slug": "racial-incident-disclosure-2025",
+    "title": "Disclosure of a Racial Incident by Students",
+    "provider": "University of Strathclyde & MARSHALL",
+    "dateCompleted": "2025-10-09",
+    "hours": 0.33,
+    "certificateReceived": true
+  },
+  {
+    "slug": "diversity-workplace-2025",
+    "title": "Diversity in the Workplace",
+    "provider": "University of Strathclyde & MARSHALL",
+    "dateCompleted": "2025-10-09",
+    "hours": 3,
+    "certificateReceived": true
+  },
+  {
+    "slug": "automated-marking-coderunner-2025",
+    "title": "Teaching Workshop — Automated Marking with CodeRunner",
+    "provider": "University of Strathclyde",
+    "dateCompleted": "2025-11-05",
+    "hours": 1,
+    "certificateReceived": false
+  },
+  {
+    "slug": "talk-about-race-2025",
+    "title": "Let's Talk About Race in the Workplace",
+    "provider": "University of Strathclyde & MARSHALL",
+    "dateCompleted": "2025-11-12",
+    "hours": 1,
+    "certificateReceived": true
+  },
+  {
+    "slug": "disability-awareness-2025",
+    "title": "Disability Awareness",
+    "provider": "University of Strathclyde & MARSHALL",
+    "dateCompleted": "2025-11-12",
+    "hours": 0.5,
+    "certificateReceived": true
+  }
+]

@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Semantic colour aliases (light) — components reference these, not raw scale colours. */
+    --background:        theme('colors.white');
+    --background-muted:  theme('colors.ink.50');
+    --foreground:        theme('colors.ink.900');
+    --foreground-muted:  theme('colors.ink.500');
+    --border:            theme('colors.ink.100');
+    --border-strong:     theme('colors.ink.200');
+    --primary:           theme('colors.brand.600');
+    --primary-foreground: theme('colors.white');
+    --ring:              theme('colors.brand.500');
+
+    /* Font stacks — geometric-leaning. Swap to next/font Inter via app/layout.tsx. */
+    --font-sans:  -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto,
+                  'Helvetica Neue', Arial, ui-sans-serif, system-ui, sans-serif;
+    --font-serif: ui-serif, 'Iowan Old Style', 'Palatino Linotype', Palatino,
+                  'Times New Roman', Georgia, serif;
+    --font-mono:  ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas,
+                  'Liberation Mono', monospace;
+  }
+
+  .dark {
+    --background:        theme('colors.ink.950');
+    --background-muted:  theme('colors.ink.900');
+    --foreground:        theme('colors.ink.50');
+    --foreground-muted:  theme('colors.ink.300');
+    --border:            theme('colors.ink.800');
+    --border-strong:     theme('colors.ink.700');
+    --primary:           theme('colors.brand.500');
+    --primary-foreground: theme('colors.white');
+    --ring:              theme('colors.brand.400');
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-white text-ink-900 dark:bg-ink-950 dark:text-ink-50;
+    font-family: var(--font-sans);
+  }
+
+  /* Always-visible focus ring for keyboard users. */
+  :focus-visible {
+    @apply outline-none ring-2 ring-brand-500 ring-offset-2 ring-offset-white dark:ring-offset-ink-950;
+  }
+
+  /* Respect reduced motion. */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  a {
+    @apply underline-offset-4;
+  }
+
+  /* Selection */
+  ::selection {
+    background-color: theme('colors.brand.200');
+    color: theme('colors.brand.950');
+  }
+  .dark ::selection {
+    background-color: theme('colors.brand.800');
+    color: theme('colors.brand.50');
+  }
+}
+
+@layer components {
+  .container-narrow {
+    @apply mx-auto w-full max-w-2xl px-4 sm:px-6;
+  }
+
+  .container-wide {
+    @apply mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Skip link for screen-reader / keyboard users. */
+  .skip-link {
+    @apply absolute left-2 top-2 -translate-y-20 rounded bg-brand-600 px-3 py-2 text-white transition-transform focus:translate-y-0;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+}
+
+/* Print stylesheet ─ optimised for the /cv page and publication detail pages.
+   Strips nav/footer chrome, drops to black-on-white serif, tightens spacing. */
+@media print {
+  nav,
+  footer,
+  .skip-link {
+    display: none !important;
+  }
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 11pt;
+  }
+  a {
+    color: black !important;
+    text-decoration: none !important;
+  }
+  .cv-printable {
+    max-width: none !important;
+  }
+  .cv-printable section {
+    break-inside: avoid;
+  }
+  .cv-printable h2 {
+    margin-top: 1.5em !important;
+    font-size: 13pt !important;
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "disabledMcpjsonServers": [
+    "code-review-graph"
+  ],
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cat /Users/mubashir/Documents/01-Projects/Dev/PRJ-Personal-Website/PROJECT_STATE.md"
+          }
+        ]
+      }
+    ]
+  }
+}

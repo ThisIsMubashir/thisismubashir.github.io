@@ -1,0 +1,9 @@
+# Allowed package build scripts. All three are safe — well-known native
+# helpers that need a tiny postinstall to drop a platform binary:
+#   sharp         — image processing (next/image)
+#   unrs-resolver — fast module resolver used by ESLint
+#   esbuild       — bundler used by tsx (preflight script runner)
+allowBuilds:
+  esbuild: true
+  sharp: true
+  unrs-resolver: true

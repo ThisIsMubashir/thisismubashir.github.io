@@ -1,0 +1,8 @@
+# Security contact for this site, per RFC 9116.
+# https://securitytxt.org/
+
+Contact: mailto:mubashir.hussain@live.com
+Expires: 2027-12-31T23:59:59Z
+Preferred-Languages: en
+Canonical: https://mubashirhussain.com/.well-known/security.txt
+Policy: https://mubashirhussain.com/security

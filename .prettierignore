@@ -1,0 +1,6 @@
+.next/
+out/
+node_modules/
+studio/dist/
+pnpm-lock.yaml
+*.mermaid
