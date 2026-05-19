@@ -6,7 +6,7 @@ import { getCourses, getPublications } from '@/lib/content';
 
 export const metadata = buildMetadata({
   title: 'CV',
-  description: 'Academic and industry CV / résumé downloads, plus an always-current HTML summary.',
+  description: 'An always-current summary of experience, education, publications, and teaching.',
   path: '/cv',
 });
 
@@ -61,14 +61,8 @@ export default async function CvPage() {
         <SectionHeading
           eyebrow="Career"
           title="Curriculum vitae"
-          description="Download the PDF that fits your context, or read the HTML version below — it's always current."
+          description="An always-current summary of experience, education, publications, and teaching."
         />
-
-        {/* PDF downloads — add files to public/cv/ then restore these buttons */}
-        <p className="mb-10 text-xs text-ink-500 dark:text-ink-300">
-          Or use your browser&apos;s print → save as PDF for a fresh copy. The print stylesheet strips
-          nav and footer chrome.
-        </p>
       </div>
 
       <article className="cv-printable space-y-12">
