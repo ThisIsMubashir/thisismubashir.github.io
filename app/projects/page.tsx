@@ -18,7 +18,7 @@ export default async function ProjectsPage() {
       <SectionHeading
         eyebrow="Work"
         title="Projects"
-        description={`A mix of research artefacts, teaching tools, and side projects. ${projects.length} projects; filterable by tag.`}
+        description="A mix of research artefacts, teaching tools, and side projects."
       />
       {projects.length === 0 ? (
         <p className="rounded-lg border border-dashed border-ink-200 p-6 text-center text-sm text-ink-500 dark:border-ink-700 dark:text-ink-300">
