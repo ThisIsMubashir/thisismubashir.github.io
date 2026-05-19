@@ -1,0 +1,108 @@
+name: Build & Deploy
+
+on:
+  push:
+    branches: [main]
+  repository_dispatch:
+    # Sanity webhook → POST to GitHub /repos/{owner}/{repo}/dispatches
+    # with { "event_type": "sanity-content-changed" }
+    types: [sanity-content-changed]
+  workflow_dispatch:
+
+# Avoid overlapping deploys.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - name: Preflight (env + seed data sanity)
+        run: pnpm preflight
+        env:
+          NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL || 'https://thisismubashir.github.io' }}
+          NEXT_PUBLIC_SANITY_PROJECT_ID: ${{ secrets.NEXT_PUBLIC_SANITY_PROJECT_ID }}
+          NEXT_PUBLIC_SANITY_DATASET: ${{ secrets.NEXT_PUBLIC_SANITY_DATASET }}
+          SANITY_READ_TOKEN: ${{ secrets.SANITY_READ_TOKEN }}
+          NEXT_PUBLIC_FORMSPREE_ID: ${{ secrets.NEXT_PUBLIC_FORMSPREE_ID }}
+          NEXT_PUBLIC_PLAUSIBLE_DOMAIN: ${{ secrets.NEXT_PUBLIC_PLAUSIBLE_DOMAIN }}
+
+      - name: Build static site
+        run: pnpm build
+        env:
+          NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL || 'https://thisismubashir.github.io' }}
+          NEXT_PUBLIC_SANITY_PROJECT_ID: ${{ secrets.NEXT_PUBLIC_SANITY_PROJECT_ID }}
+          NEXT_PUBLIC_SANITY_DATASET: ${{ secrets.NEXT_PUBLIC_SANITY_DATASET }}
+          NEXT_PUBLIC_SANITY_API_VERSION: ${{ secrets.NEXT_PUBLIC_SANITY_API_VERSION }}
+          SANITY_READ_TOKEN: ${{ secrets.SANITY_READ_TOKEN }}
+          NEXT_PUBLIC_FORMSPREE_ID: ${{ secrets.NEXT_PUBLIC_FORMSPREE_ID }}
+          NEXT_PUBLIC_TURNSTILE_SITE_KEY: ${{ secrets.NEXT_PUBLIC_TURNSTILE_SITE_KEY }}
+          NEXT_PUBLIC_PLAUSIBLE_DOMAIN: ${{ secrets.NEXT_PUBLIC_PLAUSIBLE_DOMAIN }}
+
+      - name: Post-build link check
+        run: pnpm preflight
+        env:
+          NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL || 'https://thisismubashir.github.io' }}
+
+      - name: Add CNAME for custom domain
+        # Set the `CNAME` repo variable under Settings → Secrets and variables → Actions → Variables.
+        run: |
+          if [ -n "${{ vars.CNAME }}" ]; then
+            echo "${{ vars.CNAME }}" > ./out/CNAME
+            echo "CNAME set to ${{ vars.CNAME }}"
+          else
+            echo "::warning::CNAME variable not set; site will serve from the github.io subdomain"
+          fi
+
+      - name: Disable Jekyll on GitHub Pages
+        run: touch ./out/.nojekyll
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Post-deploy URL probe
+        run: |
+          url="${{ steps.deployment.outputs.page_url }}"
+          echo "Probing $url"
+          # Give Pages a moment to settle, then verify the homepage and sitemap respond
+          sleep 8
+          for path in "" "sitemap.xml" "publications/" "projects/"; do
+            full="${url%/}/$path"
+            code=$(curl -s -o /dev/null -w "%{http_code}" -L "$full")
+            echo "  $full → $code"
+            if [ "$code" != "200" ]; then
+              echo "::warning::$full returned $code"
+            fi
+          done

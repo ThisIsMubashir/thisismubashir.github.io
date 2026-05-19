@@ -1,0 +1,154 @@
+[
+  {
+    "slug": "technical-rag-assistant",
+    "title": "Technical RAG Assistant",
+    "role": "Learning project",
+    "startDate": "2026-05-01",
+    "endDate": null,
+    "summary": "Exploring Retrieval-Augmented Generation for technical documentation — what changes when answers must trace back to source spans.",
+    "body": [
+      "A learning project, not a production claim. I'm working through chunking, embeddings, hybrid retrieval, and grounded synthesis on a small corpus of technical specs.",
+      "Goal: understand the failure modes well enough to teach them — what breaks when context windows fill, where rerankers help, how faithfulness is actually measured."
+    ],
+    "tags": ["Learning", "RAG", "Python", "AI"],
+    "repoUrl": "https://github.com/ThisIsMubashir",
+    "featured": false,
+    "relatedPublications": []
+  },
+  {
+    "slug": "mcp-enabled-agent",
+    "title": "MCP-Enabled Agent",
+    "role": "Learning project",
+    "startDate": "2026-05-01",
+    "endDate": null,
+    "summary": "Working through the Model Context Protocol — typed tool contracts, stateless servers, the architectural patterns behind agentic systems.",
+    "body": [
+      "A small learning study to build the muscle of working with agentic tooling. Bridging old habits from hardware-trust models into how to make AI agents auditable.",
+      "Implements a few MCP servers (file, search) and an MCP-aware host. Reading more than writing at this stage."
+    ],
+    "tags": ["Learning", "MCP", "Python", "AI"],
+    "repoUrl": "https://github.com/ThisIsMubashir",
+    "featured": false,
+    "relatedPublications": []
+  },
+  {
+    "slug": "hardware-trojan-detection-noc",
+    "title": "Hardware Trojan Detection Unit for NoC-based MPSoC",
+    "role": "PhD thesis project",
+    "startDate": "2014-08-01",
+    "endDate": "2018-08-01",
+    "summary": "A runtime detection mechanism for hardware Trojans embedded in third-party NoC IP. Modified the BookSim simulator with a Trojan model in one router and a Hardware Trojan Detection Unit (HTDU) that authenticates packets before they leave a core.",
+    "body": [
+      "Built on the BookSim simulator and extended in C++ with a configurable Trojan in one router that activates on a rare bit sequence and leaks information.",
+      "Designed HTDUs that attach lightweight integrity tags before injection and verify them on egress. Tags are per-flow and sized adaptively to traffic load.",
+      "Implemented the hardware version of the HTDU in Verilog to measure area, power, and timing overheads — published with three IEEE papers."
+    ],
+    "tags": ["Hardware security", "Network-on-Chip", "PhD", "C++", "Verilog"],
+    "repoUrl": "https://github.com/ThisIsMubashir",
+    "featured": true,
+    "relatedPublications": [
+      "eetd-trojan-detection-2018",
+      "bandwidth-aware-authentication-noc-2018",
+      "customized-authentication-noc-2017",
+      "packet-leak-detection-noc-2017"
+    ]
+  },
+  {
+    "slug": "wsn-lifetime-meta-heuristic",
+    "title": "Maximising the Lifetime of a Wireless Sensor Network",
+    "role": "Research project",
+    "startDate": "2022-01-01",
+    "endDate": null,
+    "summary": "Python framework that randomly places sensor and target nodes in a field, then uses a meta-heuristic to pick which sensors to activate so total target coverage is maintained while battery life is extended.",
+    "body": [
+      "Implemented the WSN driver with configurable field size, node count, and sensing range distributions.",
+      "Built the shuffled ARSH-FATI meta-heuristic and benchmarked against LEACH-family baselines.",
+      "Visualised energy depletion and coverage over time for paper figures."
+    ],
+    "tags": ["Wireless sensor networks", "Optimisation", "Python", "Meta-heuristic"],
+    "repoUrl": "https://github.com/ThisIsMubashir",
+    "featured": false,
+    "relatedPublications": ["shuffled-arsh-fati-wsn-2023", "arsh-fati-cluster-head-2020"]
+  },
+  {
+    "slug": "student-contribution-playground",
+    "title": "Student Contribution Playground",
+    "role": "Teaching tool",
+    "startDate": "2024-01-01",
+    "endDate": null,
+    "summary": "A small C library of utility functions (strings, math, file helpers) used as a sandbox for students to learn real contribution workflow — branch, PR, code review, tests — before they touch their capstone repos.",
+    "body": [
+      "Designed to mimic the conventions of a real open-source project: contribution guide, issue templates, CODEOWNERS, CI on every PR.",
+      "Students add new functions, fix planted bugs, and improve docs. Every change goes through the same review cycle a junior engineer would face at work.",
+      "Open to forks — the goal is for other educators to remix it for their own programming courses."
+    ],
+    "tags": ["Teaching", "C", "Open source", "Capstone", "CI/CD"],
+    "repoUrl": "https://github.com/ThisIsMubashir/Student-Contribution-Playground",
+    "featured": false,
+    "relatedPublications": []
+  },
+  {
+    "slug": "single-cycle-pipelined-processor",
+    "title": "Single-Cycle + Pipelined Processor with Assembly Interpreter",
+    "role": "Teaching project",
+    "startDate": "2016-01-01",
+    "endDate": "2018-06-01",
+    "summary": "Three-part educational design: a single-cycle CPU built from scratch in VHDL, a pipelined version with a hazard-detection unit, and a Python interpreter that converts assembly to machine code for the custom ISA.",
+    "body": [
+      "Defined a small ISA and implemented instruction/data memory, ALU, control unit, and register file in VHDL.",
+      "Added a 5-stage pipeline with bypass logic and a hazard-detection unit that handles control and data hazards.",
+      "Wrote a Python interpreter that lowers a curated assembly subset to machine code; verified end-to-end in ModelSim."
+    ],
+    "tags": ["Computer architecture", "VHDL", "Python", "Teaching"],
+    "featured": false,
+    "relatedPublications": []
+  },
+  {
+    "slug": "pic-micro-dev-kit",
+    "title": "USB-Based PIC Microcontroller Development Kit",
+    "role": "Undergraduate thesis",
+    "startDate": "2009-09-01",
+    "endDate": "2010-09-01",
+    "summary": "A PIC microcontroller development board designed for undergraduates studying microcontroller interfacing. Includes ADC/DAC, LEDs, seven-segment displays, serial port, LCD, EEPROM, switches, temperature sensor, buzzer, I2C/SPI, and relay interfaces.",
+    "body": [
+      "Designed the board in Altium Designer; managed the schematic, layout, and BOM.",
+      "Wrote teaching example firmware in C demonstrating each peripheral.",
+      "Used by subsequent cohorts of microcontroller interfacing students."
+    ],
+    "tags": ["Embedded", "Hardware", "Altium", "C", "Teaching"],
+    "featured": false,
+    "relatedPublications": []
+  },
+  {
+    "slug": "library-management-system",
+    "title": "Library Management System",
+    "role": "Side project",
+    "startDate": "2019-01-01",
+    "endDate": "2019-06-01",
+    "summary": "Web-based library management app for personal/home collections. Admin can add, edit, delete, and shelf-organise books; users browse with filters.",
+    "body": [
+      "Built front-end with HTML, CSS, JavaScript; back-end in PHP with a MySQL store.",
+      "Designed admin workflows for shelving and check-out, including a search-with-filters UI for readers."
+    ],
+    "tags": ["Web", "PHP", "MySQL", "Full-stack"],
+    "featured": false,
+    "relatedPublications": []
+  },
+  {
+    "slug": "note-app",
+    "title": "Note App",
+    "role": "Side project",
+    "startDate": "2021-01-01",
+    "endDate": "2021-06-01",
+    "summary": "A small client-side note-taking app — create, edit, delete notes in the browser.",
+    "body": [
+      "Pure HTML/CSS/JavaScript, no build step, persisted to localStorage.",
+      "Deployed on Netlify as a quick teaching example for web fundamentals."
+    ],
+    "tags": ["Web", "JavaScript", "Teaching"],
+    "repoUrl": "https://github.com/ThisIsMubashir/NoteApplication",
+    "demoUrl": "https://thisismubashirnoteapp.netlify.app/",
+    "featured": false,
+    "relatedPublications": []
+  }
+]

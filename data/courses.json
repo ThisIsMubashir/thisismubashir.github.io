@@ -1,0 +1,33 @@
+[
+  { "code": "STRATH-CS-1", "name": "Computer Science (UG, Strathclyde Bahrain)", "level": "UG", "institution": "University of Strathclyde, Bahrain", "topics": ["Programming", "Algorithms", "Data structures"], "years": ["2025-"] },
+
+  { "code": "KOI-PG-NRDB", "name": "Non-Relational Database Systems", "level": "PG", "institution": "King's Own Institute", "topics": ["NoSQL", "MongoDB", "Document modelling"], "years": ["2022-2024"] },
+  { "code": "KOI-PG-RDB", "name": "Relational Databases", "level": "PG", "institution": "King's Own Institute", "topics": ["Relational design", "SQL", "Normalisation"], "languages": ["SQL", "MySQL"], "years": ["2022-2024"] },
+  { "code": "KOI-PG-OOP", "name": "Object-Oriented Programming", "level": "PG", "institution": "King's Own Institute", "topics": ["OOP", "Design patterns", "Testing"], "languages": ["Java"], "years": ["2022-2024"] },
+  { "code": "KOI-PG-NETSEC", "name": "Network Security", "level": "PG", "institution": "King's Own Institute", "topics": ["Cryptography", "Network protocols", "Defence in depth"], "years": ["2022-2024"] },
+  { "code": "KOI-PG-SD", "name": "Software Development", "level": "PG", "institution": "King's Own Institute", "topics": ["Lifecycle", "Agile", "CI/CD"], "years": ["2022-2024"] },
+  { "code": "KOI-PG-MR", "name": "Managing Research", "level": "PG", "institution": "King's Own Institute", "topics": ["Research methods", "Literature review", "Ethics"], "years": ["2022-2024"] },
+  { "code": "KOI-PG-ACA", "name": "Advanced Computer Architecture", "level": "PG", "institution": "King's Own Institute", "topics": ["Pipelining", "Memory hierarchy", "Multi-core"], "years": ["2022-2024"] },
+  { "code": "KOI-PG-SEM", "name": "Software Engineering Methodologies", "level": "PG", "institution": "King's Own Institute", "topics": ["Process models", "Requirements", "Architecture"], "years": ["2022-2024"] },
+  { "code": "KOI-PG-RES", "name": "Advanced Research Topics in IT", "level": "PG", "institution": "King's Own Institute", "topics": ["Research design", "AI in IT", "Emerging tech"], "years": ["2022-2024"] },
+  { "code": "KOI-PG-CAP", "name": "Capstone Project", "level": "PG", "institution": "King's Own Institute", "topics": ["Industry projects", "Project management", "Delivery"], "years": ["2022-2024"] },
+  { "code": "KOI-PG-SQT", "name": "Software Quality Testing & Change Management", "level": "PG", "institution": "King's Own Institute", "topics": ["Test strategy", "Change control", "Quality assurance"], "years": ["2022-2024"] },
+  { "code": "KOI-PG-CYB", "name": "Applied Cyber Security", "level": "PG", "institution": "King's Own Institute", "topics": ["Threat modelling", "Pen testing", "Incident response"], "years": ["2022-2024"] },
+
+  { "code": "KOI-UG-FOP", "name": "Foundation of Programming", "level": "UG", "institution": "King's Own Institute", "topics": ["Programming basics", "Control flow"], "languages": ["Python"], "years": ["2020-2024"] },
+  { "code": "KOI-UG-DB", "name": "Introduction to Databases", "level": "UG", "institution": "King's Own Institute", "topics": ["Relational model", "SQL"], "languages": ["SQL"], "years": ["2020-2024"] },
+  { "code": "KOI-UG-NET", "name": "Networks Fundamentals", "level": "UG", "institution": "King's Own Institute", "topics": ["OSI/TCP-IP", "Routing", "Switching"], "years": ["2020-2024"] },
+  { "code": "KOI-UG-WEB", "name": "Developing Web Applications", "level": "UG", "institution": "King's Own Institute", "topics": ["HTTP", "Front-end", "Back-end"], "languages": ["HTML", "CSS", "JS", "PHP"], "years": ["2020-2024"] },
+  { "code": "KOI-UG-MOB", "name": "Mobile Computing", "level": "UG", "institution": "King's Own Institute", "topics": ["Mobile architectures", "Sensors", "Apps"], "years": ["2020-2024"] },
+  { "code": "KOI-UG-WIN", "name": "Developing Windows Applications", "level": "UG", "institution": "King's Own Institute", "topics": ["WinForms", "WPF", ".NET"], "languages": ["C#"], "years": ["2020-2024"] },
+  { "code": "KOI-UG-TEST", "name": "Software Testing", "level": "UG", "institution": "King's Own Institute", "topics": ["Unit testing", "Test design"], "years": ["2020-2024"] },
+  { "code": "KOI-UG-CO", "name": "Computer Organization", "level": "UG", "institution": "King's Own Institute", "topics": ["ISA", "Assembly", "Microarchitecture"], "years": ["2020-2024"] },
+  { "code": "KOI-UG-DLD", "name": "Digital Logic Design", "level": "UG", "institution": "King's Own Institute", "topics": ["Combinational + sequential logic"], "languages": ["VHDL"], "years": ["2020-2024"] },
+  { "code": "KOI-UG-CABCT", "name": "Computer Architecture & Basic Circuit Theory", "level": "UG", "institution": "King's Own Institute", "topics": ["CPU design", "Circuit basics"], "years": ["2020-2024"] },
+  { "code": "KOI-UG-ITP", "name": "Information Technology Project", "level": "UG", "institution": "King's Own Institute", "topics": ["Industry-linked capstone", "PM"], "years": ["2020-2024"] },
+
+  { "code": "VIT-PG-SEM", "name": "Software Engineering Methodologies", "level": "PG", "institution": "Victorian Institute of Technology", "topics": ["Agile", "Requirements"], "years": ["2020-2022"] },
+  { "code": "VIT-PG-CYB", "name": "Applied Cyber Security", "level": "PG", "institution": "Victorian Institute of Technology", "years": ["2020-2022"] },
+
+  { "code": "UNSW-UG-CA", "name": "Computer Architecture and Microprocessor Design and Interfacing", "level": "UG", "institution": "University of New South Wales", "topics": ["Microprocessor design", "Interfacing"], "languages": ["C", "Verilog", "VHDL"], "years": ["2016-2018"] }
+]

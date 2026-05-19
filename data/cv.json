@@ -1,0 +1,28 @@
+{
+  "experience": [
+    { "role": "Teaching Fellow", "org": "University of Strathclyde", "location": "Bahrain campus", "start": "2025-09", "end": null, "notes": ["Teaching across UG Computer Science.", "CPD: 13 trainings completed in first term (28+ hrs)."] },
+    { "role": "Head of Program — Postgraduate IT", "org": "King's Own Institute (KOI)", "location": "Sydney, Australia", "start": "2023-01", "end": "2025-08", "notes": ["Led curriculum development, quality assurance, and TEQSA/ACS accreditation evidence.", "Coordinated capstone projects with industry clients; allocated students and supervisors.", "Mentored academic staff; reported to the Course Advisory Committee."] },
+    { "role": "Senior Lecturer / Subject Coordinator / Academic Supervisor", "org": "King's Own Institute (KOI)", "location": "Sydney, Australia", "start": "2022-07", "end": "2023-01", "notes": ["Designed and delivered UG/PG IT subjects.", "Coordinated industry-linked capstone projects."] },
+    { "role": "Lecturer / Unit Facilitator", "org": "Victorian Institute of Technology (VIT)", "location": "Sydney, Australia", "start": "2020-02", "end": "2022-06", "notes": ["UG lectures and tutorials, on-campus and online.", "Capstone supervision; Moodle unit administration; TEQSA-aligned outcomes."] },
+    { "role": "Sessional Lecturer / Tutor", "org": "King's Own Institute (KOI)", "location": "Sydney, Australia", "start": "2020-10", "end": "2022-06", "notes": ["Web application development subjects; UG project supervision."] },
+    { "role": "Sessional Lecturer / Tutor", "org": "Federation University & University of the Sunshine Coast", "location": "Sydney, Australia", "start": "2018-07", "end": "2020-02", "notes": ["Lectures, tutorials, assessment, exam invigilation, lab content design."] },
+    { "role": "Casual Tutor", "org": "University of New South Wales (UNSW)", "location": "Sydney, Australia", "start": "2016-02", "end": "2018-06", "notes": ["Lab design, project supervision, marking, student consultations for Computer Architecture and Microprocessor Design."] },
+    { "role": "Lecturer", "org": "University of Haripur", "location": "KPK, Pakistan", "start": "2013-12", "end": "2014-08", "notes": ["UG/PG lectures, final-year project supervision, curriculum revision."] },
+    { "role": "Teaching Assistant", "org": "UET Taxila", "location": "Pakistan", "start": "2011-08", "end": "2013-03", "notes": ["Co-designed course content, prepared lab manuals, supported electronics and digital design teaching."] }
+  ],
+  "education": [
+    { "degree": "PhD in Computer Science and Engineering", "school": "University of New South Wales", "location": "Sydney, Australia", "end": "2018-08", "thesis": "Runtime Detection of Hardware Trojan in Untrusted Network-on-Chip (NoC)" },
+    { "degree": "MSc in Computer Engineering", "school": "University of Engineering and Technology", "location": "Taxila, Pakistan", "end": "2013-03", "thesis": "Implementation of Software Defined Radio" },
+    { "degree": "BSc in Computer Engineering", "school": "Bahria University (then UET Taxila)", "location": "Islamabad, Pakistan", "end": "2010-09", "thesis": "USB-based PIC micro Development Kit" }
+  ],
+  "awards": [
+    { "year": 2024, "title": "KOI Research & Teaching Incentive ($12,000)", "detail": "Awarded for research publications and teaching contributions." },
+    { "year": 2014, "title": "Tuition Fee Waiver + Research Scholarship", "detail": "UNSW PhD." },
+    { "year": 2011, "title": "Research Scholarship", "detail": "UET Taxila MSc." },
+    { "year": 2010, "title": "Honor Cum Laude", "detail": "Bahria University BSc in Computer Engineering." }
+  ],
+  "service": [
+    "Technical Committee Member, Next-Gen Healthcare Workshop (NGH), BDCAT 2024.",
+    "Reviewer, PhD Thesis: \"Diffusion Algorithms for Distributed Channel Gain Estimation\"."
+  ]
+}

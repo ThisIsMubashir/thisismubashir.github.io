@@ -1,0 +1,12 @@
+{
+  "extends": ["next/core-web-vitals", "next/typescript", "plugin:jsx-a11y/recommended"],
+  "plugins": ["jsx-a11y"],
+  "ignorePatterns": ["out/", ".next/", "studio/dist/", "node_modules/"],
+  "rules": {
+    "@next/next/no-html-link-for-pages": "off",
+    "jsx-a11y/label-has-associated-control": [
+      "error",
+      { "labelComponents": ["Label"], "controlComponents": ["Input", "Textarea", "Select"] }
+    ]
+  }
+}
