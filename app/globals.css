@@ -15,10 +15,9 @@
     --primary-foreground: theme('colors.white');
     --ring:              theme('colors.brand.500');
 
-    /* Font stacks — geometric-leaning. Swap to next/font Inter via app/layout.tsx. */
-    --font-sans:  -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto,
+    --font-sans:  'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
                   'Helvetica Neue', Arial, ui-sans-serif, system-ui, sans-serif;
-    --font-serif: ui-serif, 'Iowan Old Style', 'Palatino Linotype', Palatino,
+    --font-serif: 'Crimson Pro', ui-serif, 'Iowan Old Style', 'Palatino Linotype', Palatino,
                   'Times New Roman', Georgia, serif;
     --font-mono:  ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas,
                   'Liberation Mono', monospace;
@@ -59,6 +58,10 @@
       transition-duration: 0.01ms !important;
       scroll-behavior: auto !important;
     }
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-serif);
   }
 
   a {
