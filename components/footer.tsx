@@ -8,7 +8,7 @@ export function Footer() {
     <footer className="mt-24 border-t border-ink-100 py-10 text-sm dark:border-ink-900">
       <div className="container-wide flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
         <p className="text-ink-900/70 dark:text-ink-50/70">
-          © {year} {siteConfig.name}. Built with Next.js + Sanity. Hosted on GitHub Pages.
+          © {year} {siteConfig.name}
         </p>
         <ul className="flex items-center gap-3">
           <li>
