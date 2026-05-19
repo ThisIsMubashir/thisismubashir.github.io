@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { SectionHeading } from '@/components/section-heading';
 import { buildMetadata } from '@/lib/seo';
-import { getCourses, type Course } from '@/lib/content';
+import { getCourses } from '@/lib/content';
 
 export const metadata = buildMetadata({
   title: 'Teaching',
@@ -11,27 +11,10 @@ export const metadata = buildMetadata({
   path: '/teaching',
 });
 
-const INSTITUTION_ORDER = [
-  'University of Strathclyde, Bahrain',
-  "King's Own Institute",
-  'Victorian Institute of Technology',
-  'University of New South Wales',
-];
-
-function groupByInstitution(courses: Course[]): [string, { ug: Course[]; pg: Course[] }][] {
-  const map = new Map<string, { ug: Course[]; pg: Course[] }>();
-  for (const c of courses) {
-    if (!map.has(c.institution)) map.set(c.institution, { ug: [], pg: [] });
-    const bucket = map.get(c.institution)!;
-    if (c.level === 'UG') bucket.ug.push(c);
-    else bucket.pg.push(c);
-  }
-  return INSTITUTION_ORDER.filter((i) => map.has(i)).map((i) => [i, map.get(i)!]);
-}
-
 export default async function TeachingPage() {
   const courses = await getCourses();
-  const grouped = groupByInstitution(courses);
+  const pg = courses.filter((c) => c.level === 'PG');
+  const ug = courses.filter((c) => c.level === 'UG');
 
   return (
     <>
@@ -86,44 +69,31 @@ export default async function TeachingPage() {
           All courses taught at undergraduate and postgraduate level, by institution.
         </p>
 
-        <div className="mt-8 space-y-10">
-          {grouped.map(([institution, { ug, pg }]) => (
-            <div key={institution}>
-              <h3 className="text-base font-semibold text-ink-900 dark:text-ink-50">
-                {institution}
-              </h3>
-              <div className="mt-4 grid gap-6 sm:grid-cols-2">
-                {pg.length > 0 && (
-                  <div>
-                    <p className="mb-2 text-xs font-medium uppercase tracking-wider text-brand-700 dark:text-brand-300">
-                      Postgraduate
-                    </p>
-                    <ul className="space-y-1">
-                      {pg.map((c) => (
-                        <li key={c.code} className="text-sm text-ink-700 dark:text-ink-200">
-                          {c.name}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-                {ug.length > 0 && (
-                  <div>
-                    <p className="mb-2 text-xs font-medium uppercase tracking-wider text-brand-700 dark:text-brand-300">
-                      Undergraduate
-                    </p>
-                    <ul className="space-y-1">
-                      {ug.map((c) => (
-                        <li key={c.code} className="text-sm text-ink-700 dark:text-ink-200">
-                          {c.name}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-              </div>
-            </div>
-          ))}
+        <div className="mt-8 grid gap-10 sm:grid-cols-2">
+          <div>
+            <p className="mb-3 text-xs font-medium uppercase tracking-wider text-brand-700 dark:text-brand-300">
+              Postgraduate
+            </p>
+            <ul className="space-y-1.5">
+              {pg.map((c) => (
+                <li key={c.code} className="text-sm text-ink-700 dark:text-ink-200">
+                  {c.name}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <p className="mb-3 text-xs font-medium uppercase tracking-wider text-brand-700 dark:text-brand-300">
+              Undergraduate
+            </p>
+            <ul className="space-y-1.5">
+              {ug.map((c) => (
+                <li key={c.code} className="text-sm text-ink-700 dark:text-ink-200">
+                  {c.name}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
 
