@@ -24,13 +24,13 @@ export default async function TeachingPage() {
         description="A decade of UG and PG teaching across UNSW, Victorian Institute of Technology, King's Own Institute, Federation University, USC, and now the University of Strathclyde (Bahrain)."
       />
 
-      <section className="mt-2 max-w-2xl">
+      <section className="mt-2">
         <blockquote className="border-l-4 border-brand-600 pl-5 text-lg italic text-ink-700 dark:border-brand-400 dark:text-ink-200">
           I see teaching as a shared process of thinking, exploring, and making sense of ideas together.
         </blockquote>
       </section>
 
-      <section className="prose prose-neutral mt-10 max-w-2xl dark:prose-invert">
+      <section className="prose prose-neutral mt-10 max-w-none dark:prose-invert">
         <h2>Philosophy</h2>
         <p>
           Learning is not something that is simply delivered in a classroom; it is something that
