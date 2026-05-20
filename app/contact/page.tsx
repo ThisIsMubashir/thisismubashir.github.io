@@ -15,7 +15,7 @@ export default function ContactPage() {
   return (
     <>
       <SectionHeading
-        eyebrow="Contact"
+       
         title="Get in touch"
         description="I read everything. Reply times vary — fastest by email."
       />

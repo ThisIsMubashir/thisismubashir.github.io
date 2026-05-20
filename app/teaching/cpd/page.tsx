@@ -30,7 +30,7 @@ export default async function CpdPage() {
   return (
     <>
       <SectionHeading
-        eyebrow="Teaching"
+       
         title="Continuing professional development"
         description="Courses, workshops, and certifications completed."
       />

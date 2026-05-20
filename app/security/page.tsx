@@ -10,7 +10,7 @@ export const metadata = buildMetadata({
 export default function SecurityPage() {
   return (
     <article className="prose prose-neutral max-w-2xl dark:prose-invert">
-      <SectionHeading eyebrow="Site" title="Security policy" />
+      <SectionHeading title="Security policy" />
       <p>
         Found a security issue with this site? Please don&apos;t open a public issue. Email me
         directly at <a href="mailto:mubashir.hussain@live.com">mubashir.hussain@live.com</a> with:

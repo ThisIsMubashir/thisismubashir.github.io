@@ -62,12 +62,12 @@ export default function AboutPage() {
   return (
     <>
       <SectionHeading
-        eyebrow="About"
+       
         title="A computer engineer who fell in love with teaching."
         description="Researcher, academic leader, educator."
       />
 
-      <article className="prose prose-neutral max-w-none text-justify hyphens-auto dark:prose-invert">
+      <article className="prose prose-neutral max-w-none dark:prose-invert">
         <p>
           I&apos;m a Teaching Fellow at the University of Strathclyde, Bahrain campus, with more
           than a decade of teaching and academic leadership across Australian and international

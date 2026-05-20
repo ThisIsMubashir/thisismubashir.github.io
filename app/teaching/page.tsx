@@ -19,7 +19,7 @@ export default async function TeachingPage() {
   return (
     <>
       <SectionHeading
-        eyebrow="Practice"
+       
         title="Teaching"
         description="A decade of UG and PG teaching across UNSW, Victorian Institute of Technology, King's Own Institute, Federation University, USC, and now the University of Strathclyde (Bahrain)."
       />
