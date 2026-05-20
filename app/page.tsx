@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, BookOpen, FlaskConical, GraduationCap, Users } from 'lucide-react';
+import { ArrowRight, BookOpen, Cpu, GraduationCap, Users } from 'lucide-react';
 import { buildMetadata } from '@/lib/seo';
 import { siteConfig } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
@@ -64,7 +64,7 @@ export default async function HomePage() {
           </Link>
           <Link href="/projects/">
             <Button variant="secondary" className="rounded-full" size="lg">
-              <FlaskConical className="h-4 w-4" /> Projects
+              <Cpu className="h-4 w-4" /> Projects
             </Button>
           </Link>
           <Link href="/contact/">
@@ -111,7 +111,7 @@ export default async function HomePage() {
           detail="UG and PG projects from proposal to delivery"
         />
         <Currently
-          icon={<FlaskConical className="h-5 w-5" />}
+          icon={<Cpu className="h-5 w-5" />}
           label="Researching"
           title="Cyber-physical systems"
           detail="Healthcare, game-based learning, AI in HE"
