@@ -25,40 +25,41 @@ export default async function HomePage() {
 
   return (
     <>
-      <section className="py-10 sm:py-section">
-        <p className="font-mono text-xs uppercase tracking-wider text-brand-700 dark:text-brand-300">
+      <section className="flex min-h-[82vh] flex-col items-center justify-center py-16 text-center">
+        <p className="inline-flex items-center rounded-full border border-ink-200/80 bg-white/80 px-4 py-1.5 text-xs font-medium tracking-wide text-ink-600 backdrop-blur dark:border-ink-700/80 dark:bg-ink-900/80 dark:text-ink-300">
           {siteConfig.tagline}
         </p>
-        <h1 className="mt-4 text-balance text-4xl tracking-tightish sm:text-5xl">
+        <h1 className="mt-6 text-balance text-5xl font-bold tracking-tight text-ink-900 dark:text-ink-50 sm:text-6xl lg:text-7xl">
           Hi, I&apos;m Dr.&nbsp;Mubashir Hussain.
         </h1>
-        <p className="mt-6 max-w-2xl text-lg text-pretty text-ink-700 dark:text-ink-200">
-          I teach, supervise, and research at the intersection of computer engineering and
-          education. My PhD work focused on detecting hardware Trojans in network-on-chip systems;
-          today I explore cyber-physical systems for healthcare, game-based learning, and AI in
-          higher education.
+        <p className="mt-4 text-lg font-medium text-ink-500 dark:text-ink-300">
+          Computer Engineer · Teaching Fellow · Researcher
         </p>
-
-        <div className="mt-8 flex flex-wrap gap-3">
+        <p className="mt-6 max-w-2xl text-pretty text-base text-ink-600 dark:text-ink-300">
+          I teach, supervise, and research at the intersection of computer engineering and
+          education — hardware security, network-on-chip design, and AI in higher education.
+          Currently a Teaching Fellow at the University of Strathclyde, Bahrain.
+        </p>
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
           <Link href="/publications/">
-            <Button variant="primary">
+            <Button variant="primary" className="rounded-full" size="lg">
               <BookOpen className="h-4 w-4" /> Publications
             </Button>
           </Link>
           <Link href="/projects/">
-            <Button variant="secondary">
+            <Button variant="secondary" className="rounded-full" size="lg">
               <FlaskConical className="h-4 w-4" /> Projects
             </Button>
           </Link>
           <Link href="/contact/">
-            <Button variant="ghost">
+            <Button variant="ghost" className="rounded-full" size="lg">
               Get in touch <ArrowRight className="h-4 w-4" />
             </Button>
           </Link>
         </div>
       </section>
 
-      <section className="grid gap-6 border-t border-ink-100 py-12 sm:grid-cols-3 dark:border-ink-800">
+      <section className="grid gap-4 border-t border-ink-100/60 py-12 sm:grid-cols-3 dark:border-ink-800/60">
         <Currently
           icon={<GraduationCap className="h-5 w-5" />}
           label="Now"
@@ -157,12 +158,12 @@ function Currently({
   detail: string;
 }) {
   return (
-    <div>
-      <p className="flex items-center gap-2 text-xs font-medium uppercase tracking-wider text-brand-700 dark:text-brand-300">
+    <div className="rounded-2xl border border-ink-100/70 bg-white/70 p-5 backdrop-blur dark:border-ink-800/70 dark:bg-ink-900/50">
+      <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-brand-600 dark:text-brand-400">
         {icon} {label}
       </p>
-      <p className="mt-2 text-lg">{title}</p>
-      <p className="text-sm text-ink-500 dark:text-ink-300">{detail}</p>
+      <p className="mt-2 font-serif text-lg font-medium text-ink-900 dark:text-ink-50">{title}</p>
+      <p className="mt-1 text-sm text-ink-500 dark:text-ink-400">{detail}</p>
     </div>
   );
 }
