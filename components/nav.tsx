@@ -27,7 +27,7 @@ export function Nav() {
     href === '/' ? pathname === '/' : pathname.startsWith(href);
 
   return (
-    <header className="sticky top-0 z-40 w-full">
+    <header className="sticky top-0 z-40 w-full bg-white/90 backdrop-blur-md dark:bg-ink-950/90">
       <div className="container-wide flex h-16 items-center justify-between gap-4">
         {/* Name / logo */}
         <Link
