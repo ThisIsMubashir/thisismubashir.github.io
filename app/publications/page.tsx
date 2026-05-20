@@ -22,8 +22,7 @@ export default async function PublicationsPage() {
           Published in
         </span>
         {[
-          { src: '/logos/IEEE.png',     alt: 'IEEE' },
-          { src: '/logos/Springer.png', alt: 'Springer' },
+          { src: '/logos/IEEE.png', alt: 'IEEE' },
         ].map((logo) => (
           <img
             key={logo.src}
