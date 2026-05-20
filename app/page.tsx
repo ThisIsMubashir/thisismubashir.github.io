@@ -79,7 +79,7 @@ export default async function HomePage() {
             Academic journey
           </p>
           <div className="overflow-hidden">
-            <div className="flex animate-marquee items-center gap-8">
+            <div className="flex animate-marquee items-center gap-4">
               {[...academicLogos, ...academicLogos].map((logo, i) => (
                 <div key={i} className="flex h-16 w-40 shrink-0 items-center justify-center">
                   <img

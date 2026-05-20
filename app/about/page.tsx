@@ -9,26 +9,52 @@ export const metadata = buildMetadata({
   path: '/about',
 });
 
-const arsenal: { layer: string; items: string[] }[] = [
+const arsenal: { layer: string; items: { name: string; icon?: string }[] }[] = [
   {
     layer: 'Languages',
-    items: ['Python', 'C', 'C++', 'Java', 'JavaScript', 'Verilog', 'VHDL'],
+    items: [
+      { name: 'Python',     icon: 'devicon-python-plain colored' },
+      { name: 'C',          icon: 'devicon-c-plain colored' },
+      { name: 'C++',        icon: 'devicon-cplusplus-plain colored' },
+      { name: 'Java',       icon: 'devicon-java-plain colored' },
+      { name: 'JavaScript', icon: 'devicon-javascript-plain colored' },
+      { name: 'Verilog' },
+      { name: 'VHDL' },
+    ],
   },
   {
     layer: 'Engineering',
-    items: ['Cloud (AWS)', 'Embedded systems', 'Software engineering', 'System architecture'],
+    items: [
+      { name: 'Cloud (AWS)', icon: 'devicon-amazonwebservices-plain colored' },
+      { name: 'Embedded systems' },
+      { name: 'Software engineering' },
+      { name: 'System architecture' },
+    ],
   },
   {
     layer: 'Data',
-    items: ['MySQL', 'MongoDB', 'Relational + non-relational design'],
+    items: [
+      { name: 'MySQL',   icon: 'devicon-mysql-plain colored' },
+      { name: 'MongoDB', icon: 'devicon-mongodb-plain colored' },
+      { name: 'Relational + non-relational design' },
+    ],
   },
   {
     layer: 'Leadership',
-    items: ['Curriculum design', 'Industry-linked capstones', 'TEQSA / ACS accreditation', 'QA + moderation'],
+    items: [
+      { name: 'Curriculum design' },
+      { name: 'Industry-linked capstones' },
+      { name: 'TEQSA / ACS accreditation' },
+      { name: 'QA + moderation' },
+    ],
   },
   {
     layer: 'Currently learning',
-    items: ['Agentic AI workflows', 'RAG', 'Model Context Protocol'],
+    items: [
+      { name: 'Agentic AI workflows' },
+      { name: 'RAG' },
+      { name: 'Model Context Protocol' },
+    ],
   },
 ];
 
@@ -41,7 +67,7 @@ export default function AboutPage() {
         description="Researcher, academic leader, educator."
       />
 
-      <article className="prose prose-neutral max-w-2xl dark:prose-invert">
+      <article className="prose prose-neutral max-w-2xl text-justify hyphens-auto dark:prose-invert">
         <p>
           I&apos;m a Teaching Fellow at the University of Strathclyde, Bahrain campus, with more
           than a decade of teaching and academic leadership across Australian and international
@@ -77,9 +103,12 @@ export default function AboutPage() {
               </p>
               <ul className="flex flex-wrap gap-1.5">
                 {row.items.map((item) => (
-                  <li key={item}>
+                  <li key={item.name}>
                     <Badge tone={row.layer === 'Currently learning' ? 'brand' : 'neutral'}>
-                      {item}
+                      {item.icon && (
+                        <i className={`${item.icon} mr-1 text-sm`} aria-hidden="true" />
+                      )}
+                      {item.name}
                     </Badge>
                   </li>
                 ))}

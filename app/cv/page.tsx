@@ -23,9 +23,10 @@ export default async function CvPage() {
         title="Curriculum vitae"
         description={
           <>
-            Full document available on request &middot;{' '}
+            I share the full document on request with employers, collaborators, and institutions.
+            If you&apos;d like a copy, feel free to{' '}
             <Link href="/contact/" className="font-medium text-brand-700 hover:underline dark:text-brand-300">
-              Get in touch &rarr;
+              get in touch &rarr;
             </Link>
           </>
         }
@@ -82,28 +83,36 @@ export default async function CvPage() {
 
       {/* Teaching */}
       <section className="mb-12">
-        <h2 className="text-xl font-medium">Teaching</h2>
+        <div className="flex items-baseline justify-between gap-4">
+          <h2 className="text-xl font-medium">Teaching</h2>
+          <Link
+            href="/teaching/"
+            className="text-sm font-medium text-brand-700 hover:underline dark:text-brand-300"
+          >
+            Full list &rarr;
+          </Link>
+        </div>
         <div className="mt-4 grid gap-6 sm:grid-cols-2">
           <div>
-            <h3 className="text-sm font-medium uppercase tracking-wider text-ink-500">
+            <p className="mb-3 text-xs font-medium uppercase tracking-wider text-ink-500">
               Postgraduate
-            </h3>
-            <ul className="mt-2 flex flex-wrap gap-1.5">
-              {pgCourses.map((c) => (
-                <li key={c.code}>
-                  <Badge tone="neutral">{c.name}</Badge>
+            </p>
+            <ul className="space-y-1.5">
+              {pgCourses.slice(0, 5).map((c) => (
+                <li key={c.code} className="text-sm text-ink-700 dark:text-ink-200">
+                  {c.name}
                 </li>
               ))}
             </ul>
           </div>
           <div>
-            <h3 className="text-sm font-medium uppercase tracking-wider text-ink-500">
+            <p className="mb-3 text-xs font-medium uppercase tracking-wider text-ink-500">
               Undergraduate
-            </h3>
-            <ul className="mt-2 flex flex-wrap gap-1.5">
-              {ugCourses.map((c) => (
-                <li key={c.code}>
-                  <Badge tone="neutral">{c.name}</Badge>
+            </p>
+            <ul className="space-y-1.5">
+              {ugCourses.slice(0, 5).map((c) => (
+                <li key={c.code} className="text-sm text-ink-700 dark:text-ink-200">
+                  {c.name}
                 </li>
               ))}
             </ul>
