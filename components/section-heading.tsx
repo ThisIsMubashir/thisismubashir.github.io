@@ -12,7 +12,7 @@ export function SectionHeading({ title, description }: Props) {
         {title}
       </h1>
       {description && (
-        <p className="mt-4 text-ink-600 dark:text-ink-300">{description}</p>
+        <p className="mt-4 max-w-2xl text-ink-600 dark:text-ink-300">{description}</p>
       )}
     </header>
   );
