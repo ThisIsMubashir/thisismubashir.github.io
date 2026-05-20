@@ -59,6 +59,31 @@ export default async function HomePage() {
         </div>
       </section>
 
+      {/* Affiliation logos */}
+      <section className="border-t border-ink-100/60 py-10 dark:border-ink-800/60">
+        <p className="mb-6 text-center text-xs font-semibold uppercase tracking-widest text-ink-400 dark:text-ink-500">
+          Affiliated with
+        </p>
+        <div className="flex flex-wrap items-center justify-center gap-8">
+          {[
+            { src: '/logos/UoSB.png',   alt: 'University of Strathclyde Bahrain' },
+            { src: '/logos/UNSW.jpg',   alt: 'UNSW Sydney' },
+            { src: '/logos/KOI.png',    alt: "King's Own Institute" },
+            { src: '/logos/CQU.png',    alt: 'CQUniversity' },
+            { src: '/logos/FedUni.png', alt: 'Federation University' },
+            { src: '/logos/VIT.png',    alt: 'VIT' },
+            { src: '/logos/SISTC.png',  alt: 'Sydney International School of Technology & Commerce' },
+          ].map((logo) => (
+            <img
+              key={logo.src}
+              src={logo.src}
+              alt={logo.alt}
+              className="h-10 w-auto object-contain opacity-60 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0"
+            />
+          ))}
+        </div>
+      </section>
+
       <section className="grid gap-4 border-t border-ink-100/60 py-12 sm:grid-cols-3 dark:border-ink-800/60">
         <Currently
           icon={<GraduationCap className="h-5 w-5" />}
