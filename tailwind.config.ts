@@ -128,7 +128,7 @@ const config: Config = {
           css: {
             '--tw-prose-links': theme('colors.brand.700'),
             '--tw-prose-invert-links': theme('colors.brand.300'),
-            maxWidth: '70ch',
+            maxWidth: 'none',
           },
         },
       }),

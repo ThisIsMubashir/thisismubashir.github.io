@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import {
-  Menu, X, User, BookOpen, FlaskConical,
+  Menu, X, Home, User, BookOpen, FlaskConical,
   GraduationCap, FileText, Mail, Github, Linkedin,
 } from 'lucide-react';
 import { useState } from 'react';
@@ -11,6 +11,7 @@ import { cn, siteConfig } from '@/lib/utils';
 import { ThemeToggle } from './theme-toggle';
 
 const links = [
+  { href: '/',             label: 'Home',         icon: Home },
   { href: '/about',        label: 'About',        icon: User },
   { href: '/publications', label: 'Publications',  icon: BookOpen },
   { href: '/projects',     label: 'Projects',      icon: FlaskConical },
@@ -32,7 +33,7 @@ export function Nav() {
         {/* Name / logo */}
         <Link
           href="/"
-          className="shrink-0 text-base font-bold text-ink-900 no-underline dark:text-ink-50"
+          className="shrink-0 bg-gradient-to-r from-brand-700 via-brand-500 to-brand-400 bg-clip-text text-base font-bold text-transparent no-underline"
         >
           {siteConfig.shortName}
         </Link>
