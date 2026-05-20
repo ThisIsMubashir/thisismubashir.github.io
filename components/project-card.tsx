@@ -55,16 +55,6 @@ export function ProjectCard({
 
         {summary && <CardDescription className="mt-2 line-clamp-3">{summary}</CardDescription>}
 
-        {tags.length > 0 && (
-          <ul className="mt-4 flex flex-wrap gap-1.5" aria-label="Tags">
-            {tags.slice(0, 6).map((t) => (
-              <li key={t}>
-                <Badge tone="neutral">{t}</Badge>
-              </li>
-            ))}
-          </ul>
-        )}
-
         <div className="relative z-[1] mt-auto flex items-center gap-3 pt-4 text-sm">
           {detailHref && (
             <span className="inline-flex items-center gap-1 text-brand-700 group-hover:underline dark:text-brand-300">
