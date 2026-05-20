@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, BookOpen, FlaskConical, GraduationCap, Users } from 'lucide-react';
 import { buildMetadata } from '@/lib/seo';
@@ -82,10 +83,12 @@ export default async function HomePage() {
             <div className="flex animate-marquee items-center gap-4">
               {[...academicLogos, ...academicLogos].map((logo, i) => (
                 <div key={i} className="flex h-16 w-40 shrink-0 items-center justify-center">
-                  <img
+                  <Image
                     src={logo.src}
                     alt={logo.alt}
-                    className="max-h-14 max-w-[150px] w-auto object-contain opacity-50 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0"
+                    width={150}
+                    height={56}
+                    className="max-h-14 w-auto max-w-[150px] object-contain opacity-50 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0"
                   />
                 </div>
               ))}
@@ -133,7 +136,6 @@ export default async function HomePage() {
                   title={p.title}
                   slug={p.slug}
                   summary={p.summary}
-                  tags={p.tags}
                   endDate={p.endDate ?? undefined}
                   repoUrl={p.repoUrl}
                   demoUrl={p.demoUrl}
