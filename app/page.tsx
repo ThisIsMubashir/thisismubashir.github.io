@@ -67,12 +67,10 @@ export default async function HomePage() {
         <div className="flex flex-wrap items-center justify-center gap-8">
           {[
             { src: '/logos/UoSB.png',   alt: 'University of Strathclyde Bahrain' },
-            { src: '/logos/UNSW.jpg',   alt: 'UNSW Sydney' },
             { src: '/logos/KOI.png',    alt: "King's Own Institute" },
-            { src: '/logos/CQU.png',    alt: 'CQUniversity' },
+            { src: '/logos/VIT.png',    alt: 'Victorian Institute of Technology' },
             { src: '/logos/FedUni.png', alt: 'Federation University' },
-            { src: '/logos/VIT.png',    alt: 'VIT' },
-            { src: '/logos/SISTC.png',  alt: 'Sydney International School of Technology & Commerce' },
+            { src: '/logos/UNSW.jpg',   alt: 'UNSW Sydney' },
           ].map((logo) => (
             <img
               key={logo.src}
