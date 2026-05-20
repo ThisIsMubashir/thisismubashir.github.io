@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { SectionHeading } from '@/components/section-heading';
 import { ProjectsList } from '@/components/projects-list';
 import { buildMetadata } from '@/lib/seo';

@@ -95,7 +95,7 @@ export default async function CvPage() {
         </div>
         <div className="mt-4 grid gap-6 sm:grid-cols-2">
           <div>
-            <p className="mb-3 text-xs font-medium uppercase tracking-wider text-ink-500">
+            <p className="mb-3 text-xs font-medium uppercase tracking-wider text-brand-700 dark:text-brand-300">
               Postgraduate
             </p>
             <ul className="space-y-1.5">
@@ -107,7 +107,7 @@ export default async function CvPage() {
             </ul>
           </div>
           <div>
-            <p className="mb-3 text-xs font-medium uppercase tracking-wider text-ink-500">
+            <p className="mb-3 text-xs font-medium uppercase tracking-wider text-brand-700 dark:text-brand-300">
               Undergraduate
             </p>
             <ul className="space-y-1.5">
