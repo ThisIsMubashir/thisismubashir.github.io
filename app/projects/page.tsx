@@ -16,7 +16,7 @@ export default async function ProjectsPage() {
   return (
     <>
       <SectionHeading
-        eyebrow="Work"
+       
         title="Projects"
         description=""
       />

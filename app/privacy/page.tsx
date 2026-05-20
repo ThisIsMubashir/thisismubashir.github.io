@@ -10,7 +10,7 @@ export const metadata = buildMetadata({
 export default function PrivacyPage() {
   return (
     <article className="prose prose-neutral max-w-2xl dark:prose-invert">
-      <SectionHeading eyebrow="Site" title="Privacy" />
+      <SectionHeading title="Privacy" />
       <p>
         This site doesn&apos;t set tracking cookies. If analytics are enabled, they use Plausible —
         a privacy-friendly, GDPR-compliant service that collects aggregate visit counts only,

@@ -19,7 +19,7 @@ export default async function CvPage() {
   return (
     <>
       <SectionHeading
-        eyebrow="Career"
+       
         title="Curriculum vitae"
         description={
           <>

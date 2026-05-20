@@ -65,7 +65,7 @@ export default function DesignSystemPage() {
   return (
     <>
       <SectionHeading
-        eyebrow="Internal"
+       
         title="Design system"
         description="The tokens, primitives, and patterns this site is built from. Updated alongside the codebase — see DESIGN_SYSTEM.md for the full reference."
       />

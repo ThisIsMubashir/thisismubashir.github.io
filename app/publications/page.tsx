@@ -14,7 +14,7 @@ export default async function PublicationsPage() {
 
   return (
     <>
-      <SectionHeading eyebrow="Research" title="Publications" />
+      <SectionHeading title="Publications" />
 
       {pubs.length === 0 ? (
         <p className="rounded-lg border border-dashed border-ink-200 p-6 text-center text-sm text-ink-500 dark:border-ink-700 dark:text-ink-300">

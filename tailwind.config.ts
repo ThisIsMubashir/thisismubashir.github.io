@@ -129,6 +129,10 @@ const config: Config = {
             '--tw-prose-links': theme('colors.brand.700'),
             '--tw-prose-invert-links': theme('colors.brand.300'),
             maxWidth: 'none',
+            p: {
+              textAlign: 'justify',
+              hyphens: 'auto',
+            },
           },
         },
       }),
