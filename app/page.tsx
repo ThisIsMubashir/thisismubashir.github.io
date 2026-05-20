@@ -69,7 +69,8 @@ export default async function HomePage() {
             { src: '/logos/UoSB.png',   alt: 'University of Strathclyde Bahrain' },
             { src: '/logos/KOI.png',    alt: "King's Own Institute" },
             { src: '/logos/VIT.png',    alt: 'Victorian Institute of Technology' },
-            { src: '/logos/FedUni.png', alt: 'Federation University' },
+            { src: '/logos/FedUni.png', alt: 'Federation University & USC' },
+            { src: '/logos/CQU.png',    alt: 'CQUniversity' },
             { src: '/logos/UNSW.jpg',   alt: 'UNSW Sydney' },
           ].map((logo) => (
             <img
