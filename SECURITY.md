@@ -15,7 +15,7 @@ I aim to acknowledge within 72 hours and roll out a fix within 7 days for high-s
 
 This is a static site (no server-side code, no database, no auth). Reasonable scope:
 
-- The published site at `mubashirhussain.cThom` (once live)
+- The published site at `thisismubashir.github.io` (once live)
 - The Next.js + Sanity build pipeline in this repo
 - Any environment leak (Sanity tokens, Formspree IDs, GitHub PATs)
 
@@ -27,3 +27,4 @@ Out of scope:
 ## Acknowledgements
 
 Reporters who follow this process and request it will be credited in the project README once a fix is shipped.
+

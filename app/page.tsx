@@ -13,6 +13,19 @@ export const metadata = buildMetadata({
   path: '/',
 });
 
+const academicLogos = [
+  { src: '/logos/UoSB.png',                      alt: 'University of Strathclyde Bahrain' },
+  { src: '/logos/KOI.png',                       alt: "King's Own Institute" },
+  { src: '/logos/VIT.png',                       alt: 'Victorian Institute of Technology' },
+  { src: '/logos/FedUni.png',                    alt: 'Federation University' },
+  { src: '/logos/UniversityOfSunshineCoast.png', alt: 'University of the Sunshine Coast' },
+  { src: '/logos/CQU.png',                       alt: 'CQUniversity' },
+  { src: '/logos/SISTC.png',                     alt: 'Sydney International School of Technology & Commerce' },
+  { src: '/logos/BahrainUni.jpeg',               alt: 'Bahria University' },
+  { src: '/logos/UniversityofEngTech.jpeg',       alt: 'University of Engineering & Technology Taxila' },
+  { src: '/logos/UNSW.jpg',                      alt: 'UNSW Sydney' },
+];
+
 export default async function HomePage() {
   const [publications, projects] = await Promise.all([getPublications(), getProjects()]);
 
@@ -25,7 +38,7 @@ export default async function HomePage() {
 
   return (
     <>
-      <section className="flex min-h-[82vh] flex-col items-center justify-center py-16 text-center">
+      <section className="flex min-h-[88vh] flex-col items-center justify-center py-16 text-center">
         <p className="inline-flex items-center rounded-full border border-ink-200/80 bg-white/80 px-4 py-1.5 text-xs font-medium tracking-wide text-ink-600 backdrop-blur dark:border-ink-700/80 dark:bg-ink-900/80 dark:text-ink-300">
           {siteConfig.tagline}
         </p>
@@ -57,29 +70,25 @@ export default async function HomePage() {
             </Button>
           </Link>
         </div>
-      </section>
 
-      {/* Affiliation logos */}
-      <section className="border-t border-ink-100/60 py-10 dark:border-ink-800/60">
-        <p className="mb-6 text-center text-xs font-semibold uppercase tracking-widest text-ink-400 dark:text-ink-500">
-          Affiliated with
-        </p>
-        <div className="flex flex-wrap items-center justify-center gap-8">
-          {[
-            { src: '/logos/UoSB.png',   alt: 'University of Strathclyde Bahrain' },
-            { src: '/logos/KOI.png',    alt: "King's Own Institute" },
-            { src: '/logos/VIT.png',    alt: 'Victorian Institute of Technology' },
-            { src: '/logos/FedUni.png', alt: 'Federation University & USC' },
-            { src: '/logos/CQU.png',    alt: 'CQUniversity' },
-            { src: '/logos/UNSW.jpg',   alt: 'UNSW Sydney' },
-          ].map((logo) => (
-            <img
-              key={logo.src}
-              src={logo.src}
-              alt={logo.alt}
-              className="h-10 w-auto object-contain opacity-60 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0"
-            />
-          ))}
+        {/* Academic journey marquee — sits at bottom of hero, visible on first load */}
+        <div className="mt-16 w-full">
+          <p className="mb-5 text-xs font-semibold uppercase tracking-widest text-ink-400 dark:text-ink-500">
+            Academic journey
+          </p>
+          <div className="overflow-hidden">
+            <div className="flex animate-marquee items-center gap-14">
+              {[...academicLogos, ...academicLogos].map((logo, i) => (
+                <div key={i} className="flex h-16 w-40 shrink-0 items-center justify-center">
+                  <img
+                    src={logo.src}
+                    alt={logo.alt}
+                    className="max-h-14 max-w-[150px] w-auto object-contain opacity-50 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 

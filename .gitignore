@@ -65,5 +65,9 @@ architecture.mermaid
 sitemap.mermaid
 scripts/README.md
 
+# reference design screenshots (local only)
+/reference-designs/
+
 # stale build artefact
 /out_stale_to_delete/
+node_modules
