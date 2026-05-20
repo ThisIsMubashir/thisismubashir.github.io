@@ -24,6 +24,8 @@ const academicLogos = [
   { src: '/logos/BahrainUni.jpeg',               alt: 'Bahria University' },
   { src: '/logos/UniversityofEngTech.jpeg',       alt: 'University of Engineering & Technology Taxila' },
   { src: '/logos/UNSW.jpg',                      alt: 'UNSW Sydney' },
+  { src: '/logos/IEEE.png',                      alt: 'IEEE' },
+  { src: '/logos/ACS.png',                       alt: 'Australian Computer Society' },
 ];
 
 export default async function HomePage() {
@@ -77,7 +79,7 @@ export default async function HomePage() {
             Academic journey
           </p>
           <div className="overflow-hidden">
-            <div className="flex animate-marquee items-center gap-14">
+            <div className="flex animate-marquee items-center gap-8">
               {[...academicLogos, ...academicLogos].map((logo, i) => (
                 <div key={i} className="flex h-16 w-40 shrink-0 items-center justify-center">
                   <img

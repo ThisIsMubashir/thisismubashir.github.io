@@ -89,22 +89,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="mt-16">
-        <h2 className="font-medium text-2xl">Professional memberships</h2>
-        <div className="mt-6 flex flex-wrap items-center gap-8">
-          {[
-            { src: '/logos/ACS.png', alt: 'Australian Computer Society (ACS)' },
-            { src: '/logos/IEEE.png', alt: 'IEEE' },
-          ].map((logo) => (
-            <img
-              key={logo.src}
-              src={logo.src}
-              alt={logo.alt}
-              className="h-12 w-auto object-contain opacity-60 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0"
-            />
-          ))}
-        </div>
-      </section>
     </>
   );
 }
