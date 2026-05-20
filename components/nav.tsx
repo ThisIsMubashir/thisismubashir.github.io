@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import {
-  Menu, X, Home, User, BookOpen, FlaskConical,
+  Menu, X, Home, User, BookOpen, Cpu,
   GraduationCap, FileText, Mail, Github, Linkedin,
 } from 'lucide-react';
 import { useState } from 'react';
@@ -14,7 +14,7 @@ const links = [
   { href: '/',             label: 'Home',         icon: Home },
   { href: '/about',        label: 'About',        icon: User },
   { href: '/publications', label: 'Publications',  icon: BookOpen },
-  { href: '/projects',     label: 'Projects',      icon: FlaskConical },
+  { href: '/projects',     label: 'Projects',      icon: Cpu },
   { href: '/teaching',     label: 'Teaching',      icon: GraduationCap },
   { href: '/cv',           label: 'CV',            icon: FileText },
   { href: '/contact',      label: 'Contact',       icon: Mail },
