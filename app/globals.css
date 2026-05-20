@@ -96,7 +96,8 @@
   }
 
   .container-wide {
-    @apply mx-auto w-full px-4 sm:px-6 lg:w-[65%] lg:px-0;
+    /* Always centred — equal side margins at every breakpoint */
+    @apply mx-auto w-[92%] sm:w-[88%] lg:w-[65%];
   }
 
   /* Skip link for screen-reader / keyboard users. */

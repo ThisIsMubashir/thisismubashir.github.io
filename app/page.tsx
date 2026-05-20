@@ -41,17 +41,17 @@ export default async function HomePage() {
 
   return (
     <>
-      <section className="flex min-h-[88vh] flex-col items-center justify-center py-16 text-center">
+      <section className="flex min-h-[88vh] flex-col items-center justify-center py-12 text-center sm:py-16">
         <p className="inline-flex items-center rounded-full border border-ink-200/80 bg-white/80 px-4 py-1.5 text-xs font-medium tracking-wide text-ink-600 backdrop-blur dark:border-ink-700/80 dark:bg-ink-900/80 dark:text-ink-300">
           {siteConfig.tagline}
         </p>
-        <h1 className="mt-6 text-balance text-5xl font-bold tracking-tight text-ink-900 dark:text-ink-50 sm:text-6xl lg:text-7xl">
+        <h1 className="mt-6 text-balance text-3xl font-bold tracking-tight text-ink-900 dark:text-ink-50 sm:text-5xl lg:text-7xl">
           Hi, I&apos;m Dr.&nbsp;Mubashir Hussain.
         </h1>
-        <p className="mt-4 text-lg font-medium text-ink-500 dark:text-ink-300">
+        <p className="mt-4 text-base font-medium text-ink-500 dark:text-ink-300 sm:text-lg">
           Computer Engineer · Teaching Fellow · Researcher
         </p>
-        <p className="mt-6 max-w-2xl text-pretty text-base text-ink-600 dark:text-ink-300">
+        <p className="mt-6 max-w-prose text-pretty text-sm text-ink-600 dark:text-ink-300 sm:text-base">
           I teach, supervise, and research at the intersection of computer engineering and
           education — hardware security, network-on-chip design, and AI in higher education.
           Currently a Teaching Fellow at the University of Strathclyde, Bahrain.
@@ -82,13 +82,13 @@ export default async function HomePage() {
           <div className="overflow-hidden">
             <div className="flex animate-marquee items-center gap-4">
               {[...academicLogos, ...academicLogos].map((logo, i) => (
-                <div key={i} className="flex h-16 w-40 shrink-0 items-center justify-center">
+                <div key={i} className="flex h-12 w-28 shrink-0 items-center justify-center sm:h-16 sm:w-40">
                   <Image
                     src={logo.src}
                     alt={logo.alt}
                     width={150}
                     height={56}
-                    className="max-h-14 w-auto max-w-[150px] object-contain opacity-50 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0"
+                    className="max-h-10 w-auto max-w-[110px] object-contain opacity-50 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0 sm:max-h-14 sm:max-w-[150px]"
                   />
                 </div>
               ))}
@@ -97,7 +97,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="grid gap-4 border-t border-ink-100/60 py-12 sm:grid-cols-3 dark:border-ink-800/60">
+      <section className="grid grid-cols-1 gap-4 border-t border-ink-100/60 py-12 sm:grid-cols-3 dark:border-ink-800/60">
         <Currently
           icon={<GraduationCap className="h-5 w-5" />}
           label="Now"

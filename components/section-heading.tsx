@@ -8,7 +8,7 @@ interface Props {
 export function SectionHeading({ title, description }: Props) {
   return (
     <header className="mb-10">
-      <h1 className="font-serif text-4xl font-bold tracking-tight text-ink-900 dark:text-ink-50 sm:text-5xl">
+      <h1 className="font-serif text-2xl font-bold tracking-tight text-ink-900 dark:text-ink-50 sm:text-4xl lg:text-5xl">
         {title}
       </h1>
       {description && (
