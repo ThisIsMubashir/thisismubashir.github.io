@@ -6,18 +6,6 @@ import { Analytics } from '@/components/analytics';
 import { buildMetadata, personJsonLd } from '@/lib/seo';
 import './globals.css';
 
-// Fonts are defined in globals.css via system stacks for zero external deps,
-// no FOUT, and no third-party privacy concerns. To switch to Google Fonts
-// (Inter / Source Serif 4 / JetBrains Mono), uncomment the block below and
-// re-add the `cn(sans.variable, …)` className on <html>. Network access to
-// fonts.googleapis.com is required at build time.
-//
-// import { Inter, Source_Serif_4, JetBrains_Mono } from 'next/font/google';
-// import { cn } from '@/lib/utils';
-// const sans = Inter({ subsets: ['latin'], variable: '--font-sans', display: 'swap' });
-// const serif = Source_Serif_4({ subsets: ['latin'], variable: '--font-serif', display: 'swap' });
-// const mono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mono', display: 'swap' });
-
 export const metadata: Metadata = buildMetadata();
 
 export const viewport: Viewport = {
@@ -32,6 +20,14 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;1,14..32,400&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body>
         <ThemeProvider>
           <a href="#main" className="skip-link">
@@ -41,7 +37,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <main
             id="main"
             data-pagefind-body
-            className="container-wide py-10 sm:py-14"
+            className="container-wide py-10 sm:py-16"
           >
             {children}
           </main>
