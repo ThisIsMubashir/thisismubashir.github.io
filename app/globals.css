@@ -96,7 +96,7 @@
   }
 
   .container-wide {
-    @apply mx-auto w-full px-4 sm:px-6 lg:w-3/4 lg:px-0;
+    @apply mx-auto w-full px-4 sm:px-6 lg:w-[65%] lg:px-0;
   }
 
   /* Skip link for screen-reader / keyboard users. */
