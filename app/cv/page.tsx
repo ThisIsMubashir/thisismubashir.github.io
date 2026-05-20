@@ -1,8 +1,6 @@
 import Link from 'next/link';
-import { Mail } from 'lucide-react';
 import { SectionHeading } from '@/components/section-heading';
 import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
 import { buildMetadata } from '@/lib/seo';
 import { getCourses, getPublications } from '@/lib/content';
 
@@ -20,7 +18,18 @@ export default async function CvPage() {
 
   return (
     <>
-      <SectionHeading eyebrow="Career" title="Curriculum vitae" />
+      <SectionHeading
+        eyebrow="Career"
+        title="Curriculum vitae"
+        description={
+          <>
+            Full document available on request &middot;{' '}
+            <Link href="/contact/" className="font-medium text-brand-700 hover:underline dark:text-brand-300">
+              Get in touch &rarr;
+            </Link>
+          </>
+        }
+      />
 
       {/* Credential summary */}
       <section className="mb-12 rounded-xl border border-ink-100 bg-ink-50/50 p-6 dark:border-ink-800 dark:bg-ink-900/40">
@@ -130,21 +139,6 @@ export default async function CvPage() {
         </ol>
       </section>
 
-      {/* Request CTA */}
-      <section className="rounded-xl border border-ink-200 bg-white p-8 text-center dark:border-ink-700 dark:bg-ink-900">
-        <h2 className="text-xl font-medium">Want the full CV?</h2>
-        <p className="mx-auto mt-2 max-w-md text-ink-600 dark:text-ink-300">
-          The complete version — employment history, education, awards, and service record — is
-          available on request. Send me a message and I&apos;ll share it directly.
-        </p>
-        <div className="mt-6">
-          <Link href="/contact/">
-            <Button variant="primary" size="lg">
-              <Mail className="h-4 w-4" /> Request CV
-            </Button>
-          </Link>
-        </div>
-      </section>
     </>
   );
 }
