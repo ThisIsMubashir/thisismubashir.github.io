@@ -67,7 +67,7 @@ export default function AboutPage() {
         description="Researcher, academic leader, educator."
       />
 
-      <article className="prose prose-neutral max-w-2xl text-justify hyphens-auto dark:prose-invert">
+      <article className="prose prose-neutral max-w-none text-justify hyphens-auto dark:prose-invert">
         <p>
           I&apos;m a Teaching Fellow at the University of Strathclyde, Bahrain campus, with more
           than a decade of teaching and academic leadership across Australian and international
