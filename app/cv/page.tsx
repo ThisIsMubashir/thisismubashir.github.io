@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { SectionHeading } from '@/components/section-heading';
 import { Badge } from '@/components/ui/badge';
+import { PublicationEntry } from '@/components/publication-entry';
 import { buildMetadata } from '@/lib/seo';
 import { getCourses, getPublications } from '@/lib/content';
 
@@ -122,30 +123,35 @@ export default async function CvPage() {
 
       {/* Selected publications */}
       <section className="mb-12">
-        <h2 className="text-xl font-medium">Selected publications</h2>
-        <p className="mt-1 text-sm text-ink-500 dark:text-ink-300">
-          Full list at <Link href="/publications/">/publications</Link>.
-        </p>
-        <ol className="mt-4 space-y-3">
+        <div className="mb-4 flex items-end justify-between gap-4">
+          <h2 className="text-xl font-medium">Selected publications</h2>
+          <Link
+            href="/publications/"
+            className="text-sm font-medium text-brand-700 hover:underline dark:text-brand-300"
+          >
+            Full list &rarr;
+          </Link>
+        </div>
+        <ul className="divide-y divide-ink-100 dark:divide-ink-800">
           {publications.slice(0, 5).map((p) => (
-            <li key={p.slug} className="text-sm">
-              <span className="font-medium">{p.title}.</span>{' '}
-              <span className="text-ink-500 dark:text-ink-300">
-                {p.authors.join(', ')}. <em>{p.venue}</em>, {p.year}.
-              </span>{' '}
-              {p.doi && (
-                <a
-                  href={`https://doi.org/${p.doi}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-brand-700 dark:text-brand-300"
-                >
-                  doi:{p.doi}
-                </a>
-              )}
+            <li key={p.slug}>
+              <Link
+                href={`/publications/${p.slug}/`}
+                className="block no-underline hover:bg-ink-50/60 dark:hover:bg-ink-900/40"
+              >
+                <PublicationEntry
+                  title={p.title}
+                  authors={p.authors}
+                  venue={p.venue}
+                  year={p.year}
+                  type={p.type}
+                  doi={p.doi}
+                  url={p.url}
+                />
+              </Link>
             </li>
           ))}
-        </ol>
+        </ul>
       </section>
 
     </>
