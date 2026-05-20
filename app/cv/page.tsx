@@ -124,7 +124,7 @@ export default async function CvPage() {
       <section className="mb-12">
         <h2 className="text-xl font-medium">Selected publications</h2>
         <p className="mt-1 text-sm text-ink-500 dark:text-ink-300">
-          Full list at <a href="/publications/">/publications</a>.
+          Full list at <Link href="/publications/">/publications</Link>.
         </p>
         <ol className="mt-4 space-y-3">
           {publications.slice(0, 5).map((p) => (

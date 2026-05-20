@@ -7,7 +7,6 @@ export interface ProjectCardProps {
   title: string;
   slug?: string;
   summary?: string;
-  tags?: string[];
   /** Show "Current" badge when endDate is undefined. */
   endDate?: string;
   repoUrl?: string;
@@ -25,7 +24,6 @@ export function ProjectCard({
   title,
   slug,
   summary,
-  tags = [],
   endDate,
   repoUrl,
   demoUrl,
