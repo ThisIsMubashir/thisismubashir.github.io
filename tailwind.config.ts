@@ -109,6 +109,15 @@ const config: Config = {
         // Soft-out for UI; ease-in-out for movement.
         DEFAULT: 'cubic-bezier(0.2, 0.8, 0.2, 1)',
       },
+      keyframes: {
+        marquee: {
+          '0%':   { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
+      },
+      animation: {
+        marquee: 'marquee 40s linear infinite',
+      },
       spacing: {
         // Adds a comfortable section rhythm on top of the default scale.
         section: '4rem',
