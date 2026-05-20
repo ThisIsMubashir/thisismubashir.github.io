@@ -6,7 +6,7 @@ import { getCourses, getPublications } from '@/lib/content';
 
 export const metadata = buildMetadata({
   title: 'CV',
-  description: 'An always-current summary of experience, education, publications, and teaching.',
+  description: 'Curriculum vitae — experience, education, publications, and teaching.',
   path: '/cv',
 });
 
@@ -61,7 +61,7 @@ export default async function CvPage() {
         <SectionHeading
           eyebrow="Career"
           title="Curriculum vitae"
-          description="An always-current summary of experience, education, publications, and teaching."
+          description=""
         />
       </div>
 
