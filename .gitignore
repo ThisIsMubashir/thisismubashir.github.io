@@ -71,3 +71,14 @@ scripts/README.md
 # stale build artefact
 /out_stale_to_delete/
 node_modules
+
+# claude / AI tooling (local only)
+.claude/
+.claude-flow/
+.superpowers/
+.swarm/
+SESSION_CONTEXT.md
+
+# planning & knowledge graph (local only)
+.planning/
+graphify-out/
