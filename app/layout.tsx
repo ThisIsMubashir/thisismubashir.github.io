@@ -3,6 +3,7 @@ import { ThemeProvider } from '@/components/theme-provider';
 import { Nav } from '@/components/nav';
 import { Footer } from '@/components/footer';
 import { Analytics } from '@/components/analytics';
+import { DotField } from '@/components/dot-field';
 import { buildMetadata, personJsonLd } from '@/lib/seo';
 import './globals.css';
 
@@ -33,6 +34,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body>
+        <DotField />
         <ThemeProvider>
           <a href="#main" className="skip-link">
             Skip to content

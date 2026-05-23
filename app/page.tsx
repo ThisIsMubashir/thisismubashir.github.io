@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { ProjectCard } from '@/components/project-card';
 import { PublicationEntry } from '@/components/publication-entry';
 import { getProjects, getPublications } from '@/lib/content';
+import { ScrollReveal } from '@/components/scroll-reveal';
 
 export const metadata = buildMetadata({
   title: 'Home',
@@ -97,25 +98,27 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="grid grid-cols-1 gap-4 border-t border-ink-100/60 py-12 sm:grid-cols-3 dark:border-ink-800/60">
-        <Currently
-          icon={<GraduationCap className="h-5 w-5" />}
-          label="Now"
-          title="Teaching Fellow"
-          detail="University of Strathclyde, Bahrain campus"
-        />
-        <Currently
-          icon={<Users className="h-5 w-5" />}
-          label="Supervising"
-          title="Industry-linked capstones"
-          detail="UG and PG projects from proposal to delivery"
-        />
-        <Currently
-          icon={<Cpu className="h-5 w-5" />}
-          label="Researching"
-          title="Cyber-physical systems"
-          detail="Healthcare, game-based learning, AI in HE"
-        />
+      <section className="border-t border-ink-100/60 py-12 dark:border-ink-800/60">
+        <ScrollReveal className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+          <Currently
+            icon={<GraduationCap className="h-5 w-5" />}
+            label="Now"
+            title="Teaching Fellow"
+            detail="University of Strathclyde, Bahrain campus"
+          />
+          <Currently
+            icon={<Users className="h-5 w-5" />}
+            label="Supervising"
+            title="Industry-linked capstones"
+            detail="UG and PG projects from proposal to delivery"
+          />
+          <Currently
+            icon={<Cpu className="h-5 w-5" />}
+            label="Researching"
+            title="Cyber-physical systems"
+            detail="Healthcare, game-based learning, AI in HE"
+          />
+        </ScrollReveal>
       </section>
 
       {featuredProjects.length > 0 && (
@@ -129,7 +132,7 @@ export default async function HomePage() {
               All projects <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
-          <ul className="grid gap-4 sm:grid-cols-3">
+          <ScrollReveal as="ul" className="grid gap-4 sm:grid-cols-3">
             {featuredProjects.map((p) => (
               <li key={p.slug}>
                 <ProjectCard
@@ -142,7 +145,7 @@ export default async function HomePage() {
                 />
               </li>
             ))}
-          </ul>
+          </ScrollReveal>
         </section>
       )}
 
@@ -157,7 +160,7 @@ export default async function HomePage() {
               All publications <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
-          <ul className="divide-y divide-ink-100 dark:divide-ink-800">
+          <ScrollReveal as="ul" className="divide-y divide-ink-100 dark:divide-ink-800">
             {featuredPubs.map((p) => (
               <li key={p.slug}>
                 <Link
@@ -176,7 +179,7 @@ export default async function HomePage() {
                 </Link>
               </li>
             ))}
-          </ul>
+          </ScrollReveal>
         </section>
       )}
     </>
