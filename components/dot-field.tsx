@@ -31,6 +31,14 @@ export function DotField() {
     let dots: Dot[] = [];
     let raf = 0;
     let mouse = { x: -9999, y: -9999 };
+    let isDark = document.documentElement.classList.contains('dark');
+
+    // Dot color per theme
+    function dotColor() {
+      return isDark
+        ? 'rgba(103,125,255,0.22)'   // brand-400, visible on dark bg
+        : 'rgba(37,50,182,0.13)';    // brand-700, faint on white
+    }
 
     // ── Build dot grid ────────────────────────────────────────────
     function buildGrid() {
@@ -93,7 +101,7 @@ export function DotField() {
         // Draw
         ctx.beginPath();
         ctx.arc(d.x, d.y, DOT_R, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(37,50,182,0.13)'; // faint brand indigo
+        ctx.fillStyle = dotColor();
         ctx.fill();
       }
 
@@ -118,6 +126,15 @@ export function DotField() {
       mouse = { x: -9999, y: -9999 };
     }
 
+    // Re-read theme whenever next-themes toggles the .dark class on <html>
+    const themeObserver = new MutationObserver(() => {
+      isDark = document.documentElement.classList.contains('dark');
+    });
+    themeObserver.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['class'],
+    });
+
     resize();
     tick();
 
@@ -129,6 +146,7 @@ export function DotField() {
 
     return () => {
       cancelAnimationFrame(raf);
+      themeObserver.disconnect();
       window.removeEventListener('resize',     resize);
       window.removeEventListener('mousemove',  onMouseMove);
       window.removeEventListener('mouseleave', onMouseLeave);
