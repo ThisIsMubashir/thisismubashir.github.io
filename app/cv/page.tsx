@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { SectionHeading } from '@/components/section-heading';
 import { Badge } from '@/components/ui/badge';
+import { ScrollReveal } from '@/components/scroll-reveal';
 import { PublicationEntry } from '@/components/publication-entry';
 import { buildMetadata } from '@/lib/seo';
 import { getCourses, getPublications } from '@/lib/content';
@@ -35,7 +36,7 @@ export default async function CvPage() {
 
       {/* Credential summary */}
       <section className="mb-12 rounded-xl border border-ink-100 bg-ink-50/50 p-6 dark:border-ink-800 dark:bg-ink-900/40">
-        <div className="grid gap-6 sm:grid-cols-3">
+        <ScrollReveal className="grid gap-6 sm:grid-cols-3">
           <div>
             <p className="text-xs font-semibold uppercase tracking-wider text-brand-700 dark:text-brand-300">
               Current role
@@ -61,12 +62,12 @@ export default async function CvPage() {
               Teaching, research, academic leadership
             </p>
           </div>
-        </div>
+        </ScrollReveal>
         <div className="mt-6">
           <p className="text-xs font-semibold uppercase tracking-wider text-brand-700 dark:text-brand-300">
             Research areas
           </p>
-          <ul className="mt-2 flex flex-wrap gap-2" aria-label="Research areas">
+          <ScrollReveal as="ul" className="mt-2 flex flex-wrap gap-2" aria-label="Research areas">
             {[
               'Hardware security',
               'Network-on-Chip',
@@ -78,7 +79,7 @@ export default async function CvPage() {
                 <Badge tone="neutral">{area}</Badge>
               </li>
             ))}
-          </ul>
+          </ScrollReveal>
         </div>
       </section>
 
@@ -93,7 +94,7 @@ export default async function CvPage() {
             Full list &rarr;
           </Link>
         </div>
-        <div className="mt-4 grid gap-6 sm:grid-cols-2">
+        <ScrollReveal className="mt-4 grid gap-6 sm:grid-cols-2">
           <div>
             <p className="mb-3 text-xs font-medium uppercase tracking-wider text-brand-700 dark:text-brand-300">
               Postgraduate
@@ -118,7 +119,7 @@ export default async function CvPage() {
               ))}
             </ul>
           </div>
-        </div>
+        </ScrollReveal>
       </section>
 
       {/* Selected publications */}
@@ -132,7 +133,7 @@ export default async function CvPage() {
             Full list &rarr;
           </Link>
         </div>
-        <ul className="divide-y divide-ink-100 dark:divide-ink-800">
+        <ScrollReveal as="ul" className="divide-y divide-ink-100 dark:divide-ink-800">
           {publications.slice(0, 5).map((p) => (
             <li key={p.slug}>
               <Link
@@ -151,7 +152,7 @@ export default async function CvPage() {
               </Link>
             </li>
           ))}
-        </ul>
+        </ScrollReveal>
       </section>
 
     </>

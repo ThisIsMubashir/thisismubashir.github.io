@@ -1,5 +1,6 @@
 import { SectionHeading } from '@/components/section-heading';
 import { Badge } from '@/components/ui/badge';
+import { ScrollReveal } from '@/components/scroll-reveal';
 import { buildMetadata } from '@/lib/seo';
 
 export const metadata = buildMetadata({
@@ -95,7 +96,7 @@ export default function AboutPage() {
           What I&apos;m proficient in or actively practising. The last row is what I&apos;m investing
           time in right now — listed honestly, not aspirationally.
         </p>
-        <div className="mt-6 space-y-5">
+        <ScrollReveal className="mt-6 space-y-5">
           {arsenal.map((row) => (
             <div key={row.layer} className="grid gap-3 sm:grid-cols-[160px_1fr] sm:items-baseline">
               <p className="text-xs font-medium uppercase tracking-wider text-brand-700 dark:text-brand-300">
@@ -115,7 +116,7 @@ export default function AboutPage() {
               </ul>
             </div>
           ))}
-        </div>
+        </ScrollReveal>
       </section>
 
     </>

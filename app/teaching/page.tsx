@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { SectionHeading } from '@/components/section-heading';
+import { ScrollReveal } from '@/components/scroll-reveal';
 import { buildMetadata } from '@/lib/seo';
 import { getCourses } from '@/lib/content';
 
@@ -74,25 +75,25 @@ export default async function TeachingPage() {
             <p className="mb-3 text-xs font-medium uppercase tracking-wider text-brand-700 dark:text-brand-300">
               Postgraduate
             </p>
-            <ul className="space-y-1.5">
+            <ScrollReveal as="ul" className="space-y-1.5">
               {pg.map((c) => (
                 <li key={c.code} className="text-sm text-ink-700 dark:text-ink-200">
                   {c.name}
                 </li>
               ))}
-            </ul>
+            </ScrollReveal>
           </div>
           <div>
             <p className="mb-3 text-xs font-medium uppercase tracking-wider text-brand-700 dark:text-brand-300">
               Undergraduate
             </p>
-            <ul className="space-y-1.5">
+            <ScrollReveal as="ul" className="space-y-1.5">
               {ug.map((c) => (
                 <li key={c.code} className="text-sm text-ink-700 dark:text-ink-200">
                   {c.name}
                 </li>
               ))}
-            </ul>
+            </ScrollReveal>
           </div>
         </div>
       </section>

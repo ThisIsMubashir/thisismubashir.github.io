@@ -3,6 +3,7 @@
 import { useMemo, useState } from 'react';
 import { ClearFilters, FilterChips } from '@/components/filter-chips';
 import { ProjectCard } from '@/components/project-card';
+import { ScrollReveal } from '@/components/scroll-reveal';
 import type { Project } from '@/lib/content';
 
 interface Props {
@@ -42,7 +43,7 @@ export function ProjectsList({ projects }: Props) {
           No projects match that tag.
         </p>
       ) : (
-        <ul className="grid gap-4 sm:grid-cols-2">
+        <ScrollReveal as="ul" className="grid gap-4 sm:grid-cols-2">
           {filtered.map((p) => (
             <li key={p.slug}>
               <ProjectCard
@@ -56,7 +57,7 @@ export function ProjectsList({ projects }: Props) {
               />
             </li>
           ))}
-        </ul>
+        </ScrollReveal>
       )}
     </>
   );

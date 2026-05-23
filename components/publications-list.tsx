@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Input } from '@/components/ui/form';
 import { ClearFilters, FilterChips } from '@/components/filter-chips';
 import { PublicationEntry } from '@/components/publication-entry';
+import { ScrollReveal } from '@/components/scroll-reveal';
 import type { Publication, PublicationType } from '@/lib/content';
 
 interface Props {
@@ -81,7 +82,7 @@ export function PublicationsList({ publications }: Props) {
           No publications match those filters.
         </p>
       ) : (
-        <ul className="divide-y divide-ink-100 dark:divide-ink-800">
+        <ScrollReveal as="ul" className="divide-y divide-ink-100 dark:divide-ink-800">
           {filtered.map((p) => (
             <li key={p.slug}>
               <Link
@@ -101,7 +102,7 @@ export function PublicationsList({ publications }: Props) {
               </Link>
             </li>
           ))}
-        </ul>
+        </ScrollReveal>
       )}
     </>
   );

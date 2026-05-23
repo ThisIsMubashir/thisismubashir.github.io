@@ -115,6 +115,14 @@
   }
 }
 
+/* ── Scroll-reveal: initial hidden state ────────────────────────────────────
+   JS (ScrollReveal component) takes over after hydration and drives opacity
+   + transform via inline styles based on real-time scroll position.
+   This CSS hides children before JS runs to avoid a visible flash. */
+[data-reveal="false"] > * {
+  opacity: 0;
+}
+
 /* Print stylesheet ─ optimised for the /cv page and publication detail pages.
    Strips nav/footer chrome, drops to black-on-white serif, tightens spacing. */
 @media print {
