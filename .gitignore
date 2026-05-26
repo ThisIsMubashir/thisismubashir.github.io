@@ -60,6 +60,11 @@ Thumbs.db
 .vercel
 .netlify
 
+# ── Security policy files (kept local only) ──────────────────────────────────
+SECURITY.md
+app/security/page.tsx
+public/.well-known/
+
 # ── Internal / developer-only docs ───────────────────────────────────────────
 README.md
 BACKLOG.md
