@@ -44,6 +44,16 @@ interface ResultRow {
   excerpt: string;
 }
 
+// Allow only <mark> and </mark> — strip every other HTML tag from Pagefind excerpts.
+function sanitizeExcerpt(html: string): string {
+  return html.replace(/<(?!\/?\bmark\b)[^>]*>/gi, '');
+}
+
+// Pagefind result URLs are always site-relative paths; reject anything else.
+function safeResultUrl(url: string): string {
+  return url.startsWith('/') ? url : '/';
+}
+
 export function SearchButton() {
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState('');
@@ -70,7 +80,8 @@ export function SearchButton() {
   }, [open]);
 
   const runSearch = useCallback(async (q: string) => {
-    if (!q.trim()) {
+    const trimmed = q.trim().slice(0, 200);
+    if (!trimmed) {
       setResults([]);
       return;
     }
@@ -81,13 +92,13 @@ export function SearchButton() {
       setLoading(false);
       return;
     }
-    const { results: raw } = await pf.search(q);
+    const { results: raw } = await pf.search(trimmed);
     const top = await Promise.all(raw.slice(0, 8).map((r) => r.data()));
     setResults(
       top.map((d) => ({
-        url: d.url,
+        url: safeResultUrl(d.url),
         title: d.meta.title ?? d.url,
-        excerpt: d.excerpt,
+        excerpt: sanitizeExcerpt(d.excerpt),
       })),
     );
     setLoading(false);
@@ -136,7 +147,10 @@ export function SearchButton() {
                 type="search"
                 placeholder="Search publications, projects, CV…"
                 value={query}
-                onChange={(e) => setQuery(e.target.value)}
+                onChange={(e) => setQuery(e.target.value.slice(0, 200))}
+                maxLength={200}
+                autoComplete="off"
+                spellCheck={false}
                 className="flex-1 bg-transparent text-sm outline-none placeholder:text-ink-400"
               />
               <button
