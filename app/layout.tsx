@@ -4,7 +4,7 @@ import { Nav } from '@/components/nav';
 import { Footer } from '@/components/footer';
 import { Analytics } from '@/components/analytics';
 import { DotField } from '@/components/dot-field';
-import { buildMetadata, personJsonLd } from '@/lib/seo';
+import { buildMetadata, personJsonLd, jsonLdScript } from '@/lib/seo';
 import './globals.css';
 
 export const metadata: Metadata = buildMetadata();
@@ -22,6 +22,22 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        {/*
+          GitHub Pages serves this static export with no way to set custom
+          response headers — `next.config.mjs`'s `headers()` only applies
+          under `next dev`/a Node server, and `public/_headers` is a
+          Netlify/Cloudflare-Pages convention GitHub Pages doesn't read. This
+          meta tag is the only mechanism that actually reaches production, so
+          it must be kept in sync with the CSP in `next.config.mjs` and
+          `public/_headers`. Note it can't carry `frame-ancestors`, so it does
+          NOT provide clickjacking protection (no meta equivalent exists) —
+          `X-Frame-Options`/`Permissions-Policy` need a header-capable host.
+        */}
+        <meta
+          httpEquiv="Content-Security-Policy"
+          content="default-src 'self'; script-src 'self' 'unsafe-inline' challenges.cloudflare.com plausible.io; style-src 'self' 'unsafe-inline' fonts.googleapis.com cdn.jsdelivr.net; font-src 'self' fonts.gstatic.com cdn.jsdelivr.net; img-src 'self' data: cdn.sanity.io; connect-src 'self' plausible.io; frame-src challenges.cloudflare.com; object-src 'none'; base-uri 'self';"
+        />
+        <meta name="referrer" content="strict-origin-when-cross-origin" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
@@ -51,7 +67,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </ThemeProvider>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+          dangerouslySetInnerHTML={{ __html: jsonLdScript(personJsonLd) }}
         />
         <Analytics />
       </body>

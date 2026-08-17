@@ -45,6 +45,19 @@ export function buildMetadata({
 }
 
 /**
+ * Serializes a JSON-LD object for inline `<script>` injection.
+ *
+ * `JSON.stringify` does not escape `</script>`, so a value containing that
+ * literal text would close the script tag early and let the rest be parsed
+ * as HTML. Low-risk today since JSON-LD fields are hardcoded or come from
+ * `data/*.json`, but becomes a real stored-XSS vector once fields are
+ * editable through Sanity.
+ */
+export function jsonLdScript(data: unknown): string {
+  return JSON.stringify(data).replace(/</g, '\\u003c');
+}
+
+/**
  * JSON-LD `Person` schema for the homepage / about page.
  * Drop into a `<script type="application/ld+json">` block.
  */

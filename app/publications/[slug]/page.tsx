@@ -5,7 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { BibTexBlock } from '@/components/bibtex-block';
 import { getProjects, getPublication, getPublicationSlugs } from '@/lib/content';
-import { buildMetadata } from '@/lib/seo';
+import { buildMetadata, jsonLdScript } from '@/lib/seo';
 import { siteConfig } from '@/lib/utils';
 
 export const dynamicParams = false;
@@ -170,7 +170,7 @@ export default async function PublicationDetail({
 
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(scholarlyArticleJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: jsonLdScript(scholarlyArticleJsonLd) }}
       />
     </>
   );
