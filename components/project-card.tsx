@@ -1,5 +1,5 @@
 import NextLink from 'next/link';
-import { ArrowUpRight, Github } from 'lucide-react';
+import { Github } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardBody, CardTitle, CardDescription } from '@/components/ui/card';
 
@@ -54,11 +54,6 @@ export function ProjectCard({
         {summary && <CardDescription className="mt-2 line-clamp-3">{summary}</CardDescription>}
 
         <div className="relative z-[1] mt-auto flex items-center gap-3 pt-4 text-sm">
-          {detailHref && (
-            <span className="inline-flex items-center gap-1 text-brand-700 group-hover:underline dark:text-brand-300">
-              Read more <ArrowUpRight className="h-4 w-4" />
-            </span>
-          )}
           {repoUrl && (
             <a
               href={repoUrl}
