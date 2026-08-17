@@ -11,7 +11,6 @@
       "Goal: understand the failure modes well enough to teach them — what breaks when context windows fill, where rerankers help, how faithfulness is actually measured."
     ],
     "tags": ["Learning", "RAG", "Python", "AI"],
-    "repoUrl": "https://github.com/ThisIsMubashir",
     "featured": false,
     "relatedPublications": []
   },
@@ -27,7 +26,6 @@
       "Implements a few MCP servers (file, search) and an MCP-aware host. Reading more than writing at this stage."
     ],
     "tags": ["Learning", "MCP", "Python", "AI"],
-    "repoUrl": "https://github.com/ThisIsMubashir",
     "featured": false,
     "relatedPublications": []
   },
@@ -44,7 +42,6 @@
       "Implemented the hardware version of the HTDU in Verilog to measure area, power, and timing overheads — published with three IEEE papers."
     ],
     "tags": ["Hardware security", "Network-on-Chip", "PhD", "C++", "Verilog"],
-    "repoUrl": "https://github.com/ThisIsMubashir",
     "featured": true,
     "relatedPublications": [
       "eetd-trojan-detection-2018",
@@ -66,7 +63,6 @@
       "Visualised energy depletion and coverage over time for paper figures."
     ],
     "tags": ["Wireless sensor networks", "Optimisation", "Python", "Meta-heuristic"],
-    "repoUrl": "https://github.com/ThisIsMubashir",
     "featured": false,
     "relatedPublications": ["shuffled-arsh-fati-wsn-2023", "arsh-fati-cluster-head-2020"]
   },
