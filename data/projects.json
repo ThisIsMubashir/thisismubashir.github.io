@@ -55,7 +55,7 @@
     "title": "Maximising the Lifetime of a Wireless Sensor Network",
     "role": "Research project",
     "startDate": "2022-01-01",
-    "endDate": null,
+    "endDate": "2023-01-01",
     "summary": "Python framework that randomly places sensor and target nodes in a field, then uses a meta-heuristic to pick which sensors to activate so total target coverage is maintained while battery life is extended.",
     "body": [
       "Implemented the WSN driver with configurable field size, node count, and sensing range distributions.",
@@ -70,8 +70,8 @@
     "slug": "student-contribution-playground",
     "title": "Student Contribution Playground",
     "role": "Teaching tool",
-    "startDate": "2024-01-01",
-    "endDate": null,
+    "startDate": "2025-11-01",
+    "endDate": "2026-02-01",
     "summary": "A small C library of utility functions (strings, math, file helpers) used as a sandbox for students to learn real contribution workflow — branch, PR, code review, tests — before they touch their capstone repos.",
     "body": [
       "Designed to mimic the conventions of a real open-source project: contribution guide, issue templates, CODEOWNERS, CI on every PR.",
