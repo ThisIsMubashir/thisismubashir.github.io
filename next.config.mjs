@@ -43,7 +43,12 @@ const nextConfig = {
     ],
   },
 
-  // Keep the Studio out of the Next build.
+  // Next 16 defaults to Turbopack; declare it explicitly so the leftover
+  // `webpack` config below (used only if someone runs with --webpack) isn't
+  // flagged as a mistake.
+  turbopack: {},
+
+  // Keep the Studio out of the Next build (only applies with --webpack).
   webpack: (config) => {
     config.watchOptions = { ...config.watchOptions, ignored: ['**/studio/**', '**/node_modules/**'] };
     return config;
