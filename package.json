@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "next dev",
-    "build": "next build && pnpm pagefind",
+    "build": "next build --webpack && pnpm pagefind",
     "build:no-search": "next build",
     "pagefind": "pagefind --site out --output-subdir _pagefind",
     "start": "next start",
