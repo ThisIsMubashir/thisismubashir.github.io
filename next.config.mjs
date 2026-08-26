@@ -34,6 +34,11 @@ const nextConfig = {
 
   trailingSlash: true,
 
+  // `tsc --noEmit` and `next lint` run as separate CI steps, so the production
+  // build doesn't re-run (or block on) them — this roughly halves cold builds.
+  eslint: { ignoreDuringBuilds: true },
+  typescript: { ignoreBuildErrors: true },
+
   images: {
     // next/image needs this for static export — Sanity already serves
     // images via its own CDN with on-the-fly transforms, so we don't lose much.
@@ -48,6 +53,11 @@ const nextConfig = {
     config.watchOptions = { ...config.watchOptions, ignored: ['**/studio/**', '**/node_modules/**'] };
     return config;
   },
+
+  // Next.js 16 uses Turbopack by default. An empty config coexists with the
+  // webpack() fallback above and silences the "webpack config, no turbopack
+  // config" build error.
+  turbopack: {},
 
   // Active during `next dev` and any future server deployment.
   // GitHub Pages (static export) ignores these; public/_headers covers that host.
