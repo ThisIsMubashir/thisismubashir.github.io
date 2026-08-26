@@ -380,7 +380,7 @@ export default function DesignSystemPage() {
             title="Hardware Trojan Detection Unit for NoC-based MPSoC"
             slug="hardware-trojan-detection"
             summary="A modified BookSim NoC simulator with a Trojan in one router and a runtime detection unit that authenticates packets before they leave a core."
-            tags={['Hardware security', 'NoC', 'C++', 'Verilog']}
+            // tags={['Hardware security', 'NoC', 'C++', 'Verilog']}
             endDate="2018-08-01"
             repoUrl="https://github.com/ThisIsMubashir"
           />
@@ -388,7 +388,7 @@ export default function DesignSystemPage() {
             title="Maximising the Lifetime of a Wireless Sensor Network"
             slug="wsn-lifetime"
             summary="A meta-heuristic that picks which sensors to activate so total coverage is maintained while battery life is extended."
-            tags={['Optimization', 'WSN', 'Python']}
+            // tags={['Optimization', 'WSN', 'Python']}
             repoUrl="https://github.com/ThisIsMubashir"
           />
         </div>
