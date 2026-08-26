@@ -24,27 +24,23 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   });
 }
 
-function formatPeriod(start?: string, end?: string | null): string {
+function formatPeriod(start?: string, end?: string | null, current?: boolean): string {
   const fmt = (d: string) =>
     new Date(d).toLocaleDateString('en-GB', { month: 'short', year: 'numeric' });
   if (!start && !end) return '';
-  if (start && !end) return `${fmt(start)} → Current`;
+  if (start && !end) return current === false ? fmt(start) : `${fmt(start)} → Current`;
   if (start && end) return `${fmt(start)} → ${fmt(end)}`;
   return '';
 }
 
-export default async function ProjectDetail({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
+export default async function ProjectDetail({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const project = await getProject(slug);
   if (!project) notFound();
 
   const related = await resolvePublications(project.relatedPublications);
-  const period = formatPeriod(project.startDate, project.endDate);
-  const ongoing = !project.endDate;
+  const period = formatPeriod(project.startDate, project.endDate, project.current);
+  const ongoing = project.current ?? !project.endDate;
 
   return (
     <>
@@ -60,9 +56,7 @@ export default async function ProjectDetail({
           <div className="flex flex-wrap items-center gap-2">
             {project.role && <Badge tone="brand">{project.role}</Badge>}
             {ongoing && <Badge tone="success">Current</Badge>}
-            {period && (
-              <span className="text-sm text-ink-500 dark:text-ink-300">{period}</span>
-            )}
+            {period && <span className="text-sm text-ink-500 dark:text-ink-300">{period}</span>}
           </div>
 
           <h1 className="mt-4 text-balance text-3xl tracking-tightish sm:text-4xl">
@@ -70,7 +64,7 @@ export default async function ProjectDetail({
           </h1>
 
           {project.summary && (
-            <p className="mt-4 max-w-2xl text-lg text-pretty text-ink-700 dark:text-ink-200">
+            <p className="mt-4 max-w-2xl text-pretty text-lg text-ink-700 dark:text-ink-200">
               {project.summary}
             </p>
           )}
@@ -113,9 +107,7 @@ export default async function ProjectDetail({
 
         {project.tags && project.tags.length > 0 && (
           <section className="mt-10">
-            <h2 className="mb-3 text-sm font-medium uppercase tracking-wider text-ink-500">
-              Tags
-            </h2>
+            <h2 className="mb-3 text-sm font-medium uppercase tracking-wider text-ink-500">Tags</h2>
             <ul className="flex flex-wrap gap-2" aria-label="Tags">
               {project.tags.map((t) => (
                 <li key={t}>

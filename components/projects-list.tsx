@@ -43,15 +43,18 @@ export function ProjectsList({ projects }: Props) {
           No projects match that tag.
         </p>
       ) : (
-        <ScrollReveal as="ul" className="grid gap-4 sm:grid-cols-2">
+        <ScrollReveal
+          as="ul"
+          className="grid gap-4 sm:grid-cols-2 sm:[&>li:last-child:nth-child(odd)]:col-span-2"
+        >
           {filtered.map((p) => (
             <li key={p.slug}>
               <ProjectCard
                 title={p.title}
                 slug={p.slug}
                 summary={p.summary}
-                tags={p.tags}
                 endDate={p.endDate ?? undefined}
+                current={p.current}
                 repoUrl={p.repoUrl}
                 demoUrl={p.demoUrl}
               />

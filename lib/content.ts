@@ -74,6 +74,8 @@ export interface Project {
   role?: string;
   startDate?: string;
   endDate?: string | null;
+  /** Explicit override for the "Current" badge. Defaults to `endDate` being empty. */
+  current?: boolean;
   summary?: string;
   body?: string[]; // paragraphs; will move to Portable Text once Sanity is live
   tags?: string[];

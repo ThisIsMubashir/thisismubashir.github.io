@@ -55,11 +55,6 @@ export function Footer() {
           </li>
         </ul>
       </div>
-      <div className="container-wide mt-4 text-xs text-ink-900/50 dark:text-ink-50/50">
-        <Link href="/privacy" className="no-underline hover:underline">
-          Privacy
-        </Link>
-      </div>
     </footer>
   );
 }

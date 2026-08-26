@@ -3,29 +3,37 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import {
-  Menu, X, Home, User, BookOpen, Cpu,
-  GraduationCap, FileText, Mail, Github, Linkedin,
+  Menu,
+  X,
+  Home,
+  User,
+  BookOpen,
+  Cpu,
+  GraduationCap,
+  FileText,
+  Mail,
+  Github,
+  Linkedin,
 } from 'lucide-react';
 import { useState } from 'react';
 import { cn, siteConfig } from '@/lib/utils';
 import { ThemeToggle } from './theme-toggle';
 
 const links = [
-  { href: '/',             label: 'Home',         icon: Home },
-  { href: '/about',        label: 'About',        icon: User },
-  { href: '/publications', label: 'Publications',  icon: BookOpen },
-  { href: '/projects',     label: 'Projects',      icon: Cpu },
-  { href: '/teaching',     label: 'Teaching',      icon: GraduationCap },
-  { href: '/cv',           label: 'CV',            icon: FileText },
-  { href: '/contact',      label: 'Contact',       icon: Mail },
+  { href: '/', label: 'Home', icon: Home },
+  { href: '/about', label: 'About', icon: User },
+  { href: '/publications', label: 'Publications', icon: BookOpen },
+  { href: '/projects', label: 'Projects', icon: Cpu },
+  { href: '/teaching', label: 'Teaching', icon: GraduationCap },
+  { href: '/cv', label: 'CV', icon: FileText },
+  { href: '/contact', label: 'Contact', icon: Mail },
 ];
 
 export function Nav() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
-  const isActive = (href: string) =>
-    href === '/' ? pathname === '/' : pathname.startsWith(href);
+  const isActive = (href: string) => (href === '/' ? pathname === '/' : pathname.startsWith(href));
 
   return (
     <header className="sticky top-0 z-40 w-full bg-white/90 backdrop-blur-md dark:bg-ink-950/90">
@@ -40,7 +48,7 @@ export function Nav() {
 
         {/* Desktop pill nav — lg+ */}
         <nav
-          className="hidden items-center rounded-full border border-ink-200/80 bg-white/90 px-2 py-1.5 shadow-sm backdrop-blur lg:flex dark:border-ink-700/80 dark:bg-ink-900/90"
+          className="hidden items-center rounded-full border border-ink-200/80 bg-white/90 px-2 py-1.5 shadow-sm backdrop-blur dark:border-ink-700/80 dark:bg-ink-900/90 lg:flex"
           aria-label="Main"
         >
           {links.map((l) => {
@@ -66,6 +74,13 @@ export function Nav() {
 
         {/* Right side: social + theme */}
         <div className="hidden items-center gap-1 lg:flex">
+          <a
+            href={`mailto:${siteConfig.authorEmail}`}
+            className="rounded-full p-2 text-ink-500 transition-colors hover:bg-ink-100 hover:text-ink-900 dark:text-ink-400 dark:hover:bg-ink-800 dark:hover:text-ink-50"
+            aria-label="Email"
+          >
+            <Mail className="h-4 w-4" />
+          </a>
           <a
             href={siteConfig.social.github}
             target="_blank"
@@ -128,6 +143,13 @@ export function Nav() {
               );
             })}
             <li className="mt-1 flex items-center gap-2 border-t border-ink-100 px-3 py-2 dark:border-ink-800">
+              <a
+                href={`mailto:${siteConfig.authorEmail}`}
+                className="p-1.5 text-ink-500 hover:text-ink-900 dark:text-ink-400"
+                aria-label="Email"
+              >
+                <Mail className="h-4 w-4" />
+              </a>
               <a
                 href={siteConfig.social.github}
                 target="_blank"
