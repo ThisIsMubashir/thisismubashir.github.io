@@ -16,25 +16,28 @@ export const metadata = buildMetadata({
 });
 
 const academicLogos = [
-  { src: '/logos/UoSB.png',                      alt: 'University of Strathclyde Bahrain' },
-  { src: '/logos/KOI.png',                       alt: "King's Own Institute" },
-  { src: '/logos/VIT.png',                       alt: 'Victorian Institute of Technology' },
-  { src: '/logos/FedUni.png',                    alt: 'Federation University' },
+  { src: '/logos/UoSB.png', alt: 'University of Strathclyde Bahrain' },
+  { src: '/logos/KOI.png', alt: "King's Own Institute" },
+  { src: '/logos/VIT.png', alt: 'Victorian Institute of Technology' },
+  { src: '/logos/FedUni.png', alt: 'Federation University' },
   { src: '/logos/UniversityOfSunshineCoast.png', alt: 'University of the Sunshine Coast' },
-  { src: '/logos/CQU.png',                       alt: 'CQUniversity' },
-  { src: '/logos/SISTC.png',                     alt: 'Sydney International School of Technology & Commerce' },
-  { src: '/logos/BahrainUni.jpeg',               alt: 'Bahria University' },
-  { src: '/logos/UniversityofEngTech.jpeg',       alt: 'University of Engineering & Technology Taxila' },
-  { src: '/logos/UNSW.jpg',                      alt: 'UNSW Sydney' },
-  { src: '/logos/IEEE.png',                      alt: 'IEEE' },
-  { src: '/logos/ACS.png',                       alt: 'Australian Computer Society' },
+  { src: '/logos/CQU.png', alt: 'CQUniversity' },
+  { src: '/logos/SISTC.png', alt: 'Sydney International School of Technology & Commerce' },
+  { src: '/logos/BahrainUni.jpeg', alt: 'Bahria University' },
+  { src: '/logos/UniversityofEngTech.jpeg', alt: 'University of Engineering & Technology Taxila' },
+  { src: '/logos/UNSW.jpg', alt: 'UNSW Sydney' },
+  { src: '/logos/IEEE.png', alt: 'IEEE' },
+  { src: '/logos/ACS.png', alt: 'Australian Computer Society' },
 ];
 
 export default async function HomePage() {
   const [publications, projects] = await Promise.all([getPublications(), getProjects()]);
 
   // Featured first; fall back to most-recent if fewer than 3 are flagged.
-  const featuredPubs = [...publications.filter((p) => p.featured), ...publications.filter((p) => !p.featured)].slice(0, 3);
+  const featuredPubs = [
+    ...publications.filter((p) => p.featured),
+    ...publications.filter((p) => !p.featured),
+  ].slice(0, 3);
   const featuredProjects = [
     ...projects.filter((p) => p.featured),
     ...projects.filter((p) => !p.featured),
@@ -53,9 +56,9 @@ export default async function HomePage() {
           Computer Engineer · Teaching Fellow · Researcher
         </p>
         <p className="mt-6 max-w-prose text-pretty text-sm text-ink-600 dark:text-ink-300 sm:text-base">
-          I teach, supervise, and research at the intersection of computer engineering and
-          education — hardware security, network-on-chip design, and AI in higher education.
-          Currently a Teaching Fellow at the University of Strathclyde, Bahrain.
+          I teach, supervise, and research at the intersection of computer engineering and education
+          — hardware security, network-on-chip design, and AI in higher education. Currently a
+          Teaching Fellow at the University of Strathclyde, Bahrain.
         </p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
           <Link href="/publications/">
@@ -83,7 +86,10 @@ export default async function HomePage() {
           <div className="overflow-hidden">
             <div className="flex animate-marquee items-center gap-4">
               {[...academicLogos, ...academicLogos].map((logo, i) => (
-                <div key={i} className="flex h-12 w-28 shrink-0 items-center justify-center sm:h-16 sm:w-40">
+                <div
+                  key={i}
+                  className="flex h-12 w-28 shrink-0 items-center justify-center sm:h-16 sm:w-40"
+                >
                   <Image
                     src={logo.src}
                     alt={logo.alt}
@@ -140,6 +146,7 @@ export default async function HomePage() {
                   slug={p.slug}
                   summary={p.summary}
                   endDate={p.endDate ?? undefined}
+                  current={p.current}
                   repoUrl={p.repoUrl}
                   demoUrl={p.demoUrl}
                 />

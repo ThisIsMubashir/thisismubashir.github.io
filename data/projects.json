@@ -1,5 +1,21 @@
 [
   {
+    "slug": "aura-daily",
+    "title": "Aura — Daily Motivational Quotes",
+    "role": "Side project",
+    "endDate": null,
+    "summary": "A daily-motivation web app that surfaces a curated quote each day across 13 topics — with streaks, custom affirmations, reminders, read-aloud, favourites, a shareable card-image export, and an embeddable widget.",
+    "body": [
+      "Each day surfaces a curated quote and rewards returning with a streak counter. Quotes span 13 topics — Stoicism, Discipline, Mindfulness, Resilience, Leadership, Success and more — browsable from a topic rail.",
+      "Beyond reading: save favourites, add personal affirmations, hear quotes read aloud in a soft voice, copy them, or export a designed card image to share. A daily reminder schedule nudges you back.",
+      "Built as a client-rendered single-page app deployed on Vercel, with light/dark themes, selectable visual 'atmospheres', serif/sans typography, and an embeddable widget for dropping a quote into other sites."
+    ],
+    "tags": ["Web", "React", "PWA", "Side project"],
+    "demoUrl": "https://auradaily.vercel.app/",
+    "featured": true,
+    "relatedPublications": []
+  },
+  {
     "slug": "technical-rag-assistant",
     "title": "Technical RAG Assistant",
     "role": "Learning project",
@@ -11,7 +27,6 @@
       "Goal: understand the failure modes well enough to teach them — what breaks when context windows fill, where rerankers help, how faithfulness is actually measured."
     ],
     "tags": ["Learning", "RAG", "Python", "AI"],
-    "repoUrl": "https://github.com/ThisIsMubashir",
     "featured": false,
     "relatedPublications": []
   },
@@ -27,7 +42,6 @@
       "Implements a few MCP servers (file, search) and an MCP-aware host. Reading more than writing at this stage."
     ],
     "tags": ["Learning", "MCP", "Python", "AI"],
-    "repoUrl": "https://github.com/ThisIsMubashir",
     "featured": false,
     "relatedPublications": []
   },
@@ -44,7 +58,6 @@
       "Implemented the hardware version of the HTDU in Verilog to measure area, power, and timing overheads — published with three IEEE papers."
     ],
     "tags": ["Hardware security", "Network-on-Chip", "PhD", "C++", "Verilog"],
-    "repoUrl": "https://github.com/ThisIsMubashir",
     "featured": true,
     "relatedPublications": [
       "eetd-trojan-detection-2018",
@@ -59,6 +72,7 @@
     "role": "Research project",
     "startDate": "2022-01-01",
     "endDate": null,
+    "current": false,
     "summary": "Python framework that randomly places sensor and target nodes in a field, then uses a meta-heuristic to pick which sensors to activate so total target coverage is maintained while battery life is extended.",
     "body": [
       "Implemented the WSN driver with configurable field size, node count, and sensing range distributions.",
@@ -66,7 +80,6 @@
       "Visualised energy depletion and coverage over time for paper figures."
     ],
     "tags": ["Wireless sensor networks", "Optimisation", "Python", "Meta-heuristic"],
-    "repoUrl": "https://github.com/ThisIsMubashir",
     "featured": false,
     "relatedPublications": ["shuffled-arsh-fati-wsn-2023", "arsh-fati-cluster-head-2020"]
   },
@@ -76,6 +89,7 @@
     "role": "Teaching tool",
     "startDate": "2024-01-01",
     "endDate": null,
+    "current": false,
     "summary": "A small C library of utility functions (strings, math, file helpers) used as a sandbox for students to learn real contribution workflow — branch, PR, code review, tests — before they touch their capstone repos.",
     "body": [
       "Designed to mimic the conventions of a real open-source project: contribution guide, issue templates, CODEOWNERS, CI on every PR.",
