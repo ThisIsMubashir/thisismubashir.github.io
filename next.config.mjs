@@ -1,3 +1,6 @@
+// React's dev server needs eval() for fast refresh / debugging; production never does.
+const isDev = process.env.NODE_ENV !== 'production';
+
 const securityHeaders = [
   { key: 'X-Frame-Options', value: 'DENY' },
   { key: 'X-Content-Type-Options', value: 'nosniff' },
@@ -8,7 +11,7 @@ const securityHeaders = [
     key: 'Content-Security-Policy',
     value: [
       "default-src 'self'",
-      "script-src 'self' 'unsafe-inline' challenges.cloudflare.com plausible.io",
+      `script-src 'self' 'unsafe-inline' ${isDev ? "'unsafe-eval' " : ''}challenges.cloudflare.com plausible.io`,
       "style-src 'self' 'unsafe-inline' fonts.googleapis.com cdn.jsdelivr.net",
       "font-src 'self' fonts.gstatic.com cdn.jsdelivr.net",
       "img-src 'self' data: cdn.sanity.io",
