@@ -9,6 +9,14 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
+/** "May 2026 → Current" / "Aug 2014 → Aug 2018" from YYYY-MM-DD strings. */
+export function formatPeriod(start?: string, end?: string | null): string {
+  const fmt = (d: string) =>
+    new Date(d).toLocaleDateString('en-GB', { month: 'short', year: 'numeric', timeZone: 'UTC' });
+  if (!start) return '';
+  return `${fmt(start)} → ${end ? fmt(end) : 'Current'}`;
+}
+
 export const siteConfig = {
   name: 'Dr. Mubashir Hussain',
   shortName: 'Mubashir Hussain',

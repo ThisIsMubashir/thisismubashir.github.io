@@ -5,6 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { getProject, getProjectSlugs, resolvePublications } from '@/lib/content';
 import { buildMetadata } from '@/lib/seo';
+import { formatPeriod } from '@/lib/utils';
 
 export const dynamicParams = false;
 
@@ -22,15 +23,6 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     description: project.summary?.slice(0, 160),
     path: `/projects/${slug}`,
   });
-}
-
-function formatPeriod(start?: string, end?: string | null): string {
-  const fmt = (d: string) =>
-    new Date(d).toLocaleDateString('en-GB', { month: 'short', year: 'numeric' });
-  if (!start && !end) return '';
-  if (start && !end) return `${fmt(start)} → Current`;
-  if (start && end) return `${fmt(start)} → ${fmt(end)}`;
-  return '';
 }
 
 export default async function ProjectDetail({

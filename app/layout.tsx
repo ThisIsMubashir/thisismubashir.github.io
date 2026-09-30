@@ -35,7 +35,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         */}
         <meta
           httpEquiv="Content-Security-Policy"
-          content="default-src 'self'; script-src 'self' 'unsafe-inline' challenges.cloudflare.com plausible.io; style-src 'self' 'unsafe-inline' fonts.googleapis.com cdn.jsdelivr.net; font-src 'self' fonts.gstatic.com cdn.jsdelivr.net; img-src 'self' data: cdn.sanity.io; connect-src 'self' plausible.io; frame-src challenges.cloudflare.com; object-src 'none'; base-uri 'self';"
+          content="default-src 'self'; script-src 'self' 'unsafe-inline' challenges.cloudflare.com plausible.io; style-src 'self' 'unsafe-inline' fonts.googleapis.com cdn.jsdelivr.net; font-src 'self' fonts.gstatic.com cdn.jsdelivr.net; img-src 'self' data: cdn.sanity.io ghchart.rshah.org; connect-src 'self' plausible.io; frame-src challenges.cloudflare.com; object-src 'none'; base-uri 'self';"
         />
         <meta name="referrer" content="strict-origin-when-cross-origin" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
