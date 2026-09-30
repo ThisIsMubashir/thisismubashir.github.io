@@ -50,7 +50,6 @@ export function ProjectsList({ projects }: Props) {
                 title={p.title}
                 slug={p.slug}
                 summary={p.summary}
-                tags={p.tags}
                 endDate={p.endDate ?? undefined}
                 repoUrl={p.repoUrl}
                 demoUrl={p.demoUrl}

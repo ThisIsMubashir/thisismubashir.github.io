@@ -22,10 +22,13 @@ export function DotField() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
+    const canvasEl = canvasRef.current;
+    if (!canvasEl) return;
+    const canvas: HTMLCanvasElement = canvasEl;
+
+    const ctx2d = canvas.getContext('2d');
+    if (!ctx2d) return;
+    const ctx: CanvasRenderingContext2D = ctx2d;
 
     let W = 0, H = 0;
     let dots: Dot[] = [];

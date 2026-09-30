@@ -11,7 +11,7 @@ const securityHeaders = [
       "script-src 'self' 'unsafe-inline' challenges.cloudflare.com plausible.io",
       "style-src 'self' 'unsafe-inline' fonts.googleapis.com cdn.jsdelivr.net",
       "font-src 'self' fonts.gstatic.com cdn.jsdelivr.net",
-      "img-src 'self' data: cdn.sanity.io",
+      "img-src 'self' data: cdn.sanity.io ghchart.rshah.org",
       "connect-src 'self' plausible.io",
       "frame-src challenges.cloudflare.com",
       "object-src 'none'",
@@ -33,6 +33,9 @@ const nextConfig = {
   // assetPrefix: '/portfolio/',
 
   trailingSlash: true,
+
+  // Stop `next dev` generating AGENTS.md / CLAUDE.md in the repo root.
+  agentRules: false,
 
   images: {
     // next/image needs this for static export — Sanity already serves
