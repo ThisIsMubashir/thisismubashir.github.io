@@ -1,5 +1,20 @@
 [
   {
+    "slug": "kids-virtual-piano",
+    "title": "Kids Virtual Piano",
+    "role": "Side project",
+    "startDate": "2026-10-01",
+    "endDate": null,
+    "summary": "A colourful virtual piano where kids learn nursery songs by following glowing notes.",
+    "body": [
+      "Free play, guided songs, recording, and small rewards. Built with Next.js as an installable PWA."
+    ],
+    "tags": ["Web", "Next.js", "PWA", "Education"],
+    "demoUrl": "https://play-piano-kids.vercel.app/",
+    "featured": false,
+    "relatedPublications": []
+  },
+  {
     "slug": "technical-rag-assistant",
     "title": "Technical RAG Assistant",
     "role": "Learning project",
