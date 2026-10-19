@@ -139,7 +139,7 @@ export default async function HomePage() {
                   title={p.title}
                   slug={p.slug}
                   summary={p.summary}
-                  endDate={p.endDate ?? undefined}
+                  current={p.current}
                   repoUrl={p.repoUrl}
                   demoUrl={p.demoUrl}
                 />

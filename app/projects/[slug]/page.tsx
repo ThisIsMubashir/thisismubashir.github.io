@@ -5,7 +5,6 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { getProject, getProjectSlugs, resolvePublications } from '@/lib/content';
 import { buildMetadata } from '@/lib/seo';
-import { formatPeriod } from '@/lib/utils';
 
 export const dynamicParams = false;
 
@@ -35,8 +34,6 @@ export default async function ProjectDetail({
   if (!project) notFound();
 
   const related = await resolvePublications(project.relatedPublications);
-  const period = formatPeriod(project.startDate, project.endDate);
-  const ongoing = !project.endDate;
 
   return (
     <>
@@ -51,10 +48,7 @@ export default async function ProjectDetail({
         <header>
           <div className="flex flex-wrap items-center gap-2">
             {project.role && <Badge tone="brand">{project.role}</Badge>}
-            {ongoing && <Badge tone="success">Current</Badge>}
-            {period && (
-              <span className="text-sm text-ink-500 dark:text-ink-300">{period}</span>
-            )}
+            {project.current && <Badge tone="success">Current</Badge>}
           </div>
 
           <h1 className="mt-4 text-balance text-3xl tracking-tightish sm:text-4xl">

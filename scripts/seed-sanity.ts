@@ -59,8 +59,7 @@ interface SeedProject {
   slug: string;
   title: string;
   role?: string;
-  startDate?: string;
-  endDate?: string | null;
+  current?: boolean;
   summary?: string;
   body?: string[];
   tags?: string[];
@@ -134,8 +133,7 @@ for (const proj of projects as SeedProject[]) {
     title: proj.title,
     slug: { _type: 'slug', current: proj.slug },
     role: proj.role,
-    startDate: proj.startDate,
-    endDate: proj.endDate ?? undefined,
+    current: proj.current ?? false,
     summary: proj.summary,
     body: proj.body ? portableTextFromParagraphs(proj.body) : undefined,
     tags: proj.tags,

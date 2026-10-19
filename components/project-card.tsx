@@ -7,8 +7,8 @@ export interface ProjectCardProps {
   title: string;
   slug?: string;
   summary?: string;
-  /** Show "Current" badge when endDate is undefined. */
-  endDate?: string;
+  /** Show a "Current" badge. */
+  current?: boolean;
   repoUrl?: string;
   demoUrl?: string;
   href?: string;
@@ -24,13 +24,12 @@ export function ProjectCard({
   title,
   slug,
   summary,
-  endDate,
+  current,
   repoUrl,
   demoUrl,
   href,
 }: ProjectCardProps) {
   const detailHref = href ?? (slug ? `/projects/${slug}` : undefined);
-  const ongoing = !endDate;
 
   return (
     <Card variant="elevated" className="group relative h-full">
@@ -48,7 +47,7 @@ export function ProjectCard({
               title
             )}
           </CardTitle>
-          {ongoing && <Badge tone="success">Current</Badge>}
+          {current && <Badge tone="success">Current</Badge>}
         </div>
 
         {summary && <CardDescription className="mt-2 line-clamp-3">{summary}</CardDescription>}

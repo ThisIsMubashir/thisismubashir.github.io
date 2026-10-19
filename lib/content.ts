@@ -72,8 +72,7 @@ export interface Project {
   slug: string;
   title: string;
   role?: string;
-  startDate?: string;
-  endDate?: string | null;
+  current?: boolean; // shows a "Current" badge; list order = file order
   summary?: string;
   body?: string[]; // paragraphs; will move to Portable Text once Sanity is live
   tags?: string[];
@@ -121,9 +120,9 @@ export async function getPublicationSlugs(): Promise<string[]> {
 // ---------------------------------------------------------------------------
 
 export async function getProjects(): Promise<Project[]> {
-  if (sanityNotConfigured) return [...projects].sort(byEndDateDesc);
+  if (sanityNotConfigured) return projects;
   const live = await sanityClient.fetch<Project[]>(projectsListQuery);
-  return live.length ? live : [...projects].sort(byEndDateDesc);
+  return live.length ? live : projects;
 }
 
 export async function getProject(slug: string): Promise<Project | null> {
@@ -161,12 +160,6 @@ export async function getCourses(): Promise<Course[]> {
 
 function byYearDesc<T extends { year?: number }>(a: T, b: T): number {
   return (b.year ?? 0) - (a.year ?? 0);
-}
-
-function byEndDateDesc<T extends { endDate?: string | null }>(a: T, b: T): number {
-  const av = a.endDate ?? '9999-12-31';
-  const bv = b.endDate ?? '9999-12-31';
-  return bv.localeCompare(av);
 }
 
 function byDateDesc<T extends { dateCompleted?: string }>(a: T, b: T): number {

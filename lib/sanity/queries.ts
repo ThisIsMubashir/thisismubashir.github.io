@@ -31,16 +31,16 @@ export const publicationBySlugQuery = /* groq */ `
 `;
 
 export const projectsListQuery = /* groq */ `
-  *[_type == "project"] | order(coalesce(endDate, "9999") desc) {
+  *[_type == "project"] | order(current desc) {
     title, "slug": slug.current, summary, tags, repoUrl, demoUrl, featured,
-    "hero": hero.asset->url, startDate, endDate
+    "hero": hero.asset->url, current
   }
 `;
 
 export const projectBySlugQuery = /* groq */ `
   *[_type == "project" && slug.current == $slug][0]{
     title, "slug": slug.current, summary, body, tags, repoUrl, demoUrl,
-    startDate, endDate, featured,
+    current, featured,
     "hero": hero.asset->url,
     "gallery": gallery[].asset->url,
     "relatedPublications": relatedPublications[]->slug.current
