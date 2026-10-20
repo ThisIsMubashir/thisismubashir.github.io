@@ -32,9 +32,24 @@ const { renderToString } = await import('react-dom/server');
 const { ThemeProvider } = await import('next-themes');
 const { ThemeToggle } = await import('@/components/theme-toggle');
 
-// 1. Projects are public: no exact dates in the data.
-const projects = JSON.parse(readFileSync(new URL('data/projects.json', root), 'utf8'));
-for (const p of projects) assert.ok(!('startDate' in p || 'endDate' in p), `${p.slug} has a date`);
+// 1. Real project content stays out of git: only the placeholder is committed,
+//    and the public Sanity queries never select private fields.
+const example = JSON.parse(readFileSync(new URL('data/projects.example.json', root), 'utf8'));
+assert.deepEqual(example.map((p) => p.slug), ['example-project'], 'projects.example.json must only hold the placeholder');
+const queries = readFileSync(new URL('lib/sanity/queries.ts', root), 'utf8');
+const projectQueries = queries.slice(queries.indexOf('projectsListQuery'), queries.indexOf('projectBySlugQuery') + 600);
+assert.doesNotMatch(projectQueries, /startDate|endDate|notes/, 'public project query selects a private field');
+
+// 1b. Sanity Portable Text body → plain paragraphs.
+const { blocksToParagraphs } = await import('@/lib/utils');
+assert.deepEqual(
+  blocksToParagraphs([
+    { _type: 'block', children: [{ text: 'Hello ' }, { text: 'world' }] },
+    { _type: 'image' },
+    'plain',
+  ]),
+  ['Hello world', 'plain'],
+);
 
 // 2. Every CSP copy must allow the GitHub contribution graph host.
 for (const file of ['app/layout.tsx', 'next.config.mjs', 'public/_headers']) {

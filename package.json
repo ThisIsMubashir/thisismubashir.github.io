@@ -14,6 +14,7 @@
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
     "check": "node scripts/check-projects.mjs",
+    "export:sanity": "node --env-file=.env.local scripts/export-sanity.mjs",
     "preflight": "tsx scripts/preflight.ts",
     "format": "prettier --write \"**/*.{ts,tsx,md,mdx,json,css}\"",
     "format:check": "prettier --check \"**/*.{ts,tsx,md,mdx,json,css}\"",

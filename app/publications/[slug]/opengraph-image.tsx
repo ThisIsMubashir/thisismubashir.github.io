@@ -12,8 +12,9 @@ export async function generateStaticParams() {
   return slugs.map((slug) => ({ slug }));
 }
 
-export default async function PublicationOgImage({ params }: { params: { slug: string } }) {
-  const pub = await getPublication(params.slug);
+export default async function PublicationOgImage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const pub = await getPublication(slug);
   const title = pub?.title ?? 'Publication';
   const subtitle = pub ? `${pub.venue ?? ''} · ${pub.year ?? ''}` : '';
   const authors = pub?.authors?.join(', ') ?? '';

@@ -1,0 +1,13 @@
+[
+  {
+    "slug": "example-project",
+    "title": "Example Project",
+    "role": "Side project",
+    "current": true,
+    "summary": "Placeholder used for local dev and CI. Real projects are loaded from Sanity.",
+    "body": ["Set NEXT_PUBLIC_SANITY_PROJECT_ID and SANITY_READ_TOKEN to load real content."],
+    "tags": ["Example"],
+    "featured": false,
+    "relatedPublications": []
+  }
+]

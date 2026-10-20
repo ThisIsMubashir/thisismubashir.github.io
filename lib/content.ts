@@ -13,8 +13,10 @@
 import publicationsSeed from '@/data/publications.json';
 import cpdSeed from '@/data/cpd.json';
 import coursesSeed from '@/data/courses.json';
-import projectsSeed from '@/data/projects.json';
+// Placeholder only — real projects live in Sanity (private dataset).
+import projectsSeed from '@/data/projects.example.json';
 import { sanityClient, sanityNotConfigured } from '@/lib/sanity/client';
+import { blocksToParagraphs } from '@/lib/utils';
 import {
   cpdListQuery,
   coursesListQuery,
@@ -120,17 +122,18 @@ export async function getPublicationSlugs(): Promise<string[]> {
 // ---------------------------------------------------------------------------
 
 export async function getProjects(): Promise<Project[]> {
+  // No JSON fallback once Sanity is configured — the example file must never reach production.
   if (sanityNotConfigured) return projects;
-  const live = await sanityClient.fetch<Project[]>(projectsListQuery);
-  return live.length ? live : projects;
+  return sanityClient.fetch<Project[]>(projectsListQuery);
 }
 
 export async function getProject(slug: string): Promise<Project | null> {
-  if (sanityNotConfigured) {
-    return projects.find((p) => p.slug === slug) ?? null;
-  }
-  const live = await sanityClient.fetch<Project | null>(projectBySlugQuery, { slug });
-  return live ?? projects.find((p) => p.slug === slug) ?? null;
+  if (sanityNotConfigured) return projects.find((p) => p.slug === slug) ?? null;
+  const live = await sanityClient.fetch<(Omit<Project, 'body'> & { body?: unknown[] }) | null>(
+    projectBySlugQuery,
+    { slug },
+  );
+  return live && { ...live, body: blocksToParagraphs(live.body) };
 }
 
 export async function getProjectSlugs(): Promise<string[]> {

@@ -15,7 +15,7 @@
 import { readFileSync, existsSync, readdirSync, statSync } from 'node:fs';
 import { join, relative, dirname } from 'node:path';
 import publications from '../data/publications.json' with { type: 'json' };
-import projects from '../data/projects.json' with { type: 'json' };
+import projects from '../data/projects.example.json' with { type: 'json' };
 import cpd from '../data/cpd.json' with { type: 'json' };
 import courses from '../data/courses.json' with { type: 'json' };
 

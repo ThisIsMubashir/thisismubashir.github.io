@@ -30,16 +30,17 @@ export const publicationBySlugQuery = /* groq */ `
   }
 `;
 
+// Public projections only — never select the schema's private fields (dates, notes).
 export const projectsListQuery = /* groq */ `
-  *[_type == "project"] | order(current desc) {
-    title, "slug": slug.current, summary, tags, repoUrl, demoUrl, featured,
+  *[_type == "project"] | order(sortOrder asc) {
+    title, "slug": slug.current, role, summary, tags, repoUrl, demoUrl, featured,
     "hero": hero.asset->url, current
   }
 `;
 
 export const projectBySlugQuery = /* groq */ `
   *[_type == "project" && slug.current == $slug][0]{
-    title, "slug": slug.current, summary, body, tags, repoUrl, demoUrl,
+    title, "slug": slug.current, role, summary, body, tags, repoUrl, demoUrl,
     current, featured,
     "hero": hero.asset->url,
     "gallery": gallery[].asset->url,

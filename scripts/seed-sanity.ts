@@ -15,11 +15,21 @@
  */
 import { createClient, type SanityClient } from '@sanity/client';
 import publications from '../data/publications.json' with { type: 'json' };
-import projects from '../data/projects.json' with { type: 'json' };
+import { existsSync, readFileSync } from 'node:fs';
 import cpd from '../data/cpd.json' with { type: 'json' };
 import courses from '../data/courses.json' with { type: 'json' };
 
 const APPLY = process.argv.includes('--apply');
+
+// Real projects are kept out of git in data/private/projects.json (gitignored).
+const privateProjects = new URL('../data/private/projects.json', import.meta.url);
+const projects: unknown[] = JSON.parse(
+  readFileSync(
+    existsSync(privateProjects) ? privateProjects : new URL('../data/projects.example.json', import.meta.url),
+    'utf8',
+  ),
+);
+if (!existsSync(privateProjects)) console.warn('data/private/projects.json not found — seeding the example project.');
 
 const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
 const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET ?? 'production';
@@ -126,8 +136,9 @@ for (const p of publications as SeedPublication[]) {
 }
 
 // --- Projects ------------------------------------------------------------
-for (const proj of projects as SeedProject[]) {
+for (const [sortOrder, proj] of (projects as SeedProject[]).entries()) {
   transactions.push({
+    sortOrder,
     _id: id('project', proj.slug),
     _type: 'project',
     title: proj.title,
