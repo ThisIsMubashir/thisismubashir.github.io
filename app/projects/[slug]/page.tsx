@@ -24,11 +24,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   });
 }
 
-export default async function ProjectDetail({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
+export default async function ProjectDetail({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const project = await getProject(slug);
   if (!project) notFound();
@@ -56,7 +52,7 @@ export default async function ProjectDetail({
           </h1>
 
           {project.summary && (
-            <p className="mt-4 max-w-2xl text-lg text-pretty text-ink-700 dark:text-ink-200">
+            <p className="mt-4 max-w-2xl text-pretty text-lg text-ink-700 dark:text-ink-200">
               {project.summary}
             </p>
           )}
@@ -99,9 +95,7 @@ export default async function ProjectDetail({
 
         {project.tags && project.tags.length > 0 && (
           <section className="mt-10">
-            <h2 className="mb-3 text-sm font-medium uppercase tracking-wider text-ink-500">
-              Tags
-            </h2>
+            <h2 className="mb-3 text-sm font-medium uppercase tracking-wider text-ink-500">Tags</h2>
             <ul className="flex flex-wrap gap-2" aria-label="Tags">
               {project.tags.map((t) => (
                 <li key={t}>

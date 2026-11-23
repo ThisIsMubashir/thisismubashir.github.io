@@ -6,7 +6,7 @@ import { getProjects } from '@/lib/content';
 export const metadata = buildMetadata({
   title: 'Projects',
   description:
-    'Research, teaching, and AI projects — RAG and MCP agents, hardware Trojan detection, WSN lifetime optimisation, PIC dev kits, web apps.',
+    'Research and engineering projects — hardware Trojan detection, WSN lifetime optimisation, PIC dev kits, web apps.',
   path: '/projects',
 });
 
@@ -22,11 +22,17 @@ export default async function ProjectsPage() {
         <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-ink-400 dark:text-ink-500">
           GitHub activity
         </p>
-        {/* ghchart always draws empty cells #eee — invert + hue-rotate for dark mode keeps the blue */}
+        {/* Light mode graph */}
         <img
           src="https://ghchart.rshah.org/2532b6/ThisIsMubashir"
           alt="GitHub contribution graph"
-          className="w-full dark:invert dark:hue-rotate-180"
+          className="w-full dark:hidden"
+        />
+        {/* Dark mode — invert the SVG colours */}
+        <img
+          src="https://ghchart.rshah.org/94a4ff/ThisIsMubashir"
+          alt="GitHub contribution graph"
+          className="hidden w-full dark:block"
         />
       </div>
 

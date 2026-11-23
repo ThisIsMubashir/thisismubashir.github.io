@@ -321,19 +321,19 @@ export default function DesignSystemPage() {
             <TableRow>
               <TableCell className="font-medium">Cybersecurity Awareness</TableCell>
               <TableCell>Strathclyde &amp; MetaCompliance</TableCell>
-              <TableCell>2025-09-08</TableCell>
+              <TableCell>Sep 2025</TableCell>
               <TableCell>1</TableCell>
             </TableRow>
             <TableRow>
               <TableCell className="font-medium">Diversity in Workplace</TableCell>
               <TableCell>Strathclyde &amp; MARSHALL</TableCell>
-              <TableCell>2025-10-09</TableCell>
+              <TableCell>Oct 2025</TableCell>
               <TableCell>3</TableCell>
             </TableRow>
             <TableRow>
               <TableCell className="font-medium">Teaching Workshop — CodeRunner</TableCell>
               <TableCell>University of Strathclyde</TableCell>
-              <TableCell>2025-11-05</TableCell>
+              <TableCell>Nov 2025</TableCell>
               <TableCell>1</TableCell>
             </TableRow>
           </TableBody>
@@ -380,12 +380,14 @@ export default function DesignSystemPage() {
             title="Hardware Trojan Detection Unit for NoC-based MPSoC"
             slug="hardware-trojan-detection"
             summary="A modified BookSim NoC simulator with a Trojan in one router and a runtime detection unit that authenticates packets before they leave a core."
+            // tags={['Hardware security', 'NoC', 'C++', 'Verilog']}
             repoUrl="https://github.com/ThisIsMubashir"
           />
           <ProjectCard
             title="Maximising the Lifetime of a Wireless Sensor Network"
             slug="wsn-lifetime"
             summary="A meta-heuristic that picks which sensors to activate so total coverage is maintained while battery life is extended."
+            // tags={['Optimization', 'WSN', 'Python']}
             repoUrl="https://github.com/ThisIsMubashir"
           />
         </div>

@@ -21,7 +21,11 @@ export function ThemeToggle() {
       className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-ink-100 text-ink-900 transition-colors hover:bg-ink-50 dark:border-ink-900 dark:text-ink-50 dark:hover:bg-ink-900"
     >
       {mounted ? (
-        isDark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />
+        isDark ? (
+          <Sun className="h-4 w-4" />
+        ) : (
+          <Moon className="h-4 w-4" />
+        )
       ) : (
         <span className="h-4 w-4" aria-hidden />
       )}

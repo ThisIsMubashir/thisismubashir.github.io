@@ -1,3 +1,6 @@
+// React's dev server needs eval() for fast refresh / debugging; production never does.
+const isDev = process.env.NODE_ENV !== 'production';
+
 const securityHeaders = [
   { key: 'X-Frame-Options', value: 'DENY' },
   { key: 'X-Content-Type-Options', value: 'nosniff' },
@@ -8,10 +11,10 @@ const securityHeaders = [
     key: 'Content-Security-Policy',
     value: [
       "default-src 'self'",
-      "script-src 'self' 'unsafe-inline' challenges.cloudflare.com plausible.io",
+      `script-src 'self' 'unsafe-inline' ${isDev ? "'unsafe-eval' " : ''}challenges.cloudflare.com plausible.io`,
       "style-src 'self' 'unsafe-inline' fonts.googleapis.com cdn.jsdelivr.net",
       "font-src 'self' fonts.gstatic.com cdn.jsdelivr.net",
-      "img-src 'self' data: cdn.sanity.io ghchart.rshah.org",
+      "img-src 'self' data: cdn.sanity.io",
       "connect-src 'self' plausible.io",
       "frame-src challenges.cloudflare.com",
       "object-src 'none'",
@@ -34,8 +37,10 @@ const nextConfig = {
 
   trailingSlash: true,
 
-  // Stop `next dev` generating AGENTS.md / CLAUDE.md in the repo root.
-  agentRules: false,
+  // `tsc --noEmit` and `next lint` run as separate CI steps, so the production
+  // build doesn't re-run (or block on) them — this roughly halves cold builds.
+  eslint: { ignoreDuringBuilds: true },
+  typescript: { ignoreBuildErrors: true },
 
   images: {
     // next/image needs this for static export — Sanity already serves
@@ -46,16 +51,16 @@ const nextConfig = {
     ],
   },
 
-  // Next 16 defaults to Turbopack; declare it explicitly so the leftover
-  // `webpack` config below (used only if someone runs with --webpack) isn't
-  // flagged as a mistake.
-  turbopack: {},
-
-  // Keep the Studio out of the Next build (only applies with --webpack).
+  // Keep the Studio out of the Next build.
   webpack: (config) => {
     config.watchOptions = { ...config.watchOptions, ignored: ['**/studio/**', '**/node_modules/**'] };
     return config;
   },
+
+  // Next.js 16 uses Turbopack by default. An empty config coexists with the
+  // webpack() fallback above and silences the "webpack config, no turbopack
+  // config" build error.
+  turbopack: {},
 
   // Active during `next dev` and any future server deployment.
   // GitHub Pages (static export) ignores these; public/_headers covers that host.
