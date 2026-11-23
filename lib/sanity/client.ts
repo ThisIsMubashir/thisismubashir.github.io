@@ -1,9 +1,10 @@
 import { createClient, type SanityClient } from '@sanity/client';
 import imageUrlBuilder from '@sanity/image-url';
 
-const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID ?? '';
-const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET ?? 'production';
-const apiVersion = process.env.NEXT_PUBLIC_SANITY_API_VERSION ?? '2024-12-01';
+// `||` not `??`: CI passes unset secrets as empty strings, which must fall back too.
+const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || '';
+const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET || 'production';
+const apiVersion = process.env.NEXT_PUBLIC_SANITY_API_VERSION || '2024-12-01';
 
 /**
  * True when no Sanity project ID is configured. Page components branch on this
