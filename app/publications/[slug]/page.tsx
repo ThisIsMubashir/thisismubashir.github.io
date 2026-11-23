@@ -73,6 +73,7 @@ export default async function PublicationDetail({
           <div className="flex flex-wrap items-center gap-2">
             {pub.type && <Badge tone="brand">{typeLabels[pub.type] ?? pub.type}</Badge>}
             {pub.status === 'submitted' && <Badge tone="warning">Submitted</Badge>}
+            {pub.status === 'in-press' && <Badge tone="warning">Early access</Badge>}
             {pub.year && <Badge tone="neutral">{pub.year}</Badge>}
           </div>
 

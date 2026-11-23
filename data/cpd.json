@@ -103,5 +103,75 @@
     "dateCompleted": "2025-11",
     "hours": 0.5,
     "certificateReceived": true
+  },
+  {
+    "slug": "responsible-ai-iat-2026",
+    "title": "Responsible Artificial Intelligence",
+    "provider": "Institute of Applied Technology",
+    "dateCompleted": "2026-11",
+    "certificateReceived": true
+  },
+  {
+    "slug": "learn-to-lead-unsw-2026",
+    "title": "Learn to Lead with UNSW 2026",
+    "provider": "UNSW",
+    "dateCompleted": "2026-06",
+    "certificateReceived": true
+  },
+  {
+    "slug": "intro-ai-iat-2025",
+    "title": "Introduction to Artificial Intelligence",
+    "provider": "Institute of Applied Technology",
+    "dateCompleted": "2025-03",
+    "certificateReceived": true
+  },
+  {
+    "slug": "google-cybersecurity-foundations-2023",
+    "title": "Foundations of Cybersecurity by Google",
+    "provider": "Coursera",
+    "dateCompleted": "2023-07",
+    "certificateReceived": true
+  },
+  {
+    "slug": "learner-engagement-2022",
+    "title": "Learning How to Increase Learner Engagement",
+    "provider": "LinkedIn Learning",
+    "dateCompleted": "2022-10",
+    "certificateReceived": true
+  },
+  {
+    "slug": "webcam-video-presence-2022",
+    "title": "Stepping Up Your Webcam Video Presence",
+    "provider": "LinkedIn Learning",
+    "dateCompleted": "2022-10",
+    "certificateReceived": true
+  },
+  {
+    "slug": "engaging-video-training-2022",
+    "title": "Creating Fun and Engaging Video Training: The How",
+    "provider": "LinkedIn Learning",
+    "dateCompleted": "2022-09",
+    "certificateReceived": true
+  },
+  {
+    "slug": "first-web-app-modern-tooling-2021",
+    "title": "Build and Deploy Your First Web App with Modern Tooling",
+    "provider": "LinkedIn Learning",
+    "dateCompleted": "2021-10",
+    "certificateReceived": true
+  },
+  {
+    "slug": "blended-learning-2020",
+    "title": "Teaching Techniques: Blended Learning",
+    "provider": "LinkedIn Learning",
+    "dateCompleted": "2020-10",
+    "certificateReceived": true
+  },
+  {
+    "slug": "learning-to-teach-online-2020",
+    "title": "Learning to Teach Online",
+    "provider": "LinkedIn Learning",
+    "dateCompleted": "2020-09",
+    "certificateReceived": true
   }
 ]

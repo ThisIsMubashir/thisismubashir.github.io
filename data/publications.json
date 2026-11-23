@@ -1,18 +1,46 @@
 [
   {
     "slug": "cyber-physical-healthcare-review-2025",
-    "title": "Technological Advancements and Trends in Cyber-Physical Systems for Healthcare: A Systematic Review",
+    "title": "Technological Advancements and Trends in Cyber-physical Systems for Healthcare: A Systematic Review",
     "authors": ["Mubashir Hussain", "Meena Jha", "Sweta Thakur", "Sanjay Jha"],
-    "venue": "International Conference on Advances in IoT and Security with AI",
-    "year": 2025,
+    "venue": "Advances in IoT and Security with Computational Intelligence (ICAISA 2025), Lecture Notes in Networks and Systems, vol 1704, Springer, Cham",
+    "year": 2027,
     "type": "conference",
-    "status": "submitted",
-    "doi": "",
-    "url": "",
+    "doi": "10.1007/978-3-032-10303-1_40",
+    "url": "https://doi.org/10.1007/978-3-032-10303-1_40",
     "abstract": "A systematic review of recent technological advancements and emerging trends in cyber-physical systems for healthcare, including IoT-enabled monitoring, security threat models, and AI-driven decision support. The paper categorises gaps in the literature and proposes a research agenda for trustworthy deployment in clinical environments.",
     "keywords": ["cyber-physical systems", "healthcare", "IoT", "security", "systematic review"],
     "featured": true,
-    "bibtex": "@inproceedings{hussain2025healthcare,\n  title={Technological Advancements and Trends in Cyber-Physical Systems for Healthcare: A Systematic Review},\n  author={Hussain, Mubashir and Jha, Meena and Thakur, Sweta and Jha, Sanjay},\n  booktitle={International Conference on Advances in IoT and Security with AI},\n  year={2025}\n}"
+    "bibtex": "@inproceedings{hussain2027healthcare,\n  title={Technological Advancements and Trends in Cyber-physical Systems for Healthcare: A Systematic Review},\n  author={Hussain, Mubashir and Jha, Meena and Thakur, Sweta and Jha, Sanjay},\n  editor={Mishra, A. and Gupta, D. and Jha, M. and Singh, U. G. and Goswami, R. S.},\n  booktitle={Advances in IoT and Security with Computational Intelligence (ICAISA 2025)},\n  series={Lecture Notes in Networks and Systems},\n  volume={1704},\n  publisher={Springer, Cham},\n  year={2027},\n  doi={10.1007/978-3-032-10303-1_40}\n}"
+  },
+  {
+    "slug": "sla-qkd-pqc-smart-grids-2026",
+    "title": "SLA-Driven Network Planning for Hybrid QKD–PQC Security in Smart Grids",
+    "authors": [
+      "Umair Ullah Tariq",
+      "Fariza Sabrina",
+      "Steven Gordon",
+      "Ahsan Morshed",
+      "Yufeng Lin",
+      "Mohammad Mamunur Rashid",
+      "Mubashir Hussain"
+    ],
+    "venue": "IEEE Transactions on Network and Service Management (Early Access)",
+    "year": 2026,
+    "type": "journal",
+    "status": "in-press",
+    "doi": "10.1109/TNSM.2026.3751647",
+    "url": "https://ieeexplore.ieee.org/document/11783163",
+    "abstract": "Operational deployment of hybrid QKD–PQC security in smart grids requires coordinated planning under coupled service-level agreement (SLA) constraints, including startup latency, sustained key availability, real-time bounds, technology budget, and site storage capacity. This paper presents an SLA-driven network-planning framework solved using feasibility-first bounded local search (FF-BLS). A broad 36,300-run campaign across seven benchmark networks (14–6,495 nodes) maps deployment regimes and algorithmic ablations. Full FF-BLS attains 60.9% feasibility under fixed installed site capacity, while relaxing the site-cap constraint yields 100%. Focused studies further vary storage, technology budget, QKD-adoption target, and startup–traffic stress. FF-BLS reaches 100% feasibility at the highest tested storage multiplier (γ = 0.40), while a restrictive technology budget (b = 0.60) remains independently binding once storage is sufficient. On 246 comparison scenarios, FF-BLS achieves 100% feasibility, whereas unassisted GA, SA, Tabu, and VNS achieve 24.4–58.9%; feasibility-aware initialization and repair substantially improve the generic baselines. A separate 100-instance topology/storage stress benchmark and an aligned CPU–GPU study evaluate robustness and computational scaling. The results show that site storage is the dominant practical bottleneck under fixed installed capacity, while its importance depends on the provisioning regime. Low-to-moderate QKD adoption is most robust under constrained storage, whereas higher adoption becomes feasible when sufficient storage head-room is provisioned. These findings provide practical guidance for scalable quantum-safe smart-grid deployment under stringent SLAs.",
+    "keywords": [
+      "quantum key distribution",
+      "post-quantum cryptography",
+      "smart grids",
+      "network planning",
+      "service level agreements"
+    ],
+    "featured": true,
+    "bibtex": "@article{tariq2026sla,\n  title={SLA-Driven Network Planning for Hybrid QKD--PQC Security in Smart Grids},\n  author={Tariq, Umair Ullah and Sabrina, Fariza and Gordon, Steven and Morshed, Ahsan and Lin, Yufeng and Rashid, Mohammad Mamunur and Hussain, Mubashir},\n  journal={IEEE Transactions on Network and Service Management},\n  year={2026},\n  issn={1932-4537},\n  note={Early Access},\n  doi={10.1109/TNSM.2026.3751647}\n}"
   },
   {
     "slug": "game-based-learning-programming-2024",
@@ -38,13 +66,25 @@
     "doi": "10.1109/tgcn.2023.3278383",
     "url": "https://doi.org/10.1109/tgcn.2023.3278383",
     "abstract": "Introduces a shuffled variant of the ARSH-FATI meta-heuristic that jointly optimises sensor activation and transmission range to extend the operational lifetime of wireless sensor networks while preserving target coverage. Outperforms baseline approaches across multiple network sizes.",
-    "keywords": ["wireless sensor networks", "meta-heuristic", "lifetime optimisation", "ARSH-FATI"],
+    "keywords": [
+      "wireless sensor networks",
+      "meta-heuristic",
+      "lifetime optimisation",
+      "ARSH-FATI"
+    ],
     "bibtex": "@article{tariq2023shuffled,\n  title={Shuffled ARSH-FATI: A Novel Meta-Heuristic for Lifetime Maximization of Range-Adjustable Wireless Sensor Networks},\n  author={Tariq, Umair Ullah and Ali, Haider and Hussain, Mubashir and Liu, Lu},\n  journal={IEEE Transactions on Green Communications and Networking},\n  year={2023},\n  doi={10.1109/tgcn.2023.3278383}\n}"
   },
   {
     "slug": "hydra-mpsoc-2023",
     "title": "HyDra: Hybrid Task Mapping Application Framework for NOC-Based MPSoCs",
-    "authors": ["Waqar Amin", "Fawad Hussain", "Sheraz Anjum", "Sharoon Saleem", "Waqar Ahmad", "Mubashir Hussain"],
+    "authors": [
+      "Waqar Amin",
+      "Fawad Hussain",
+      "Sheraz Anjum",
+      "Sharoon Saleem",
+      "Waqar Ahmad",
+      "Mubashir Hussain"
+    ],
     "venue": "IEEE Access",
     "year": 2023,
     "type": "journal",
@@ -57,7 +97,13 @@
   {
     "slug": "arsh-fati-cluster-head-2020",
     "title": "ARSH-FATI: A Novel Meta-heuristic for Cluster Head Selection in Wireless Sensor Networks",
-    "authors": ["Haider Ali", "Umair Ullah Tariq", "John Panneerselvam", "Mubashir Hussain", "Lu Liu"],
+    "authors": [
+      "Haider Ali",
+      "Umair Ullah Tariq",
+      "John Panneerselvam",
+      "Mubashir Hussain",
+      "Lu Liu"
+    ],
     "venue": "IEEE Systems Journal",
     "year": 2020,
     "type": "journal",

@@ -15,19 +15,20 @@ export const metadata = buildMetadata({
 export default async function TeachingPage() {
   const courses = await getCourses();
   const pg = courses.filter((c) => c.level === 'PG');
-  const ug = courses.filter((c) => c.level === 'UG');
+  // Same subject taught at several institutions → list it once.
+  const ug = [...new Map(courses.filter((c) => c.level === 'UG').map((c) => [c.name, c])).values()];
 
   return (
     <>
       <SectionHeading
-       
         title="Teaching"
         description="A decade of UG and PG teaching across UNSW, Victorian Institute of Technology, King's Own Institute, Federation University, USC, and now the University of Strathclyde (Bahrain)."
       />
 
       <section className="mt-2">
         <blockquote className="border-l-4 border-brand-600 pl-5 text-lg italic text-ink-700 dark:border-brand-400 dark:text-ink-200">
-          I see teaching as a shared process of thinking, exploring, and making sense of ideas together.
+          I see teaching as a shared process of thinking, exploring, and making sense of ideas
+          together.
         </blockquote>
       </section>
 
@@ -50,10 +51,10 @@ export default async function TeachingPage() {
         </p>
         <p>
           I also believe that students learn best by doing. For that reason, I design learning
-          activities that require active participation — solving problems, building solutions, testing
-          ideas, and learning from mistakes. The classroom becomes a space where it is safe to try,
-          fail, and improve. This process helps students move from simply understanding ideas to
-          actually being able to use them.
+          activities that require active participation — solving problems, building solutions,
+          testing ideas, and learning from mistakes. The classroom becomes a space where it is safe
+          to try, fail, and improve. This process helps students move from simply understanding
+          ideas to actually being able to use them.
         </p>
         <p>
           Ultimately, my goal is to help students become independent thinkers who can approach new
