@@ -32,27 +32,21 @@ const { renderToString } = await import('react-dom/server');
 const { ThemeProvider } = await import('next-themes');
 const { ThemeToggle } = await import('@/components/theme-toggle');
 
-// 1. Real project content stays out of git: only the placeholder is committed,
-//    and the public Sanity queries never select private fields.
-const example = JSON.parse(readFileSync(new URL('data/projects.example.json', root), 'utf8'));
-assert.deepEqual(example.map((p) => p.slug), ['example-project'], 'projects.example.json must only hold the placeholder');
-const queries = readFileSync(new URL('lib/sanity/queries.ts', root), 'utf8');
-const projectQueries = queries.slice(queries.indexOf('projectsListQuery'), queries.indexOf('projectBySlugQuery') + 600);
-assert.doesNotMatch(projectQueries, /startDate|endDate|notes/, 'public project query selects a private field');
-
-// 1b. Sanity Portable Text body → plain paragraphs.
-const { blocksToParagraphs } = await import('@/lib/utils');
-assert.deepEqual(
-  blocksToParagraphs([
-    { _type: 'block', children: [{ text: 'Hello ' }, { text: 'world' }] },
-    { _type: 'image' },
-    'plain',
-  ]),
-  ['Hello world', 'plain'],
-);
+// 1. Public data files carry only displayed fields — private ones (dates, notes,
+//    hours, institutions, …) live in the gitignored data/private/ and stay there.
+const PRIVATE_KEYS = /^(startDate|endDate|notes|hours|certificateReceived|certificateUrl|institution|topics|languages|years|semesters|hero|gallery)$/;
+for (const name of ['projects', 'cpd', 'courses']) {
+  const rows = JSON.parse(readFileSync(new URL(`data/${name}.json`, root), 'utf8'));
+  assert.ok(rows.length > 0, `data/${name}.json is empty — run \`pnpm data\``);
+  for (const row of rows) {
+    const leaked = Object.keys(row).filter((k) => PRIVATE_KEYS.test(k));
+    assert.deepEqual(leaked, [], `data/${name}.json "${row.slug ?? row.code}" exposes ${leaked}`);
+    if (row.dateCompleted) assert.match(row.dateCompleted, /^\d{4}-\d{2}$/, `${row.slug}: exact date in public cpd`);
+  }
+}
 
 // 2. Every CSP copy must allow the GitHub contribution graph host.
-for (const file of ['app/layout.tsx', 'next.config.mjs', 'public/_headers']) {
+for (const file of ['next.config.mjs', 'public/_headers']) {
   const imgSrc = readFileSync(new URL(file, root), 'utf8').match(/img-src[^;"]*/)?.[0] ?? '';
   assert.match(imgSrc, /ghchart\.rshah\.org/, `${file} CSP img-src blocks ghchart`);
 }

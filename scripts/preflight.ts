@@ -15,7 +15,7 @@
 import { readFileSync, existsSync, readdirSync, statSync } from 'node:fs';
 import { join, relative, dirname } from 'node:path';
 import publications from '../data/publications.json' with { type: 'json' };
-import projects from '../data/projects.example.json' with { type: 'json' };
+import projects from '../data/projects.json' with { type: 'json' };
 import cpd from '../data/cpd.json' with { type: 'json' };
 import courses from '../data/courses.json' with { type: 'json' };
 
@@ -30,9 +30,6 @@ function warn(msg: string) { warnings.push(msg); }
 
 const REQUIRED = ['NEXT_PUBLIC_SITE_URL'];
 const RECOMMENDED = [
-  'NEXT_PUBLIC_SANITY_PROJECT_ID',
-  'NEXT_PUBLIC_SANITY_DATASET',
-  'SANITY_READ_TOKEN',
   'NEXT_PUBLIC_FORMSPREE_ID',
   'NEXT_PUBLIC_PLAUSIBLE_DOMAIN',
 ];

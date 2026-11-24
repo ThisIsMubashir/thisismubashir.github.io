@@ -24,10 +24,6 @@ next-env.d.ts
 /coverage
 public/pagefind/
 
-# ── Sanity Studio ────────────────────────────────────────────────────────────
-studio/dist/
-studio/.sanity/
-
 # ── Environment & secrets ────────────────────────────────────────────────────
 .env*
 !.env.example
@@ -91,5 +87,5 @@ SESSION_CONTEXT.md
 .planning/
 graphify-out/
 
-# Real project content lives in Sanity; this local copy is only for scripts/seed-sanity.ts
+# Full data (dates, notes, …) — `pnpm data` publishes only displayed fields to data/*.json
 data/private/

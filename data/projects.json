@@ -1,0 +1,134 @@
+[
+  {
+    "slug": "kids-virtual-piano",
+    "title": "Kids Virtual Piano",
+    "role": "Side project",
+    "current": true,
+    "summary": "A colourful virtual piano where kids learn nursery songs by following glowing notes.",
+    "body": [
+      "Free play, guided songs, recording, and small rewards. Built with Next.js as an installable PWA."
+    ],
+    "tags": ["Web", "Next.js", "PWA", "Education"],
+    "demoUrl": "https://play-piano-kids.vercel.app/",
+    "featured": true,
+    "relatedPublications": []
+  },
+  {
+    "slug": "aura-daily-motivational-quotes",
+    "title": "Aura — Daily Motivational Quotes",
+    "role": "Side project",
+    "current": false,
+    "summary": "A daily-motivation web app that surfaces a curated quote each day across 13 topics — with streaks, custom affirmations, reminders, read-aloud, favourites, a shareable card-image export, and an embeddable widget.",
+    "body": [
+      "Each day surfaces a curated quote and rewards returning with a streak counter. Quotes span 13 topics — Stoicism, Discipline, Mindfulness, Resilience, Leadership, Success and more — browsable from a topic rail.",
+      "Beyond reading: save favourites, add personal affirmations, hear quotes read aloud in a soft voice, copy them, or export a designed card image to share. A daily reminder schedule nudges you back.",
+      "Built as a client-rendered single-page app deployed on Vercel, with light/dark themes, selectable visual 'atmospheres', serif/sans typography, and an embeddable widget for dropping a quote into other sites."
+    ],
+    "tags": ["Web", "React", "PWA", "Side project"],
+    "demoUrl": "https://auradaily.vercel.app/",
+    "featured": true,
+    "relatedPublications": []
+  },
+  {
+    "slug": "technical-rag-assistant",
+    "title": "Technical RAG Assistant",
+    "role": "Learning project",
+    "current": false,
+    "summary": "Exploring Retrieval-Augmented Generation for technical documentation.",
+    "body": ["A learning project on retrieval, grounding, and how answer quality is measured."],
+    "tags": ["Learning", "RAG", "Python", "AI"],
+    "featured": false,
+    "relatedPublications": []
+  },
+  {
+    "slug": "mcp-enabled-agent",
+    "title": "MCP-Enabled Agent",
+    "role": "Learning project",
+    "current": true,
+    "summary": "Learning the Model Context Protocol and the patterns behind agentic systems.",
+    "body": ["A small study of MCP servers and hosts, with a focus on auditable AI agents."],
+    "tags": ["Learning", "MCP", "Python", "AI"],
+    "featured": false,
+    "relatedPublications": []
+  },
+  {
+    "slug": "student-contribution-playground",
+    "title": "Student Contribution Playground",
+    "role": "Teaching tool",
+    "summary": "A small C library where students practise the real contribution workflow — branch, PR, review, CI.",
+    "body": ["Open to forks so other educators can remix it for their own courses."],
+    "tags": ["Teaching", "C", "Open source", "Capstone", "CI/CD"],
+    "repoUrl": "https://github.com/ThisIsMubashir/Student-Contribution-Playground",
+    "featured": false,
+    "relatedPublications": []
+  },
+  {
+    "slug": "wsn-lifetime-meta-heuristic",
+    "title": "Maximising the Lifetime of a Wireless Sensor Network",
+    "role": "Research project",
+    "summary": "A meta-heuristic that chooses which sensors to activate so coverage holds while battery life is extended.",
+    "body": ["Python simulation framework behind the published ARSH-FATI papers."],
+    "tags": ["Wireless sensor networks", "Optimisation", "Python", "Meta-heuristic"],
+    "featured": false,
+    "relatedPublications": ["shuffled-arsh-fati-wsn-2023", "arsh-fati-cluster-head-2020"]
+  },
+  {
+    "slug": "note-app",
+    "title": "Note App",
+    "role": "Side project",
+    "summary": "A small client-side note-taking app.",
+    "body": ["Plain HTML, CSS, and JavaScript — used as a web-fundamentals teaching example."],
+    "tags": ["Web", "JavaScript", "Teaching"],
+    "repoUrl": "https://github.com/ThisIsMubashir/NoteApplication",
+    "demoUrl": "https://thisismubashirnoteapp.netlify.app/",
+    "featured": false,
+    "relatedPublications": []
+  },
+  {
+    "slug": "library-management-system",
+    "title": "Library Management System",
+    "role": "Side project",
+    "summary": "A web app for organising and browsing a home book collection.",
+    "body": ["PHP and MySQL back end with a searchable, filterable catalogue."],
+    "tags": ["Web", "PHP", "MySQL", "Full-stack"],
+    "featured": false,
+    "relatedPublications": []
+  },
+  {
+    "slug": "hardware-trojan-detection-noc",
+    "title": "Hardware Trojan Detection Unit for NoC-based MPSoC",
+    "role": "PhD thesis project",
+    "summary": "Runtime detection of hardware Trojans hidden in third-party Network-on-Chip IP.",
+    "body": [
+      "Simulated in an extended BookSim and implemented in Verilog; published in several IEEE papers."
+    ],
+    "tags": ["Hardware security", "Network-on-Chip", "PhD", "C++", "Verilog"],
+    "featured": true,
+    "relatedPublications": [
+      "eetd-trojan-detection-2018",
+      "bandwidth-aware-authentication-noc-2018",
+      "customized-authentication-noc-2017",
+      "packet-leak-detection-noc-2017"
+    ]
+  },
+  {
+    "slug": "single-cycle-pipelined-processor",
+    "title": "Single-Cycle + Pipelined Processor with Assembly Interpreter",
+    "role": "Teaching project",
+    "summary": "A custom-ISA CPU in VHDL, single-cycle and pipelined, with a Python assembler.",
+    "body": ["Built as a teaching resource for computer architecture courses."],
+    "tags": ["Computer architecture", "VHDL", "Python", "Teaching"],
+    "featured": false,
+    "relatedPublications": []
+  },
+  {
+    "slug": "pic-micro-dev-kit",
+    "title": "USB-Based PIC Microcontroller Development Kit",
+    "role": "Undergraduate thesis",
+    "summary": "A PIC development board for students learning microcontroller interfacing.",
+    "body": ["Board designed in Altium, with example C firmware for each peripheral."],
+    "tags": ["Embedded", "Hardware", "Altium", "C", "Teaching"],
+    "featured": false,
+    "relatedPublications": []
+  }
+]

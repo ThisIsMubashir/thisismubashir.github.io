@@ -117,7 +117,7 @@ export default async function PublicationDetail({
                 </Button>
               </a>
             )}
-            {/* PDF link will surface once Sanity assets are configured */}
+            {/* PDF link: add a `pdf` field to the publication when available */}
           </div>
         </header>
 

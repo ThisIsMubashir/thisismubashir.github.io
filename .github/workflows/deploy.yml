@@ -3,10 +3,6 @@ name: Build & Deploy
 on:
   push:
     branches: [main]
-  repository_dispatch:
-    # Sanity webhook → POST to GitHub /repos/{owner}/{repo}/dispatches
-    # with { "event_type": "sanity-content-changed" }
-    types: [sanity-content-changed]
   workflow_dispatch:
 
 # Avoid overlapping deploys.
@@ -34,13 +30,10 @@ jobs:
 
       - run: pnpm install --frozen-lockfile
 
-      - name: Preflight (env + seed data sanity)
+      - name: Preflight (env + data checks)
         run: pnpm preflight
         env:
           NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL || 'https://thisismubashir.github.io' }}
-          NEXT_PUBLIC_SANITY_PROJECT_ID: ${{ secrets.NEXT_PUBLIC_SANITY_PROJECT_ID }}
-          NEXT_PUBLIC_SANITY_DATASET: ${{ secrets.NEXT_PUBLIC_SANITY_DATASET }}
-          SANITY_READ_TOKEN: ${{ secrets.SANITY_READ_TOKEN }}
           NEXT_PUBLIC_FORMSPREE_ID: ${{ secrets.NEXT_PUBLIC_FORMSPREE_ID }}
           NEXT_PUBLIC_PLAUSIBLE_DOMAIN: ${{ secrets.NEXT_PUBLIC_PLAUSIBLE_DOMAIN }}
 
@@ -48,10 +41,6 @@ jobs:
         run: pnpm build
         env:
           NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL || 'https://thisismubashir.github.io' }}
-          NEXT_PUBLIC_SANITY_PROJECT_ID: ${{ secrets.NEXT_PUBLIC_SANITY_PROJECT_ID }}
-          NEXT_PUBLIC_SANITY_DATASET: ${{ secrets.NEXT_PUBLIC_SANITY_DATASET }}
-          NEXT_PUBLIC_SANITY_API_VERSION: ${{ secrets.NEXT_PUBLIC_SANITY_API_VERSION }}
-          SANITY_READ_TOKEN: ${{ secrets.SANITY_READ_TOKEN }}
           NEXT_PUBLIC_FORMSPREE_ID: ${{ secrets.NEXT_PUBLIC_FORMSPREE_ID }}
           NEXT_PUBLIC_TURNSTILE_SITE_KEY: ${{ secrets.NEXT_PUBLIC_TURNSTILE_SITE_KEY }}
           NEXT_PUBLIC_PLAUSIBLE_DOMAIN: ${{ secrets.NEXT_PUBLIC_PLAUSIBLE_DOMAIN }}

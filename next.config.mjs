@@ -14,7 +14,7 @@ const securityHeaders = [
       `script-src 'self' 'unsafe-inline' ${isDev ? "'unsafe-eval' " : ''}challenges.cloudflare.com plausible.io`,
       "style-src 'self' 'unsafe-inline' fonts.googleapis.com cdn.jsdelivr.net",
       "font-src 'self' fonts.gstatic.com cdn.jsdelivr.net",
-      "img-src 'self' data: cdn.sanity.io",
+      "img-src 'self' data: ghchart.rshah.org",
       "connect-src 'self' plausible.io",
       "frame-src challenges.cloudflare.com",
       "object-src 'none'",
@@ -43,12 +43,8 @@ const nextConfig = {
   typescript: { ignoreBuildErrors: true },
 
   images: {
-    // next/image needs this for static export — Sanity already serves
-    // images via its own CDN with on-the-fly transforms, so we don't lose much.
+    // next/image needs this for static export.
     unoptimized: true,
-    remotePatterns: [
-      { protocol: 'https', hostname: 'cdn.sanity.io' },
-    ],
   },
 
   // Keep the Studio out of the Next build.

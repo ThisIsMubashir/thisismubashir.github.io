@@ -14,20 +14,15 @@
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "check": "node scripts/check-projects.mjs",
-    "export:sanity": "node --env-file=.env.local scripts/export-sanity.mjs",
     "preflight": "tsx scripts/preflight.ts",
     "format": "prettier --write \"**/*.{ts,tsx,md,mdx,json,css}\"",
     "format:check": "prettier --check \"**/*.{ts,tsx,md,mdx,json,css}\"",
-    "studio:dev": "cd studio && pnpm dev",
-    "studio:build": "cd studio && pnpm build",
-    "studio:deploy": "cd studio && pnpm deploy"
+    "data": "node scripts/publish-data.mjs && prettier --write data/projects.json data/cpd.json data/courses.json"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
     "@react-three/drei": "^10.7.7",
     "@react-three/fiber": "^9.6.1",
-    "@sanity/client": "^7.22.0",
-    "@sanity/image-url": "^2.1.1",
     "@types/node": "^22.10.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",

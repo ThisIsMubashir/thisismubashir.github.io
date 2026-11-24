@@ -3,175 +3,138 @@
     "slug": "getting-started-myplace-2025",
     "title": "Getting Started With MyPlace",
     "provider": "University of Strathclyde",
-    "dateCompleted": "2025-09",
-    "hours": 12,
-    "certificateReceived": true,
-    "notes": "Strathclyde's institutional VLE — covers course setup, gradebook, accessibility."
+    "dateCompleted": "2025-09"
   },
   {
     "slug": "cybersecurity-awareness-2025",
     "title": "Cybersecurity Awareness (Bahrain Campus)",
     "provider": "University of Strathclyde Glasgow & MetaCompliance",
-    "dateCompleted": "2025-09",
-    "hours": 1,
-    "certificateReceived": true
+    "dateCompleted": "2025-09"
   },
   {
     "slug": "ohs-induction-part-1-2025",
     "title": "Occupational Health and Safety Induction Part 1",
     "provider": "University of Strathclyde",
-    "dateCompleted": "2025-09",
-    "hours": 5,
-    "certificateReceived": true
+    "dateCompleted": "2025-09"
   },
   {
     "slug": "cc-security-governance-2025",
     "title": "Certified in Cybersecurity (CC): Security Governance, Policies, and Procedures",
     "provider": "SkillSoft (ACS)",
-    "dateCompleted": "2025-09",
-    "hours": 0.5,
-    "certificateReceived": true
+    "dateCompleted": "2025-09"
   },
   {
     "slug": "mental-health-stress-2025",
     "title": "Mental Health: Stress Awareness",
     "provider": "British Safety Council",
-    "dateCompleted": "2025-09",
-    "hours": 0.75,
-    "certificateReceived": true
+    "dateCompleted": "2025-09"
   },
   {
     "slug": "sexual-harassment-2025",
     "title": "Sexual Harassment Awareness",
     "provider": "University of Strathclyde & MARSHALL",
-    "dateCompleted": "2025-10",
-    "hours": 0.5,
-    "certificateReceived": true
+    "dateCompleted": "2025-10"
   },
   {
     "slug": "insiders-outsiders-micro-behaviours-2025",
     "title": "Insiders and Outsiders — How Micro-Behaviours Affect the Workplace",
     "provider": "University of Strathclyde & MARSHALL",
-    "dateCompleted": "2025-10",
-    "hours": 1.5,
-    "certificateReceived": true
+    "dateCompleted": "2025-10"
   },
   {
     "slug": "diversity-learning-teaching-2025",
     "title": "Diversity in Learning and Teaching",
     "provider": "University of Strathclyde & MARSHALL",
-    "dateCompleted": "2025-10",
-    "hours": 1.5,
-    "certificateReceived": true
+    "dateCompleted": "2025-10"
   },
   {
     "slug": "racial-incident-disclosure-2025",
     "title": "Disclosure of a Racial Incident by Students",
     "provider": "University of Strathclyde & MARSHALL",
-    "dateCompleted": "2025-10",
-    "hours": 0.33,
-    "certificateReceived": true
+    "dateCompleted": "2025-10"
   },
   {
     "slug": "diversity-workplace-2025",
     "title": "Diversity in the Workplace",
     "provider": "University of Strathclyde & MARSHALL",
-    "dateCompleted": "2025-10",
-    "hours": 3,
-    "certificateReceived": true
+    "dateCompleted": "2025-10"
   },
   {
     "slug": "automated-marking-coderunner-2025",
     "title": "Teaching Workshop — Automated Marking with CodeRunner",
     "provider": "University of Strathclyde",
-    "dateCompleted": "2025-11",
-    "hours": 1,
-    "certificateReceived": false
+    "dateCompleted": "2025-11"
   },
   {
     "slug": "talk-about-race-2025",
     "title": "Let's Talk About Race in the Workplace",
     "provider": "University of Strathclyde & MARSHALL",
-    "dateCompleted": "2025-11",
-    "hours": 1,
-    "certificateReceived": true
+    "dateCompleted": "2025-11"
   },
   {
     "slug": "disability-awareness-2025",
     "title": "Disability Awareness",
     "provider": "University of Strathclyde & MARSHALL",
-    "dateCompleted": "2025-11",
-    "hours": 0.5,
-    "certificateReceived": true
+    "dateCompleted": "2025-11"
   },
   {
     "slug": "responsible-ai-iat-2026",
     "title": "Responsible Artificial Intelligence",
     "provider": "Institute of Applied Technology",
-    "dateCompleted": "2026-11",
-    "certificateReceived": true
+    "dateCompleted": "2026-11"
   },
   {
     "slug": "learn-to-lead-unsw-2026",
     "title": "Learn to Lead with UNSW 2026",
     "provider": "UNSW",
-    "dateCompleted": "2026-06",
-    "certificateReceived": true
+    "dateCompleted": "2026-06"
   },
   {
     "slug": "intro-ai-iat-2025",
     "title": "Introduction to Artificial Intelligence",
     "provider": "Institute of Applied Technology",
-    "dateCompleted": "2025-03",
-    "certificateReceived": true
+    "dateCompleted": "2025-03"
   },
   {
     "slug": "google-cybersecurity-foundations-2023",
     "title": "Foundations of Cybersecurity by Google",
     "provider": "Coursera",
-    "dateCompleted": "2023-07",
-    "certificateReceived": true
+    "dateCompleted": "2023-07"
   },
   {
     "slug": "learner-engagement-2022",
     "title": "Learning How to Increase Learner Engagement",
     "provider": "LinkedIn Learning",
-    "dateCompleted": "2022-10",
-    "certificateReceived": true
+    "dateCompleted": "2022-10"
   },
   {
     "slug": "webcam-video-presence-2022",
     "title": "Stepping Up Your Webcam Video Presence",
     "provider": "LinkedIn Learning",
-    "dateCompleted": "2022-10",
-    "certificateReceived": true
+    "dateCompleted": "2022-10"
   },
   {
     "slug": "engaging-video-training-2022",
     "title": "Creating Fun and Engaging Video Training: The How",
     "provider": "LinkedIn Learning",
-    "dateCompleted": "2022-09",
-    "certificateReceived": true
+    "dateCompleted": "2022-09"
   },
   {
     "slug": "first-web-app-modern-tooling-2021",
     "title": "Build and Deploy Your First Web App with Modern Tooling",
     "provider": "LinkedIn Learning",
-    "dateCompleted": "2021-10",
-    "certificateReceived": true
+    "dateCompleted": "2021-10"
   },
   {
     "slug": "blended-learning-2020",
     "title": "Teaching Techniques: Blended Learning",
     "provider": "LinkedIn Learning",
-    "dateCompleted": "2020-10",
-    "certificateReceived": true
+    "dateCompleted": "2020-10"
   },
   {
     "slug": "learning-to-teach-online-2020",
     "title": "Learning to Teach Online",
     "provider": "LinkedIn Learning",
-    "dateCompleted": "2020-09",
-    "certificateReceived": true
+    "dateCompleted": "2020-09"
   }
 ]

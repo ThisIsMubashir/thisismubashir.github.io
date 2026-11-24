@@ -9,17 +9,6 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-/** Sanity Portable Text → plain paragraphs (text blocks only; images etc. are skipped). */
-export function blocksToParagraphs(blocks?: unknown[]): string[] {
-  return (blocks ?? []).flatMap((b) => {
-    if (typeof b === 'string') return [b];
-    const block = b as { _type?: string; children?: { text?: string }[] };
-    if (block?._type !== 'block') return [];
-    const text = (block.children ?? []).map((c) => c.text ?? '').join('');
-    return text ? [text] : [];
-  });
-}
-
 export const siteConfig = {
   name: 'Dr. Mubashir Hussain',
   shortName: 'Mubashir Hussain',
