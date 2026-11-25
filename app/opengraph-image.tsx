@@ -46,13 +46,13 @@ export default function OpengraphImage() {
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
           <div style={{ fontSize: 22, color: '#94a4ff', textTransform: 'uppercase', letterSpacing: 4 }}>
-            Teaching Fellow · University of Strathclyde (Bahrain)
+            Lecturer · University of Strathclyde (Bahrain)
           </div>
           <div style={{ fontSize: 70, fontWeight: 500, lineHeight: 1.05, letterSpacing: -1.5 }}>
             Dr. Mubashir Hussain
           </div>
           <div style={{ fontSize: 28, color: '#bdc8ff', maxWidth: 900, lineHeight: 1.35 }}>
-            Academic and technology portfolio — hardware security, NoC design, AI in higher education.
+            Academic and technology portfolio — security, AI, and teaching & learning.
           </div>
         </div>
       </div>

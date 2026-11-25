@@ -2,9 +2,10 @@ import Link from 'next/link';
 import { SectionHeading } from '@/components/section-heading';
 import { Badge } from '@/components/ui/badge';
 import { ScrollReveal } from '@/components/scroll-reveal';
-import { PublicationEntry } from '@/components/publication-entry';
+import { PublicationCards } from '@/components/publication-stack';
+import { CpdSummary } from '@/components/cpd-summary';
 import { buildMetadata } from '@/lib/seo';
-import { getCourses, getPublications } from '@/lib/content';
+import { getCourses, getCpdEntries, getPublications } from '@/lib/content';
 
 export const metadata = buildMetadata({
   title: 'CV',
@@ -13,7 +14,10 @@ export const metadata = buildMetadata({
 });
 
 export default async function CvPage() {
-  const [publications, courses] = await Promise.all([getPublications(), getCourses()]);
+  const [publications, courses, cpd] = await Promise.all([getPublications(), getCourses(), getCpdEntries()]);
+  const talks = cpd.filter((e) => e.kind === 'talk');
+  const reviews = cpd.filter((e) => e.kind === 'review');
+  const certs = cpd.filter((e) => e.kind === 'certification');
 
   const ugCourses = courses.filter((c) => c.level === 'UG');
   const pgCourses = courses.filter((c) => c.level === 'PG');
@@ -41,7 +45,7 @@ export default async function CvPage() {
             <p className="text-xs font-semibold uppercase tracking-wider text-brand-700 dark:text-brand-300">
               Current role
             </p>
-            <p className="mt-1 font-medium">Teaching Fellow</p>
+            <p className="mt-1 font-medium">Lecturer</p>
             <p className="text-sm text-ink-500 dark:text-ink-400">
               University of Strathclyde, Bahrain
             </p>
@@ -69,11 +73,9 @@ export default async function CvPage() {
           </p>
           <ScrollReveal as="ul" className="mt-2 flex flex-wrap gap-2" aria-label="Research areas">
             {[
-              'Hardware security',
-              'Network-on-Chip',
-              'Cyber-physical systems',
-              'AI in higher education',
-              'Game-based learning',
+              'Security',
+              'Artificial intelligence',
+              'Teaching & learning',
             ].map((area) => (
               <li key={area}>
                 <Badge tone="neutral">{area}</Badge>
@@ -122,6 +124,51 @@ export default async function CvPage() {
         </ScrollReveal>
       </section>
 
+      {/* Talks, peer review, certifications */}
+      <section className="mb-12">
+        <div className="flex items-baseline justify-between gap-4">
+          <h2 className="text-xl font-medium">Talks &amp; peer review</h2>
+          <Link
+            href="/teaching/cpd/"
+            className="text-sm font-medium text-brand-700 hover:underline dark:text-brand-300"
+          >
+            Full record &rarr;
+          </Link>
+        </div>
+        <ScrollReveal className="mt-4 grid gap-6 sm:grid-cols-2">
+          <div>
+            <p className="mb-3 text-xs font-medium uppercase tracking-wider text-brand-700 dark:text-brand-300">
+              Talks &amp; workshops delivered
+            </p>
+            <ul className="space-y-1.5">
+              {talks.slice(0, 5).map((t) => (
+                <li key={t.slug} className="text-sm text-ink-700 dark:text-ink-200">
+                  {t.title.replace(/^\w+: /, '')} <span className="text-ink-500 dark:text-ink-400">· {t.year}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <p className="mb-3 text-xs font-medium uppercase tracking-wider text-brand-700 dark:text-brand-300">
+              Reviewer for
+            </p>
+            <ul className="space-y-1.5">
+              {reviews.map((r) => (
+                <li key={r.slug} className="text-sm text-ink-700 dark:text-ink-200">
+                  {r.title}
+                </li>
+              ))}
+            </ul>
+            <Link
+              href="/teaching/cpd/#certification"
+              className="mt-4 inline-block text-sm font-medium text-brand-700 hover:underline dark:text-brand-300"
+            >
+              {`${certs.length} certifications & microskills →`}
+            </Link>
+          </div>
+        </ScrollReveal>
+      </section>
+
       {/* Selected publications */}
       <section className="mb-12">
         <div className="mb-4 flex items-end justify-between gap-4">
@@ -133,28 +180,10 @@ export default async function CvPage() {
             Full list &rarr;
           </Link>
         </div>
-        <ScrollReveal as="ul" className="divide-y divide-ink-100 dark:divide-ink-800">
-          {publications.slice(0, 5).map((p) => (
-            <li key={p.slug}>
-              <Link
-                href={`/publications/${p.slug}/`}
-                className="block no-underline hover:bg-ink-50/60 dark:hover:bg-ink-900/40"
-              >
-                <PublicationEntry
-                  title={p.title}
-                  authors={p.authors}
-                  venue={p.venue}
-                  year={p.year}
-                  type={p.type}
-                  doi={p.doi}
-                  url={p.url}
-                />
-              </Link>
-            </li>
-          ))}
-        </ScrollReveal>
+        <PublicationCards pubs={publications.slice(0, 5)} />
       </section>
 
+      <CpdSummary className="mb-12" />
     </>
   );
 }

@@ -5,8 +5,8 @@ import { buildMetadata } from '@/lib/seo';
 import { siteConfig } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { ProjectCard } from '@/components/project-card';
-import { PublicationEntry } from '@/components/publication-entry';
-import { getProjects, getPublications } from '@/lib/content';
+import { getCpdEntries, getProjects, getPublications } from '@/lib/content';
+import { PublicationStack } from '@/components/publication-stack';
 import { ScrollReveal } from '@/components/scroll-reveal';
 
 export const metadata = buildMetadata({
@@ -16,28 +16,28 @@ export const metadata = buildMetadata({
 });
 
 const academicLogos = [
-  { src: '/logos/UoSB.png', alt: 'University of Strathclyde Bahrain' },
-  { src: '/logos/KOI.png', alt: "King's Own Institute" },
-  { src: '/logos/VIT.png', alt: 'Victorian Institute of Technology' },
-  { src: '/logos/FedUni.png', alt: 'Federation University' },
-  { src: '/logos/UniversityOfSunshineCoast.png', alt: 'University of the Sunshine Coast' },
-  { src: '/logos/CQU.png', alt: 'CQUniversity' },
-  { src: '/logos/SISTC.png', alt: 'Sydney International School of Technology & Commerce' },
-  { src: '/logos/BahrainUni.jpeg', alt: 'Bahria University' },
-  { src: '/logos/UniversityofEngTech.jpeg', alt: 'University of Engineering & Technology Taxila' },
-  { src: '/logos/UNSW.jpg', alt: 'UNSW Sydney' },
-  { src: '/logos/IEEE.png', alt: 'IEEE' },
-  { src: '/logos/ACS.png', alt: 'Australian Computer Society' },
+  { src: '/logos/journey/strath.jpeg', name: 'University of Strathclyde Bahrain' },
+  { src: '/logos/journey/koi.jpeg', name: "King's Own Institute" },
+  { src: '/logos/journey/vit.jpeg', name: 'Victorian Institute of Technology' },
+  { src: '/logos/journey/feduni.jpeg', name: 'Federation University Australia' },
+  { src: '/logos/journey/usc.jpeg', name: 'University of the Sunshine Coast' },
+  { src: '/logos/CQU.png', name: 'CQUniversity' },
+  { src: '/logos/SISTC.png', name: 'Sydney International School of Technology & Commerce' },
+  { src: '/logos/journey/unsw.jpeg', name: 'UNSW Sydney' },
+  { src: '/logos/journey/uet.jpeg', name: 'UET Taxila' },
+  { src: '/logos/journey/bahria.jpeg', name: 'Bahria University' },
 ];
 
 export default async function HomePage() {
-  const [publications, projects] = await Promise.all([getPublications(), getProjects()]);
+  const [publications, projects, cpd] = await Promise.all([getPublications(), getProjects(), getCpdEntries()]);
+  // Talks, outreach and certifications that have a logo — shown as a scrolling strip.
+  const highlights = cpd.filter((e) => e.logo && ['talk', 'outreach', 'certification'].includes(e.kind));
 
   // Featured first; fall back to most-recent if fewer than 3 are flagged.
   const featuredPubs = [
     ...publications.filter((p) => p.featured),
     ...publications.filter((p) => !p.featured),
-  ].slice(0, 3);
+  ].slice(0, 4);
   const featuredProjects = [
     ...projects.filter((p) => p.featured),
     ...projects.filter((p) => !p.featured),
@@ -45,7 +45,7 @@ export default async function HomePage() {
 
   return (
     <>
-      <section className="flex min-h-[88vh] flex-col items-center justify-center py-12 text-center sm:py-16">
+      <section className="flex min-h-[80vh] flex-col items-center justify-center pb-4 pt-12 text-center sm:pt-16">
         <p className="inline-flex items-center rounded-full border border-ink-200/80 bg-white/80 px-4 py-1.5 text-xs font-medium tracking-wide text-ink-600 backdrop-blur dark:border-ink-700/80 dark:bg-ink-900/80 dark:text-ink-300">
           {siteConfig.tagline}
         </p>
@@ -53,12 +53,12 @@ export default async function HomePage() {
           Hi, I&apos;m Dr.&nbsp;Mubashir Hussain.
         </h1>
         <p className="mt-4 text-base font-medium text-ink-500 dark:text-ink-300 sm:text-lg">
-          Computer Engineer · Teaching Fellow · Researcher
+          Computer Engineer · Lecturer · Researcher
         </p>
         <p className="mt-6 max-w-prose text-pretty text-sm text-ink-600 dark:text-ink-300 sm:text-base">
           I teach, supervise, and research at the intersection of computer engineering and education
-          — hardware security, network-on-chip design, and AI in higher education. Currently a
-          Teaching Fellow at the University of Strathclyde, Bahrain.
+          — security, artificial intelligence, and teaching &amp; learning. Currently a
+          Lecturer at the University of Strathclyde, Bahrain.
         </p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
           <Link href="/publications/">
@@ -78,38 +78,80 @@ export default async function HomePage() {
           </Link>
         </div>
 
-        {/* Academic journey marquee — sits at bottom of hero, visible on first load */}
-        <div className="mt-16 w-full">
+        {/* Academic journey — static logo cards at the bottom of the hero */}
+        <div className="mt-12 w-full">
           <p className="mb-5 text-xs font-semibold uppercase tracking-widest text-ink-400 dark:text-ink-500">
             Academic journey
           </p>
-          <div className="overflow-hidden">
-            <div className="flex animate-marquee items-center gap-4">
-              {[...academicLogos, ...academicLogos].map((logo, i) => (
-                <div
-                  key={i}
-                  className="flex h-12 w-28 shrink-0 items-center justify-center sm:h-16 sm:w-40"
-                >
-                  <Image
-                    src={logo.src}
-                    alt={logo.alt}
-                    width={150}
-                    height={56}
-                    className="max-h-10 w-auto max-w-[110px] object-contain opacity-50 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0 sm:max-h-14 sm:max-w-[150px]"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
+          <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
+            {academicLogos.map((logo) => (
+              <li
+                key={logo.name}
+                className="flex items-center gap-2.5 rounded-xl border border-ink-100/70 bg-white/70 p-2.5 backdrop-blur dark:border-ink-800/70 dark:bg-ink-900/50"
+              >
+                <Image
+                  src={logo.src}
+                  alt=""
+                  width={36}
+                  height={36}
+                  className="h-9 w-9 shrink-0 rounded-md bg-white object-contain p-0.5"
+                />
+                <p className="line-clamp-2 text-left text-xs font-medium leading-snug text-ink-800 dark:text-ink-100">
+                  {logo.name}
+                </p>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
+
+      {highlights.length > 0 && (
+        <section className="border-t border-ink-100/60 pb-8 pt-6 dark:border-ink-800/60">
+          <div className="mb-4 flex items-end justify-between gap-4">
+            <p className="text-xs font-semibold uppercase tracking-widest text-ink-400 dark:text-ink-500">
+              Talks, outreach &amp; certifications
+            </p>
+            <Link
+              href="/teaching/cpd/"
+              className="inline-flex items-center gap-1 text-sm font-medium text-brand-700 dark:text-brand-300"
+            >
+              View all <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+          <div className="overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_5%,black_95%,transparent)]">
+            <ul
+              className="flex w-max animate-marquee gap-3 hover:[animation-play-state:paused]"
+              style={{ animationDuration: `${highlights.length * 5}s` }}
+            >
+              {[...highlights, ...highlights].map((h, i) => (
+                <li
+                  key={i}
+                  aria-hidden={i >= highlights.length || undefined}
+                  className="flex w-72 shrink-0 items-center gap-3 rounded-xl border border-ink-100/70 bg-white/70 p-3 backdrop-blur dark:border-ink-800/70 dark:bg-ink-900/50"
+                >
+                  <Image
+                    src={h.logo!}
+                    alt=""
+                    width={40}
+                    height={40}
+                    className="h-10 w-10 shrink-0 rounded-md bg-white object-contain p-0.5"
+                  />
+                  <p className="line-clamp-2 text-left text-sm font-medium leading-snug text-ink-800 dark:text-ink-100">
+                    {h.title.replace(/^(Seminar|Workshop|Training|Industry talk): /, '')}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
 
       <section className="border-t border-ink-100/60 py-12 dark:border-ink-800/60">
         <ScrollReveal className="grid grid-cols-1 gap-4 sm:grid-cols-3">
           <Currently
             icon={<GraduationCap className="h-5 w-5" />}
             label="Now"
-            title="Teaching Fellow"
+            title="Lecturer"
             detail="University of Strathclyde, Bahrain campus"
           />
           <Currently
@@ -121,8 +163,8 @@ export default async function HomePage() {
           <Currently
             icon={<Cpu className="h-5 w-5" />}
             label="Researching"
-            title="Cyber-physical systems"
-            detail="Healthcare, game-based learning, AI in HE"
+            title="Security, AI, teaching & learning"
+            detail="Hardware & smart-grid security, AI in HE, game-based learning"
           />
         </ScrollReveal>
       </section>
@@ -166,26 +208,7 @@ export default async function HomePage() {
               All publications <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
-          <ScrollReveal as="ul" className="divide-y divide-ink-100 dark:divide-ink-800">
-            {featuredPubs.map((p) => (
-              <li key={p.slug}>
-                <Link
-                  href={`/publications/${p.slug}/`}
-                  className="block no-underline hover:bg-ink-50/60 dark:hover:bg-ink-900/40"
-                >
-                  <PublicationEntry
-                    title={p.title}
-                    authors={p.authors}
-                    venue={p.venue}
-                    year={p.year}
-                    type={p.type}
-                    doi={p.doi}
-                    url={p.url}
-                  />
-                </Link>
-              </li>
-            ))}
-          </ScrollReveal>
+          <PublicationStack pubs={featuredPubs} />
         </section>
       )}
     </>

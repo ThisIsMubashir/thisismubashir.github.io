@@ -20,7 +20,7 @@ export default function NotFound() {
         <Suggestion href="/" icon={<Home className="h-4 w-4" />} title="Home" detail="Bio, current role, featured work" />
         <Suggestion href="/publications/" icon={<BookOpen className="h-4 w-4" />} title="Publications" detail="9 peer-reviewed papers" />
         <Suggestion href="/projects/" icon={<FlaskConical className="h-4 w-4" />} title="Projects" detail="Research + engineering work" />
-        <Suggestion href="/teaching/" icon={<FileText className="h-4 w-4" />} title="Teaching" detail="Courses + CPD record" />
+        <Suggestion href="/teaching/" icon={<FileText className="h-4 w-4" />} title="Teaching" detail="Courses, talks, peer review & CPD" />
         <Suggestion href="/cv/" icon={<FileText className="h-4 w-4" />} title="CV" detail="Full HTML + PDF downloads" />
         <Suggestion href="/contact/" icon={<Mail className="h-4 w-4" />} title="Contact" detail="Get in touch" />
       </div>

@@ -1,140 +1,535 @@
 [
   {
-    "slug": "getting-started-myplace-2025",
-    "title": "Getting Started With MyPlace",
+    "slug": "devops-and-ci-cd-in-modern-software-development-2026",
+    "kind": "professional",
+    "title": "DevOps and CI/CD in Modern Software Development",
+    "provider": "University of Strathclyde Bahrain",
+    "year": 2026
+  },
+  {
+    "slug": "responsible-artificial-intelligence-2026",
+    "kind": "certification",
+    "title": "Responsible Artificial Intelligence",
+    "provider": "Institute of Applied Technology (Digital), NSW Government",
+    "year": 2026,
+    "logo": "/logos/cpd/iat.jpeg"
+  },
+  {
+    "slug": "1st-cyber-collective-bahrain-gathering-2026",
+    "kind": "professional",
+    "title": "1st Cyber Collective Bahrain Gathering",
+    "provider": "Cyber Collective Bahrain with NCSC Bahrain",
+    "year": 2026
+  },
+  {
+    "slug": "international-hybrid-conference-on-decision-aid-sciences-and-2026",
+    "kind": "review",
+    "title": "International Hybrid Conference on Decision Aid Sciences and Applications (DASA'26)",
+    "provider": "Conference",
+    "year": 2026
+  },
+  {
+    "slug": "getting-started-with-ai-2026",
+    "kind": "certification",
+    "title": "Getting Started with AI",
+    "provider": "Microskill · Institute of Applied Technology (Digital), NSW Government",
+    "year": 2026,
+    "logo": "/logos/cpd/iat.jpeg"
+  },
+  {
+    "slug": "first-aid-training-2026",
+    "kind": "compliance",
+    "title": "First Aid Training",
+    "provider": "Bahrain Health",
+    "year": 2026
+  },
+  {
+    "slug": "data-26-conference-2026",
+    "kind": "review",
+    "title": "DATA'26 Conference",
+    "provider": "Conference",
+    "year": 2026
+  },
+  {
+    "slug": "7th-international-conference-on-data-analytics-for-business-2026",
+    "kind": "review",
+    "title": "7th International Conference on Data Analytics for Business and Industry (ICDABI 2026)",
+    "provider": "Conference",
+    "year": 2026
+  },
+  {
+    "slug": "general-health-safety-induction-2026",
+    "kind": "compliance",
+    "title": "General Health & Safety Induction",
+    "provider": "University of Strathclyde Bahrain",
+    "year": 2026
+  },
+  {
+    "slug": "introduction-to-gitlab-2026",
+    "kind": "professional",
+    "title": "Introduction to GitLab",
+    "provider": "GitLab University",
+    "year": 2026
+  },
+  {
+    "slug": "myplace-gradebook-and-marks-return-workshop-2026",
+    "kind": "workshop",
+    "title": "MyPlace Gradebook and Marks Return Workshop",
     "provider": "University of Strathclyde",
-    "dateCompleted": "2025-09"
+    "year": 2026
   },
   {
-    "slug": "cybersecurity-awareness-2025",
-    "title": "Cybersecurity Awareness (Bahrain Campus)",
-    "provider": "University of Strathclyde Glasgow & MetaCompliance",
-    "dateCompleted": "2025-09"
-  },
-  {
-    "slug": "ohs-induction-part-1-2025",
-    "title": "Occupational Health and Safety Induction Part 1",
+    "slug": "innovative-and-useful-transnational-learning-and-teaching-2026",
+    "kind": "workshop",
+    "title": "Innovative and Useful Transnational Learning and Teaching",
     "provider": "University of Strathclyde",
-    "dateCompleted": "2025-09"
+    "year": 2026
   },
   {
-    "slug": "cc-security-governance-2025",
-    "title": "Certified in Cybersecurity (CC): Security Governance, Policies, and Procedures",
-    "provider": "SkillSoft (ACS)",
-    "dateCompleted": "2025-09"
-  },
-  {
-    "slug": "mental-health-stress-2025",
-    "title": "Mental Health: Stress Awareness",
-    "provider": "British Safety Council",
-    "dateCompleted": "2025-09"
-  },
-  {
-    "slug": "sexual-harassment-2025",
-    "title": "Sexual Harassment Awareness",
-    "provider": "University of Strathclyde & MARSHALL",
-    "dateCompleted": "2025-10"
-  },
-  {
-    "slug": "insiders-outsiders-micro-behaviours-2025",
-    "title": "Insiders and Outsiders — How Micro-Behaviours Affect the Workplace",
-    "provider": "University of Strathclyde & MARSHALL",
-    "dateCompleted": "2025-10"
-  },
-  {
-    "slug": "diversity-learning-teaching-2025",
-    "title": "Diversity in Learning and Teaching",
-    "provider": "University of Strathclyde & MARSHALL",
-    "dateCompleted": "2025-10"
-  },
-  {
-    "slug": "racial-incident-disclosure-2025",
-    "title": "Disclosure of a Racial Incident by Students",
-    "provider": "University of Strathclyde & MARSHALL",
-    "dateCompleted": "2025-10"
-  },
-  {
-    "slug": "diversity-workplace-2025",
-    "title": "Diversity in the Workplace",
-    "provider": "University of Strathclyde & MARSHALL",
-    "dateCompleted": "2025-10"
-  },
-  {
-    "slug": "automated-marking-coderunner-2025",
-    "title": "Teaching Workshop — Automated Marking with CodeRunner",
+    "slug": "beyond-attendance-patterns-drivers-of-student-engagement-in-2026",
+    "kind": "workshop",
+    "title": "Beyond Attendance: Patterns & Drivers of Student Engagement in First-Year University Mathematics",
     "provider": "University of Strathclyde",
-    "dateCompleted": "2025-11"
+    "year": 2026
   },
   {
-    "slug": "talk-about-race-2025",
+    "slug": "gamification-of-learning-why-games-work-for-learning-2026",
+    "kind": "workshop",
+    "title": "Gamification of Learning: Why Games Work for Learning",
+    "provider": "University of Strathclyde Bahrain",
+    "year": 2026
+  },
+  {
+    "slug": "ethics-groupwork-and-trust-2026",
+    "kind": "workshop",
+    "title": "Ethics, Groupwork and Trust",
+    "provider": "University of Strathclyde",
+    "year": 2026
+  },
+  {
+    "slug": "artificial-intelligence-use-literacy-and-awareness-of-studen-2026",
+    "kind": "workshop",
+    "title": "Artificial Intelligence Use, Literacy and Awareness of Students",
+    "provider": "University of Strathclyde",
+    "year": 2026
+  },
+  {
+    "slug": "embedding-the-3es-shaping-future-ready-engineering-education-2026",
+    "kind": "workshop",
+    "title": "Embedding the 3Es: Shaping Future-Ready Engineering Education",
+    "provider": "University of Strathclyde",
+    "year": 2026
+  },
+  {
+    "slug": "discover-your-major-computing-information-sciences-2026",
+    "kind": "outreach",
+    "title": "Discover Your Major: Computing & Information Sciences",
+    "provider": "University of Strathclyde Bahrain",
+    "year": 2026,
+    "logo": "/logos/journey/strath.jpeg",
+    "summary": "Presentation and hands-on activity for groups of 30 school students (ages 16–18), introducing computing and IT degrees, the skills they need and the careers they lead to."
+  },
+  {
+    "slug": "learn-to-lead-human-connection-in-a-digital-world-2026",
+    "kind": "certification",
+    "title": "Learn to Lead: Human Connection in a Digital World",
+    "provider": "UNSW Sydney",
+    "year": 2026,
+    "logo": "/logos/cpd/unsw.jpeg"
+  },
+  {
+    "slug": "journal-of-king-saud-university-computer-and-information-sci-2026",
+    "kind": "review",
+    "title": "Journal of King Saud University — Computer and Information Sciences",
+    "provider": "Journal",
+    "year": 2026
+  },
+  {
+    "slug": "gradebook-setup-training-2026",
+    "kind": "workshop",
+    "title": "Gradebook Setup Training",
+    "provider": "University of Strathclyde",
+    "year": 2026
+  },
+  {
+    "slug": "cybersecurity-awareness-training-annual-2026",
+    "kind": "compliance",
+    "title": "Cybersecurity Awareness Training (annual)",
+    "provider": "University of Strathclyde & MetaCompliance",
+    "year": 2026
+  },
+  {
+    "slug": "no-code-app-challenge-thunkable-2026",
+    "kind": "outreach",
+    "title": "No-Code App Challenge (Thunkable)",
+    "provider": "University of Strathclyde Bahrain",
+    "year": 2026,
+    "logo": "/logos/journey/strath.jpeg",
+    "summary": "Introduced all Year 2 students to no-code app development — ideation, design and backend logic — then mentored teams as they built and pitched app prototypes."
+  },
+  {
+    "slug": "capture-the-flag-hackthebox-2026",
+    "kind": "outreach",
+    "title": "Capture the Flag (HackTheBox)",
+    "provider": "University of Strathclyde Bahrain",
+    "year": 2026,
+    "logo": "/logos/journey/strath.jpeg",
+    "summary": "Co-facilitated a HackTheBox CTF challenge, guiding Year 2 Computer Science students through practical, real-world cybersecurity problems."
+  },
+  {
+    "slug": "industry-talk-leveraging-ai-safely-in-the-cyber-era-2026",
+    "kind": "outreach",
+    "title": "Industry talk: Leveraging AI Safely in the Cyber Era",
+    "provider": "University of Strathclyde Bahrain",
+    "year": 2026,
+    "logo": "/logos/journey/strath.jpeg",
+    "summary": "Co-organised a guest session with the CTO of Beyon Cyber on generative-AI security risks, AI for cyber defence and the skills students need for cybersecurity careers."
+  },
+  {
+    "slug": "international-conference-on-innovation-and-intelligence-for-2025",
+    "kind": "review",
+    "title": "International Conference on Innovation and Intelligence for Informatics, Computing and Technologies (3ICT 2025)",
+    "provider": "Conference",
+    "year": 2025
+  },
+  {
+    "slug": "let-s-talk-about-race-in-the-workplace-2025",
+    "kind": "compliance",
     "title": "Let's Talk About Race in the Workplace",
     "provider": "University of Strathclyde & MARSHALL",
-    "dateCompleted": "2025-11"
+    "year": 2025
   },
   {
     "slug": "disability-awareness-2025",
+    "kind": "compliance",
     "title": "Disability Awareness",
     "provider": "University of Strathclyde & MARSHALL",
-    "dateCompleted": "2025-11"
+    "year": 2025
   },
   {
-    "slug": "responsible-ai-iat-2026",
-    "title": "Responsible Artificial Intelligence",
-    "provider": "Institute of Applied Technology",
-    "dateCompleted": "2026-11"
+    "slug": "teaching-workshop-automated-marking-with-coderunner-2025",
+    "kind": "workshop",
+    "title": "Teaching Workshop: Automated Marking with CodeRunner",
+    "provider": "University of Strathclyde",
+    "year": 2025
   },
   {
-    "slug": "learn-to-lead-unsw-2026",
-    "title": "Learn to Lead with UNSW 2026",
-    "provider": "UNSW",
-    "dateCompleted": "2026-06"
+    "slug": "diversity-in-learning-and-teaching-2025",
+    "kind": "compliance",
+    "title": "Diversity in Learning and Teaching",
+    "provider": "University of Strathclyde & MARSHALL",
+    "year": 2025
   },
   {
-    "slug": "intro-ai-iat-2025",
+    "slug": "disclosure-of-a-racial-incident-by-students-2025",
+    "kind": "compliance",
+    "title": "Disclosure of a Racial Incident by Students",
+    "provider": "University of Strathclyde & MARSHALL",
+    "year": 2025
+  },
+  {
+    "slug": "diversity-in-the-workplace-2025",
+    "kind": "compliance",
+    "title": "Diversity in the Workplace",
+    "provider": "University of Strathclyde & MARSHALL",
+    "year": 2025
+  },
+  {
+    "slug": "insiders-and-outsiders-how-micro-behaviours-affect-the-workp-2025",
+    "kind": "compliance",
+    "title": "Insiders and Outsiders: How Micro-Behaviours Affect the Workplace",
+    "provider": "University of Strathclyde & MARSHALL",
+    "year": 2025
+  },
+  {
+    "slug": "sexual-harassment-awareness-2025",
+    "kind": "compliance",
+    "title": "Sexual Harassment Awareness",
+    "provider": "University of Strathclyde & MARSHALL",
+    "year": 2025
+  },
+  {
+    "slug": "mental-health-stress-awareness-2025",
+    "kind": "compliance",
+    "title": "Mental Health: Stress Awareness",
+    "provider": "British Safety Council",
+    "year": 2025
+  },
+  {
+    "slug": "certified-in-cybersecurity-cc-security-governance-policies-c-2025",
+    "kind": "professional",
+    "title": "Certified in Cybersecurity (CC): Security Governance, Policies & Controls",
+    "provider": "Skillsoft (ACS)",
+    "year": 2025
+  },
+  {
+    "slug": "getting-started-with-myplace-2025",
+    "kind": "workshop",
+    "title": "Getting Started with MyPlace",
+    "provider": "University of Strathclyde",
+    "year": 2025
+  },
+  {
+    "slug": "occupational-health-and-safety-induction-part-1-2025",
+    "kind": "compliance",
+    "title": "Occupational Health and Safety Induction Part 1",
+    "provider": "University of Strathclyde",
+    "year": 2025
+  },
+  {
+    "slug": "let-s-discover-year-2-welcome-session-2025",
+    "kind": "outreach",
+    "title": "Let's Discover: Year 2 Welcome Session",
+    "provider": "University of Strathclyde Bahrain",
+    "year": 2025,
+    "logo": "/logos/journey/strath.jpeg",
+    "summary": "Students explored future skills and job roles in AI, cybersecurity, data science and networking, then presented their findings; I ran a live Git & GitHub demo on professional collaboration."
+  },
+  {
+    "slug": "edutech-australia-2025",
+    "kind": "professional",
+    "title": "EduTECH Australia 2025",
+    "provider": "EduTECH",
+    "year": 2025
+  },
+  {
+    "slug": "seminar-generative-ai-understanding-bias-and-student-percept-2025",
+    "kind": "workshop",
+    "title": "Seminar: Generative AI — Understanding Bias and Student Perception",
+    "provider": "EduTECH Australia 2025",
+    "year": 2025
+  },
+  {
+    "slug": "koi-leadership-management-performance-management-2025",
+    "kind": "professional",
+    "title": "KOI Leadership & Management: Performance Management",
+    "provider": "Liquid HR",
+    "year": 2025
+  },
+  {
+    "slug": "introduction-to-artificial-intelligence-2025",
+    "kind": "certification",
     "title": "Introduction to Artificial Intelligence",
-    "provider": "Institute of Applied Technology",
-    "dateCompleted": "2025-03"
+    "provider": "Microskill · Institute of Applied Technology (Digital), NSW Government",
+    "year": 2025,
+    "logo": "/logos/cpd/iat.jpeg"
   },
   {
-    "slug": "google-cybersecurity-foundations-2023",
-    "title": "Foundations of Cybersecurity by Google",
+    "slug": "workshop-marking-rubrics-constructive-feedback-on-moodle-2025",
+    "kind": "talk",
+    "title": "Workshop: Marking Rubrics & Constructive Feedback on Moodle",
+    "provider": "King's Own Institute",
+    "year": 2025,
+    "logo": "/logos/journey/koi.jpeg"
+  },
+  {
+    "slug": "workshop-er-process-overview-and-guidelines-for-completion-w-2025",
+    "kind": "talk",
+    "title": "Workshop: ER Process Overview and Guidelines for Completion (with Sweta Thakur)",
+    "provider": "King's Own Institute",
+    "year": 2025,
+    "logo": "/logos/journey/koi.jpeg"
+  },
+  {
+    "slug": "seminar-unlocking-the-power-of-amazon-connect-kashif-naveed-2025",
+    "kind": "workshop",
+    "title": "Seminar: Unlocking the Power of Amazon Connect (Kashif Naveed)",
+    "provider": "King's Own Institute",
+    "year": 2025
+  },
+  {
+    "slug": "from-generative-ai-to-agentic-ai-accelerating-the-future-of-2025",
+    "kind": "workshop",
+    "title": "From Generative AI to Agentic AI: Accelerating the Future of AI (Dr Maggie Zhang, NVIDIA)",
+    "provider": "King's Own Institute",
+    "year": 2025
+  },
+  {
+    "slug": "respect-in-the-workplace-2024",
+    "kind": "compliance",
+    "title": "Respect in the Workplace",
+    "provider": "David Fuller",
+    "year": 2024
+  },
+  {
+    "slug": "assessment-design-in-the-ai-era-2024",
+    "kind": "workshop",
+    "title": "Assessment Design in the AI Era",
+    "provider": "King's Own Institute",
+    "year": 2024
+  },
+  {
+    "slug": "navigating-academic-integrity-in-the-age-of-ai-2024",
+    "kind": "workshop",
+    "title": "Navigating Academic Integrity in the Age of AI",
+    "provider": "King's Own Institute",
+    "year": 2024
+  },
+  {
+    "slug": "ect-ict-credit-transfer-2024",
+    "kind": "workshop",
+    "title": "ECT & ICT Credit Transfer",
+    "provider": "King's Own Institute",
+    "year": 2024
+  },
+  {
+    "slug": "koi-leadership-management-impactful-communication-feedback-2024",
+    "kind": "professional",
+    "title": "KOI Leadership & Management: Impactful Communication & Feedback",
+    "provider": "Liquid HR",
+    "year": 2024
+  },
+  {
+    "slug": "seminar-effectiveness-of-game-based-learning-for-programming-2024",
+    "kind": "talk",
+    "title": "Seminar: Effectiveness of Game-Based Learning for Programming Courses",
+    "provider": "King's Own Institute",
+    "year": 2024,
+    "logo": "/logos/journey/koi.jpeg"
+  },
+  {
+    "slug": "seminar-shuffled-arsh-fati-research-presentation-2024",
+    "kind": "talk",
+    "title": "Seminar: Shuffled ARSH-FATI — Research Presentation",
+    "provider": "King's Own Institute",
+    "year": 2024,
+    "logo": "/logos/journey/koi.jpeg"
+  },
+  {
+    "slug": "training-session-for-hops-er-boe-process-2024",
+    "kind": "workshop",
+    "title": "Training Session for HOPs: ER-BOE Process",
+    "provider": "King's Own Institute",
+    "year": 2024
+  },
+  {
+    "slug": "foundations-of-cybersecurity-google-2023",
+    "kind": "certification",
+    "title": "Foundations of Cybersecurity (Google)",
     "provider": "Coursera",
-    "dateCompleted": "2023-07"
+    "year": 2023,
+    "logo": "/logos/cpd/coursera.jpeg"
   },
   {
-    "slug": "learner-engagement-2022",
+    "slug": "koi-leadership-management-team-leaders-and-line-managers-2023",
+    "kind": "professional",
+    "title": "KOI Leadership & Management: Team Leaders and Line Managers",
+    "provider": "Liquid HR",
+    "year": 2023
+  },
+  {
+    "slug": "chatgpt-what-do-we-need-to-know-now-implications-of-generati-2023",
+    "kind": "workshop",
+    "title": "ChatGPT — What Do We Need to Know Now? Implications of Generative AI for Higher Education",
+    "provider": "TEQSA & CRADLE",
+    "year": 2023
+  },
+  {
+    "slug": "contract-cheating-detection-and-deterrence-2023",
+    "kind": "workshop",
+    "title": "Contract Cheating Detection and Deterrence",
+    "provider": "TEQSA",
+    "year": 2023
+  },
+  {
+    "slug": "training-identifying-students-at-risk-and-action-planning-2023",
+    "kind": "talk",
+    "title": "Training: Identifying Students at Risk and Action Planning",
+    "provider": "King's Own Institute",
+    "year": 2023,
+    "logo": "/logos/journey/koi.jpeg"
+  },
+  {
+    "slug": "workshop-creating-moodle-quizzes-to-improve-student-engageme-2023",
+    "kind": "talk",
+    "title": "Workshop: Creating Moodle Quizzes to Improve Student Engagement and Participation",
+    "provider": "King's Own Institute",
+    "year": 2023,
+    "logo": "/logos/journey/koi.jpeg"
+  },
+  {
+    "slug": "seminar-threats-and-countermeasures-against-hardware-trojans-2023",
+    "kind": "talk",
+    "title": "Seminar: Threats and Countermeasures against Hardware Trojans (HT) in Third-Party Network-on-Chips (NoCs)",
+    "provider": "King's Own Institute",
+    "year": 2023,
+    "logo": "/logos/journey/koi.jpeg"
+  },
+  {
+    "slug": "learning-how-to-increase-learner-engagement-2022",
+    "kind": "certification",
     "title": "Learning How to Increase Learner Engagement",
     "provider": "LinkedIn Learning",
-    "dateCompleted": "2022-10"
+    "year": 2022,
+    "logo": "/logos/cpd/linkedin.jpeg"
   },
   {
-    "slug": "webcam-video-presence-2022",
+    "slug": "stepping-up-your-webcam-video-presence-2022",
+    "kind": "certification",
     "title": "Stepping Up Your Webcam Video Presence",
     "provider": "LinkedIn Learning",
-    "dateCompleted": "2022-10"
+    "year": 2022,
+    "logo": "/logos/cpd/linkedin.jpeg"
   },
   {
-    "slug": "engaging-video-training-2022",
+    "slug": "creating-fun-and-engaging-video-training-the-how-2022",
+    "kind": "certification",
     "title": "Creating Fun and Engaging Video Training: The How",
     "provider": "LinkedIn Learning",
-    "dateCompleted": "2022-09"
+    "year": 2022,
+    "logo": "/logos/cpd/linkedin.jpeg"
   },
   {
-    "slug": "first-web-app-modern-tooling-2021",
+    "slug": "identifying-and-reporting-misconduct-2022",
+    "kind": "workshop",
+    "title": "Identifying and Reporting Misconduct",
+    "provider": "King's Own Institute",
+    "year": 2022
+  },
+  {
+    "slug": "subject-learning-outcomes-and-powerful-assessment-2022",
+    "kind": "workshop",
+    "title": "Subject Learning Outcomes and Powerful Assessment",
+    "provider": "King's Own Institute",
+    "year": 2022
+  },
+  {
+    "slug": "teaching-and-learning-showcase-2022",
+    "kind": "workshop",
+    "title": "Teaching and Learning Showcase",
+    "provider": "King's Own Institute",
+    "year": 2022
+  },
+  {
+    "slug": "build-and-deploy-your-first-web-app-with-modern-tooling-2021",
+    "kind": "certification",
     "title": "Build and Deploy Your First Web App with Modern Tooling",
     "provider": "LinkedIn Learning",
-    "dateCompleted": "2021-10"
+    "year": 2021,
+    "logo": "/logos/cpd/linkedin.jpeg"
   },
   {
-    "slug": "blended-learning-2020",
+    "slug": "teaching-techniques-developing-curriculum-2021",
+    "kind": "certification",
+    "title": "Teaching Techniques: Developing Curriculum",
+    "provider": "LinkedIn Learning",
+    "year": 2021,
+    "logo": "/logos/cpd/linkedin.jpeg"
+  },
+  {
+    "slug": "teaching-techniques-blended-learning-2020",
+    "kind": "certification",
     "title": "Teaching Techniques: Blended Learning",
     "provider": "LinkedIn Learning",
-    "dateCompleted": "2020-10"
+    "year": 2020,
+    "logo": "/logos/cpd/linkedin.jpeg"
   },
   {
     "slug": "learning-to-teach-online-2020",
+    "kind": "certification",
     "title": "Learning to Teach Online",
     "provider": "LinkedIn Learning",
-    "dateCompleted": "2020-09"
+    "year": 2020,
+    "logo": "/logos/cpd/linkedin.jpeg"
   }
 ]

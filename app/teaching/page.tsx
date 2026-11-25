@@ -1,9 +1,8 @@
-import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
 import { SectionHeading } from '@/components/section-heading';
 import { ScrollReveal } from '@/components/scroll-reveal';
 import { buildMetadata } from '@/lib/seo';
 import { getCourses } from '@/lib/content';
+import { CpdSummary } from '@/components/cpd-summary';
 
 export const metadata = buildMetadata({
   title: 'Teaching',
@@ -99,14 +98,7 @@ export default async function TeachingPage() {
         </div>
       </section>
 
-      <section className="mt-14">
-        <Link
-          href="/teaching/cpd"
-          className="inline-flex items-center gap-2 text-sm font-medium text-brand-700 dark:text-brand-300"
-        >
-          See CPD &amp; professional development record <ArrowRight className="h-4 w-4" />
-        </Link>
-      </section>
+      <CpdSummary className="mt-14" />
     </>
   );
 }

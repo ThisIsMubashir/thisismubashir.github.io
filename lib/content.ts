@@ -27,16 +27,33 @@ export interface Publication {
   doi?: string;
   url?: string;
   abstract?: string;
+  summary?: string; // our own plain-language summary, shown when there is no publisher abstract
   keywords?: string[];
   bibtex?: string;
   featured?: boolean;
 }
 
+/** CPD categories in display order — the single source for labels on every page. */
+export const CPD_CATEGORIES = [
+  { kind: 'talk', label: 'Talks & workshops delivered', intro: 'Seminars and staff-development sessions I have led on teaching practice, learning technology and research.' },
+  { kind: 'outreach', label: 'Student engagement & outreach', intro: 'Hands-on challenges, industry sessions and school outreach I have led or co-organised.' },
+  { kind: 'review', label: 'Peer review', intro: 'Reviewer for international journals and conferences.' },
+  { kind: 'certification', label: 'Certifications & microskills', intro: 'Credentials in artificial intelligence, cybersecurity, leadership and online teaching.' },
+  { kind: 'workshop', label: 'Teaching & learning development', intro: 'Workshops and seminars on assessment, academic integrity, AI in education and learning technology.' },
+  { kind: 'professional', label: 'Professional & leadership development', intro: 'Leadership programmes, technical courses and industry events.' },
+  { kind: 'compliance', label: 'Inclusion, wellbeing & safety', intro: 'Equality, diversity and inclusion, health and safety, and wellbeing training.' },
+] as const;
+
+export type CpdKind = (typeof CPD_CATEGORIES)[number]['kind'];
+
 export interface CpdEntry {
   slug: string;
+  kind: CpdKind; // talk = delivered as speaker
   title: string;
   provider?: string;
-  dateCompleted?: string; // YYYY-MM
+  year: number;
+  logo?: string;
+  summary?: string; // one-line description (outreach)
 }
 
 export interface Course {
@@ -102,7 +119,7 @@ export async function getProjectSlugs(): Promise<string[]> {
 }
 
 export async function getCpdEntries(): Promise<CpdEntry[]> {
-  return [...cpd].sort((a, b) => (b.dateCompleted ?? '').localeCompare(a.dateCompleted ?? ''));
+  return [...cpd].sort((a, b) => b.year - a.year); // stable: keeps file order within a year
 }
 
 export async function getCourses(): Promise<Course[]> {

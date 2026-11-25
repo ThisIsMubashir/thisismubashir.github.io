@@ -6,10 +6,9 @@ import { buildMetadata } from '@/lib/seo';
 export const metadata = buildMetadata({
   title: 'About',
   description:
-    'Computer engineer and academic with a decade of teaching, research, and leadership across Australian and international institutions. Currently a Teaching Fellow at the University of Strathclyde, Bahrain campus.',
+    'Computer engineer and academic with a decade of teaching, research, and leadership across Australian and international institutions. Currently a Lecturer at the University of Strathclyde, Bahrain campus.',
   path: '/about',
 });
-
 const arsenal: { layer: string; items: { name: string; icon?: string }[] }[] = [
   {
     layer: 'Languages',
@@ -70,25 +69,38 @@ export default function AboutPage() {
 
       <article className="prose prose-neutral max-w-none dark:prose-invert">
         <p>
-          I&apos;m a Teaching Fellow at the University of Strathclyde, Bahrain campus, with more
-          than a decade of teaching and academic leadership across Australian and international
-          institutions. I completed my PhD at UNSW Sydney in 2018, working on runtime hardware-Trojan
-          detection for Network-on-Chip MPSoCs.
+          I&apos;m a Lecturer in Computer and Information Sciences at the University of Strathclyde,
+          Bahrain campus, with more than a decade of teaching and academic leadership across
+          Australian and international institutions. I hold a PhD in Computer Engineering from UNSW
+          Sydney, where my research focused on runtime hardware-Trojan detection for Network-on-Chip
+          MPSoCs, and an MS in Computer Engineering from the University of Engineering &amp;
+          Technology, Taxila.
         </p>
         <p>
-          Before Strathclyde I was Head of Program (Postgraduate IT) at King&apos;s Own Institute
-          in Sydney, where I led curriculum design, quality assurance, accreditation work (TEQSA,
-          ACS), and capstone-project coordination. I&apos;ve taught at UNSW, Victorian Institute of
-          Technology, Federation University, USC, and the University of Engineering &amp; Technology
-          Taxila.
+          Before Strathclyde I spent three years at King&apos;s Own Institute in Sydney — first as
+          Senior Lecturer, then as Head of Program (Postgraduate IT), leading curriculum design,
+          quality assurance, TEQSA and ACS accreditation work, and capstone-project coordination.
+          Earlier, I was a Lecturer and Unit Facilitator at the Victorian Institute of Technology, a
+          sessional lecturer for Federation University Australia and the University of the Sunshine
+          Coast, a casual tutor at UNSW, and a lecturer at the University of Haripur.
         </p>
         <p>
-          My research interests sit at three intersections: cyber-physical systems for healthcare,
-          game-based learning for programming, and AI in higher education and assessment design.
-          I&apos;m also currently exploring agentic AI on the side — working through RAG and the
-          Model Context Protocol when teaching allows.
+          My research spans three areas: <strong>security</strong> — from hardware Trojans in
+          Network-on-Chip to quantum-safe smart grids; <strong>artificial intelligence</strong>,
+          including its responsible adoption; and <strong>teaching and learning</strong> —
+          game-based learning, AI in higher education and assessment design. I review for
+          international journals and conferences, and I&apos;m currently exploring agentic AI —
+          RAG and the Model Context Protocol — when teaching allows.
+        </p>
+        <p>
+          Outside the lecture theatre I like connecting students with industry: running
+          capture-the-flag and no-code app challenges, hosting industry speakers on AI and
+          cybersecurity, and introducing school students to computing. The full record of talks,
+          outreach and professional development is on the{' '}
+          <a href="/teaching/cpd/">professional development &amp; service</a> page.
         </p>
       </article>
+
 
       <section className="mt-16">
         <h2 className="font-medium text-2xl">Technical arsenal</h2>

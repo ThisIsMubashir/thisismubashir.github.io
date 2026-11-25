@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!pub) return buildMetadata({ title: 'Publication not found', path: `/publications/${slug}` });
   return buildMetadata({
     title: pub.title,
-    description: pub.abstract?.slice(0, 160) ?? `${pub.venue ?? ''} · ${pub.year}`,
+    description: (pub.abstract ?? pub.summary)?.slice(0, 160) ?? `${pub.venue ?? ''} · ${pub.year}`,
     path: `/publications/${slug}`,
   });
 }
@@ -121,11 +121,11 @@ export default async function PublicationDetail({
           </div>
         </header>
 
-        {pub.abstract && (
+        {(pub.abstract ?? pub.summary) && (
           <section className="mt-10">
-            <h2 className="text-lg font-medium">Abstract</h2>
-            <p className="mt-2 max-w-2xl text-pretty text-ink-700 dark:text-ink-200">
-              {pub.abstract}
+            <h2 className="text-lg font-medium">{pub.abstract ? 'Abstract' : 'Summary'}</h2>
+            <p className="mt-2 text-pretty leading-relaxed text-ink-700 dark:text-ink-200">
+              {pub.abstract ?? pub.summary}
             </p>
           </section>
         )}

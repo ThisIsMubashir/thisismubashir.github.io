@@ -34,14 +34,17 @@ const { ThemeToggle } = await import('@/components/theme-toggle');
 
 // 1. Public data files carry only displayed fields — private ones (dates, notes,
 //    hours, institutions, …) live in the gitignored data/private/ and stay there.
-const PRIVATE_KEYS = /^(startDate|endDate|notes|hours|certificateReceived|certificateUrl|institution|topics|languages|years|semesters|hero|gallery)$/;
+const PRIVATE_KEYS = /^(dateCompleted|startDate|endDate|notes|hours|certificateReceived|certificateUrl|institution|topics|languages|years|semesters|hero|gallery)$/;
 for (const name of ['projects', 'cpd', 'courses']) {
   const rows = JSON.parse(readFileSync(new URL(`data/${name}.json`, root), 'utf8'));
   assert.ok(rows.length > 0, `data/${name}.json is empty — run \`pnpm data\``);
   for (const row of rows) {
     const leaked = Object.keys(row).filter((k) => PRIVATE_KEYS.test(k));
     assert.deepEqual(leaked, [], `data/${name}.json "${row.slug ?? row.code}" exposes ${leaked}`);
-    if (row.dateCompleted) assert.match(row.dateCompleted, /^\d{4}-\d{2}$/, `${row.slug}: exact date in public cpd`);
+    if (name === 'cpd') {
+      assert.ok(Number.isInteger(row.year), `${row.slug}: cpd needs an integer year`);
+      assert.match(row.kind, /^(talk|outreach|review|certification|workshop|professional|compliance)$/, `${row.slug}: unknown kind`);
+    }
   }
 }
 

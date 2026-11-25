@@ -55,7 +55,7 @@ export const personJsonLd = {
   givenName: 'Mubashir',
   familyName: 'Hussain',
   honorificPrefix: 'Dr.',
-  jobTitle: 'Teaching Fellow',
+  jobTitle: 'Lecturer',
   affiliation: {
     '@type': 'CollegeOrUniversity',
     name: 'University of Strathclyde (Bahrain campus)',

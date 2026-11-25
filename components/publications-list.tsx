@@ -1,11 +1,9 @@
 'use client';
 
 import { useMemo, useState } from 'react';
-import Link from 'next/link';
 import { Input } from '@/components/ui/form';
 import { ClearFilters, FilterChips } from '@/components/filter-chips';
-import { PublicationEntry } from '@/components/publication-entry';
-import { ScrollReveal } from '@/components/scroll-reveal';
+import { PublicationCards } from '@/components/publication-stack';
 import type { Publication, PublicationType } from '@/lib/content';
 
 interface Props {
@@ -82,27 +80,7 @@ export function PublicationsList({ publications }: Props) {
           No publications match those filters.
         </p>
       ) : (
-        <ScrollReveal as="ul" className="divide-y divide-ink-100 dark:divide-ink-800">
-          {filtered.map((p) => (
-            <li key={p.slug}>
-              <Link
-                href={`/publications/${p.slug}/`}
-                className="block no-underline hover:bg-ink-50/60 dark:hover:bg-ink-900/40"
-              >
-                <PublicationEntry
-                  title={p.title}
-                  authors={p.authors}
-                  venue={p.venue}
-                  year={p.year}
-                  type={p.type}
-                  doi={p.doi}
-                  url={p.url}
-                  bibtex={p.bibtex}
-                />
-              </Link>
-            </li>
-          ))}
-        </ScrollReveal>
+        <PublicationCards pubs={filtered} />
       )}
     </>
   );

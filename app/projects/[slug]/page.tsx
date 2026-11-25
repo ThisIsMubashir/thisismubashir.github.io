@@ -4,6 +4,7 @@ import { ArrowLeft, ExternalLink, Github } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { getProject, getProjectSlugs, resolvePublications } from '@/lib/content';
+import { PublicationCards } from '@/components/publication-stack';
 import { buildMetadata } from '@/lib/seo';
 
 export const dynamicParams = false;
@@ -109,21 +110,9 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
         {related.length > 0 && (
           <section className="mt-10">
             <h2 className="text-lg font-medium">Related publications</h2>
-            <ul className="mt-3 divide-y divide-ink-100 dark:divide-ink-800">
-              {related.map((p) => (
-                <li key={p.slug} className="py-3">
-                  <Link
-                    href={`/publications/${p.slug}/`}
-                    className="text-ink-900 no-underline hover:underline dark:text-ink-50"
-                  >
-                    {p.title}
-                  </Link>
-                  <p className="mt-1 text-sm italic text-ink-500 dark:text-ink-300">
-                    {p.venue} · {p.year}
-                  </p>
-                </li>
-              ))}
-            </ul>
+            <div className="mt-3">
+              <PublicationCards pubs={related} />
+            </div>
           </section>
         )}
       </article>

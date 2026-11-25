@@ -2,14 +2,25 @@
   {
     "slug": "cyber-physical-healthcare-review-2025",
     "title": "Technological Advancements and Trends in Cyber-physical Systems for Healthcare: A Systematic Review",
-    "authors": ["Mubashir Hussain", "Meena Jha", "Sweta Thakur", "Sanjay Jha"],
+    "authors": [
+      "Mubashir Hussain",
+      "Meena Jha",
+      "Sweta Thakur",
+      "Sanjay Jha"
+    ],
     "venue": "Advances in IoT and Security with Computational Intelligence (ICAISA 2025), Lecture Notes in Networks and Systems, vol 1704, Springer, Cham",
     "year": 2027,
     "type": "conference",
     "doi": "10.1007/978-3-032-10303-1_40",
     "url": "https://doi.org/10.1007/978-3-032-10303-1_40",
     "abstract": "A systematic review of recent technological advancements and emerging trends in cyber-physical systems for healthcare, including IoT-enabled monitoring, security threat models, and AI-driven decision support. The paper categorises gaps in the literature and proposes a research agenda for trustworthy deployment in clinical environments.",
-    "keywords": ["cyber-physical systems", "healthcare", "IoT", "security", "systematic review"],
+    "keywords": [
+      "cyber-physical systems",
+      "healthcare",
+      "IoT",
+      "security",
+      "systematic review"
+    ],
     "featured": true,
     "bibtex": "@inproceedings{hussain2027healthcare,\n  title={Technological Advancements and Trends in Cyber-physical Systems for Healthcare: A Systematic Review},\n  author={Hussain, Mubashir and Jha, Meena and Thakur, Sweta and Jha, Sanjay},\n  editor={Mishra, A. and Gupta, D. and Jha, M. and Singh, U. G. and Goswami, R. S.},\n  booktitle={Advances in IoT and Security with Computational Intelligence (ICAISA 2025)},\n  series={Lecture Notes in Networks and Systems},\n  volume={1704},\n  publisher={Springer, Cham},\n  year={2027},\n  doi={10.1007/978-3-032-10303-1_40}\n}"
   },
@@ -31,7 +42,7 @@
     "status": "in-press",
     "doi": "10.1109/TNSM.2026.3751647",
     "url": "https://ieeexplore.ieee.org/document/11783163",
-    "abstract": "Operational deployment of hybrid QKD–PQC security in smart grids requires coordinated planning under coupled service-level agreement (SLA) constraints, including startup latency, sustained key availability, real-time bounds, technology budget, and site storage capacity. This paper presents an SLA-driven network-planning framework solved using feasibility-first bounded local search (FF-BLS). A broad 36,300-run campaign across seven benchmark networks (14–6,495 nodes) maps deployment regimes and algorithmic ablations. Full FF-BLS attains 60.9% feasibility under fixed installed site capacity, while relaxing the site-cap constraint yields 100%. Focused studies further vary storage, technology budget, QKD-adoption target, and startup–traffic stress. FF-BLS reaches 100% feasibility at the highest tested storage multiplier (γ = 0.40), while a restrictive technology budget (b = 0.60) remains independently binding once storage is sufficient. On 246 comparison scenarios, FF-BLS achieves 100% feasibility, whereas unassisted GA, SA, Tabu, and VNS achieve 24.4–58.9%; feasibility-aware initialization and repair substantially improve the generic baselines. A separate 100-instance topology/storage stress benchmark and an aligned CPU–GPU study evaluate robustness and computational scaling. The results show that site storage is the dominant practical bottleneck under fixed installed capacity, while its importance depends on the provisioning regime. Low-to-moderate QKD adoption is most robust under constrained storage, whereas higher adoption becomes feasible when sufficient storage head-room is provisioned. These findings provide practical guidance for scalable quantum-safe smart-grid deployment under stringent SLAs.",
+    "summary": "Operational deployment of hybrid QKD–PQC security in smart grids requires coordinated planning under coupled service-level agreement (SLA) constraints, including startup latency, sustained key availability, real-time bounds, technology budget, and site storage capacity. This paper presents an SLA-driven network-planning framework solved using feasibility-first bounded local search (FF-BLS). A broad 36,300-run campaign across seven benchmark networks (14–6,495 nodes) maps deployment regimes and algorithmic ablations. Full FF-BLS attains 60.9% feasibility under fixed installed site capacity, while relaxing the site-cap constraint yields 100%. Focused studies further vary storage, technology budget, QKD-adoption target, and startup–traffic stress. FF-BLS reaches 100% feasibility at the highest tested storage multiplier (γ = 0.40), while a restrictive technology budget (b = 0.60) remains independently binding once storage is sufficient. On 246 comparison scenarios, FF-BLS achieves 100% feasibility, whereas unassisted GA, SA, Tabu, and VNS achieve 24.4–58.9%; feasibility-aware initialization and repair substantially improve the generic baselines. A separate 100-instance topology/storage stress benchmark and an aligned CPU–GPU study evaluate robustness and computational scaling. The results show that site storage is the dominant practical bottleneck under fixed installed capacity, while its importance depends on the provisioning regime. Low-to-moderate QKD adoption is most robust under constrained storage, whereas higher adoption becomes feasible when sufficient storage head-room is provisioned. These findings provide practical guidance for scalable quantum-safe smart-grid deployment under stringent SLAs.",
     "keywords": [
       "quantum key distribution",
       "post-quantum cryptography",
@@ -45,21 +56,33 @@
   {
     "slug": "game-based-learning-programming-2024",
     "title": "Effectiveness of Game-Based Learning for Programming Courses",
-    "authors": ["Mubashir Hussain"],
+    "authors": [
+      "Mubashir Hussain"
+    ],
     "venue": "Teaching and Learning in the Digital Era, World Scientific eBooks",
     "year": 2024,
     "type": "chapter",
     "doi": "10.1142/13658",
     "url": "https://doi.org/10.1142/13658",
     "abstract": "This chapter evaluates the effectiveness of game-based learning interventions in undergraduate programming courses. Drawing on a multi-cohort study, it identifies design patterns that improve engagement, retention, and conceptual understanding without compromising assessment integrity.",
-    "keywords": ["game-based learning", "programming education", "engagement", "higher education"],
+    "keywords": [
+      "game-based learning",
+      "programming education",
+      "engagement",
+      "higher education"
+    ],
     "featured": true,
     "bibtex": "@incollection{hussain2024gbl,\n  title={Effectiveness of Game-Based Learning for Programming Courses},\n  author={Hussain, Mubashir},\n  booktitle={Teaching and Learning in the Digital Era},\n  publisher={World Scientific},\n  year={2024},\n  doi={10.1142/13658}\n}"
   },
   {
     "slug": "shuffled-arsh-fati-wsn-2023",
     "title": "Shuffled ARSH-FATI: A Novel Meta-Heuristic for Lifetime Maximization of Range-Adjustable Wireless Sensor Networks",
-    "authors": ["Umair Ullah Tariq", "Haider Ali", "Mubashir Hussain", "Lu Liu"],
+    "authors": [
+      "Umair Ullah Tariq",
+      "Haider Ali",
+      "Mubashir Hussain",
+      "Lu Liu"
+    ],
     "venue": "IEEE Transactions on Green Communications and Networking",
     "year": 2023,
     "type": "journal",
@@ -91,7 +114,12 @@
     "doi": "10.1109/access.2023.3279501",
     "url": "https://doi.org/10.1109/access.2023.3279501",
     "abstract": "Presents HyDra, a hybrid task-mapping framework targeting Network-on-Chip-based MPSoCs. The framework couples design-time analysis with runtime adaptation to balance performance, energy, and thermal constraints for irregular workloads.",
-    "keywords": ["MPSoC", "Network-on-Chip", "task mapping", "energy efficiency"],
+    "keywords": [
+      "MPSoC",
+      "Network-on-Chip",
+      "task mapping",
+      "energy efficiency"
+    ],
     "bibtex": "@article{amin2023hydra,\n  title={HyDra: Hybrid Task Mapping Application Framework for NOC-Based MPSoCs},\n  author={Amin, Waqar and Hussain, Fawad and Anjum, Sheraz and Saleem, Sharoon and Ahmad, Waqar and Hussain, Mubashir},\n  journal={IEEE Access},\n  year={2023},\n  doi={10.1109/access.2023.3279501}\n}"
   },
   {
@@ -110,60 +138,101 @@
     "doi": "10.1109/jsyst.2020.2986811",
     "url": "https://doi.org/10.1109/jsyst.2020.2986811",
     "abstract": "Proposes ARSH-FATI, an adaptive meta-heuristic for cluster-head selection that balances residual energy, distance, and node density to extend WSN lifetime. The algorithm consistently outperforms LEACH-family baselines under heterogeneous deployments.",
-    "keywords": ["wireless sensor networks", "cluster head", "meta-heuristic", "energy"],
+    "keywords": [
+      "wireless sensor networks",
+      "cluster head",
+      "meta-heuristic",
+      "energy"
+    ],
     "bibtex": "@article{ali2020arshfati,\n  title={ARSH-FATI: A Novel Meta-heuristic for Cluster Head Selection in Wireless Sensor Networks},\n  author={Ali, Haider and Tariq, Umair Ullah and Panneerselvam, John and Hussain, Mubashir and Liu, Lu},\n  journal={IEEE Systems Journal},\n  year={2020},\n  doi={10.1109/jsyst.2020.2986811}\n}"
   },
   {
     "slug": "bandwidth-aware-authentication-noc-2018",
     "title": "A Bandwidth-Aware Authentication Scheme for Packet-Integrity Attack Detection on Trojan Infected NoC",
-    "authors": ["Mubashir Hussain", "Hui Guo"],
+    "authors": [
+      "Mubashir Hussain",
+      "Hui Guo"
+    ],
     "venue": "IFIP/IEEE International Conference on Very Large Scale Integration (VLSI-SoC)",
     "year": 2018,
     "type": "conference",
     "doi": "10.1109/vlsi-soc.2018.8645051",
     "url": "https://doi.org/10.1109/vlsi-soc.2018.8645051",
     "abstract": "A bandwidth-aware authentication design that detects packet-integrity attacks launched by hardware Trojans embedded in Network-on-Chip routers. The scheme adapts tag granularity to traffic load, holding overhead under 5% while catching all injected attacks in the evaluation set.",
-    "keywords": ["hardware security", "hardware Trojan", "Network-on-Chip", "authentication"],
+    "keywords": [
+      "hardware security",
+      "hardware Trojan",
+      "Network-on-Chip",
+      "authentication"
+    ],
     "bibtex": "@inproceedings{hussain2018bandwidth,\n  title={A Bandwidth-Aware Authentication Scheme for Packet-Integrity Attack Detection on Trojan Infected NoC},\n  author={Hussain, Mubashir and Guo, Hui},\n  booktitle={IFIP/IEEE International Conference on Very Large Scale Integration (VLSI-SoC)},\n  year={2018},\n  doi={10.1109/vlsi-soc.2018.8645051}\n}"
   },
   {
     "slug": "eetd-trojan-detection-2018",
     "title": "EETD: An Energy Efficient Design for Runtime Hardware Trojan Detection in Untrusted Network-on-Chip",
-    "authors": ["Mubashir Hussain", "Amin Malekpour", "Hui Guo", "Siri Parameswaran"],
+    "authors": [
+      "Mubashir Hussain",
+      "Amin Malekpour",
+      "Hui Guo",
+      "Siri Parameswaran"
+    ],
     "venue": "IEEE Computer Society Annual Symposium on VLSI",
     "year": 2018,
     "type": "conference",
     "doi": "10.1109/isvlsi.2018.00070",
     "url": "https://doi.org/10.1109/isvlsi.2018.00070",
     "abstract": "EETD is an energy-efficient runtime detection mechanism for hardware Trojans embedded in third-party NoC IP. By selectively authenticating high-risk traffic and reusing inflight cryptographic state, it cuts detection energy by ~40% versus prior work with no loss in detection rate.",
-    "keywords": ["hardware Trojan", "Network-on-Chip", "energy efficiency", "runtime detection"],
+    "keywords": [
+      "hardware Trojan",
+      "Network-on-Chip",
+      "energy efficiency",
+      "runtime detection"
+    ],
     "featured": true,
     "bibtex": "@inproceedings{hussain2018eetd,\n  title={EETD: An Energy Efficient Design for Runtime Hardware Trojan Detection in Untrusted Network-on-Chip},\n  author={Hussain, Mubashir and Malekpour, Amin and Guo, Hui and Parameswaran, Siri},\n  booktitle={IEEE Computer Society Annual Symposium on VLSI},\n  year={2018},\n  doi={10.1109/isvlsi.2018.00070}\n}"
   },
   {
     "slug": "customized-authentication-noc-2017",
     "title": "A Customized Authentication Design for Traffic Hijacking Detection on Hardware-Trojan Infected NoCs",
-    "authors": ["Mubashir Hussain", "Hui Guo", "Siri Parameswaran"],
+    "authors": [
+      "Mubashir Hussain",
+      "Hui Guo",
+      "Siri Parameswaran"
+    ],
     "venue": "Journal of Computer and Communications",
     "year": 2017,
     "type": "journal",
     "doi": "10.4236/jcc.2018.61015",
     "url": "https://doi.org/10.4236/jcc.2018.61015",
     "abstract": "A customised lightweight authentication scheme that targets the traffic-hijacking attack class on Trojan-infected NoCs. The design uses per-flow nonces and selective integrity tags to keep area overhead minimal on FPGA prototypes.",
-    "keywords": ["hardware Trojan", "Network-on-Chip", "authentication", "traffic hijacking"],
+    "keywords": [
+      "hardware Trojan",
+      "Network-on-Chip",
+      "authentication",
+      "traffic hijacking"
+    ],
     "bibtex": "@article{hussain2017customized,\n  title={A Customized Authentication Design for Traffic Hijacking Detection on Hardware-Trojan Infected NoCs},\n  author={Hussain, Mubashir and Guo, Hui and Parameswaran, Siri},\n  journal={Journal of Computer and Communications},\n  year={2017},\n  doi={10.4236/jcc.2018.61015}\n}"
   },
   {
     "slug": "packet-leak-detection-noc-2017",
     "title": "Packet Leak Detection on Hardware-Trojan Infected NoCs for MPSoC Systems",
-    "authors": ["Mubashir Hussain", "Hui Guo"],
+    "authors": [
+      "Mubashir Hussain",
+      "Hui Guo"
+    ],
     "venue": "International Conference on Cryptography, Security and Privacy",
     "year": 2017,
     "type": "conference",
     "doi": "10.1145/3058060.3058061",
     "url": "https://doi.org/10.1145/3058060.3058061",
     "abstract": "Proposes a packet-leak detection mechanism for Trojan-infected NoCs used in MPSoC platforms. The detector watches for unauthorised packet emissions through covert side-channels and triggers per-router isolation responses.",
-    "keywords": ["hardware Trojan", "Network-on-Chip", "MPSoC", "packet leak", "covert channel"],
+    "keywords": [
+      "hardware Trojan",
+      "Network-on-Chip",
+      "MPSoC",
+      "packet leak",
+      "covert channel"
+    ],
     "bibtex": "@inproceedings{hussain2017packetleak,\n  title={Packet Leak Detection on Hardware-Trojan Infected NoCs for MPSoC Systems},\n  author={Hussain, Mubashir and Guo, Hui},\n  booktitle={International Conference on Cryptography, Security and Privacy},\n  year={2017},\n  doi={10.1145/3058060.3058061}\n}"
   }
 ]

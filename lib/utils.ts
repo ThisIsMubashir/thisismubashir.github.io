@@ -15,8 +15,8 @@ export const siteConfig = {
   tagline: 'Computer Engineer · Academic · Educator',
   title: 'Dr. Mubashir Hussain — Computer Engineering & Academic Portfolio',
   description:
-    'A decade of teaching, supervision, and research in computer engineering — hardware security, ' +
-    'network-on-chip design, academic leadership. Currently Teaching Fellow at the University of ' +
+    'A decade of teaching, supervision, and research in computer engineering — security, ' +
+    'artificial intelligence, and teaching & learning. Currently a Lecturer at the University of ' +
     'Strathclyde (Bahrain).',
   url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://thisismubashir.github.io',
   authorEmail: 'mubashir.hussain@live.com',
