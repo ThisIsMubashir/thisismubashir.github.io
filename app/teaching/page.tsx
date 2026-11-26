@@ -1,7 +1,7 @@
 import { SectionHeading } from '@/components/section-heading';
-import { ScrollReveal } from '@/components/scroll-reveal';
 import { buildMetadata } from '@/lib/seo';
 import { getCourses } from '@/lib/content';
+import { TeachingAreas } from '@/components/teaching-areas';
 
 export const metadata = buildMetadata({
   title: 'Teaching',
@@ -12,9 +12,6 @@ export const metadata = buildMetadata({
 
 export default async function TeachingPage() {
   const courses = await getCourses();
-  const pg = courses.filter((c) => c.level === 'PG');
-  // Same subject taught at several institutions → list it once.
-  const ug = [...new Map(courses.filter((c) => c.level === 'UG').map((c) => [c.name, c])).values()];
 
   return (
     <>
@@ -66,37 +63,13 @@ export default async function TeachingPage() {
       <section className="mt-14">
         <h2 className="section-title">Courses</h2>
         <p className="mt-1 max-w-2xl text-sm text-ink-500 dark:text-ink-300">
-          All courses taught at undergraduate and postgraduate level, by institution.
+          Subjects taught at undergraduate (UG) and postgraduate (PG) level, grouped by area.
         </p>
 
-        <div className="mt-8 grid gap-10 sm:grid-cols-2">
-          <div>
-            <p className="eyebrow mb-3">
-              Postgraduate
-            </p>
-            <ScrollReveal as="ul" className="space-y-1.5">
-              {pg.map((c) => (
-                <li key={c.code} className="text-sm text-ink-700 dark:text-ink-200">
-                  {c.name}
-                </li>
-              ))}
-            </ScrollReveal>
-          </div>
-          <div>
-            <p className="eyebrow mb-3">
-              Undergraduate
-            </p>
-            <ScrollReveal as="ul" className="space-y-1.5">
-              {ug.map((c) => (
-                <li key={c.code} className="text-sm text-ink-700 dark:text-ink-200">
-                  {c.name}
-                </li>
-              ))}
-            </ScrollReveal>
-          </div>
+        <div className="mt-8">
+          <TeachingAreas courses={courses} />
         </div>
       </section>
-
     </>
   );
 }

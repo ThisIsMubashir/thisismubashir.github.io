@@ -33,6 +33,16 @@ export interface Publication {
   featured?: boolean;
 }
 
+/** Teaching areas in display order (courses.json `area`). */
+export const TEACHING_AREAS = [
+  'Data & Systems',
+  'Software Engineering',
+  'Cybersecurity',
+  'Architecture & Hardware',
+  'Research & Capstone',
+  'Design & Modelling',
+] as const;
+
 /** CPD categories in display order — the single source for labels on every page. */
 export const CPD_CATEGORIES = [
   { kind: 'talk', label: 'Talks & workshops delivered', intro: 'Seminars and staff-development sessions I have led on teaching practice, learning technology and research.' },
@@ -60,6 +70,7 @@ export interface Course {
   code: string;
   name: string;
   level: 'UG' | 'PG';
+  area?: string; // teaching area, e.g. "Cybersecurity" — see TEACHING_AREAS
 }
 
 export interface Project {

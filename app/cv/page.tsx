@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { ChevronDown } from 'lucide-react';
 import { SectionHeading } from '@/components/section-heading';
 import { Badge } from '@/components/ui/badge';
+import { TeachingAreas } from '@/components/teaching-areas';
 import { buildMetadata } from '@/lib/seo';
 import {
   CPD_CATEGORIES,
@@ -107,14 +108,6 @@ export default async function CvPage() {
     getProjects(),
   ]);
 
-  // Same subject taught at several institutions → list it once.
-  const byLevel = (level: 'UG' | 'PG') => [
-    ...new Map(courses.filter((c) => c.level === level).map((c) => [c.name, c])).values(),
-  ];
-  const teaching = [
-    { label: 'Undergraduate', rows: byLevel('UG') },
-    { label: 'Postgraduate', rows: byLevel('PG') },
-  ];
   const featuredFirst = [
     ...projects.filter((p) => p.featured),
     ...projects.filter((p) => !p.featured),
@@ -169,21 +162,7 @@ export default async function CvPage() {
         </div>
 
         <Row title="Teaching" href="/teaching/" linkLabel="Teaching philosophy">
-          <div className="grid gap-6 sm:grid-cols-2">
-            {teaching.map(({ label, rows }) => (
-              <div key={label}>
-                <h3 className="eyebrow mb-3">{label}</h3>
-                <Preview
-                  show={5}
-                  items={rows.map((c) => (
-                    <li key={c.code} className={item}>
-                      {c.name}
-                    </li>
-                  ))}
-                />
-              </div>
-            ))}
-          </div>
+          <TeachingAreas courses={courses} />
         </Row>
 
         <Row

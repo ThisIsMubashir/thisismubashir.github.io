@@ -2,166 +2,199 @@
   {
     "code": "STRATH-UG-CSA",
     "name": "Computer Systems and Architecture",
-    "level": "UG"
+    "level": "UG",
+    "area": "Architecture & Hardware"
   },
   {
     "code": "STRATH-UG-HCI",
     "name": "Introduction to Human Computer Interaction",
-    "level": "UG"
+    "level": "UG",
+    "area": "Design & Modelling"
   },
   {
     "code": "STRATH-UG-FT",
     "name": "Functional Thinking",
-    "level": "UG"
+    "level": "UG",
+    "area": "Software Engineering"
   },
   {
     "code": "STRATH-UG-UDM",
     "name": "User and Data Modelling",
-    "level": "UG"
+    "level": "UG",
+    "area": "Data & Systems"
   },
   {
     "code": "KOI-PG-NRDB",
     "name": "Non-Relational Database Systems",
-    "level": "PG"
+    "level": "PG",
+    "area": "Data & Systems"
   },
   {
     "code": "KOI-PG-RDB",
     "name": "Relational Databases",
-    "level": "PG"
+    "level": "PG",
+    "area": "Data & Systems"
   },
   {
     "code": "KOI-PG-OOP",
     "name": "Object-Oriented Programming",
-    "level": "PG"
+    "level": "PG",
+    "area": "Software Engineering"
   },
   {
     "code": "KOI-PG-NETSEC",
     "name": "Network Security",
-    "level": "PG"
+    "level": "PG",
+    "area": "Cybersecurity"
   },
   {
     "code": "KOI-PG-SD",
     "name": "Software Development",
-    "level": "PG"
+    "level": "PG",
+    "area": "Software Engineering"
   },
   {
     "code": "KOI-PG-MR",
     "name": "Managing Research",
-    "level": "PG"
+    "level": "PG",
+    "area": "Research & Capstone"
   },
   {
     "code": "KOI-PG-ACA",
     "name": "Advanced Computer Architecture",
-    "level": "PG"
+    "level": "PG",
+    "area": "Architecture & Hardware"
   },
   {
     "code": "KOI-PG-SEM",
     "name": "Software Engineering Methodologies",
-    "level": "PG"
+    "level": "PG",
+    "area": "Software Engineering"
   },
   {
     "code": "KOI-PG-RES",
     "name": "Advanced Research Topics in IT",
-    "level": "PG"
+    "level": "PG",
+    "area": "Research & Capstone"
   },
   {
     "code": "KOI-PG-CAP",
     "name": "Capstone Project",
-    "level": "PG"
+    "level": "PG",
+    "area": "Research & Capstone"
   },
   {
     "code": "KOI-PG-SQT",
     "name": "Software Quality Testing & Change Management",
-    "level": "PG"
+    "level": "PG",
+    "area": "Software Engineering"
   },
   {
     "code": "KOI-PG-CYB",
     "name": "Applied Cyber Security",
-    "level": "PG"
+    "level": "PG",
+    "area": "Cybersecurity"
   },
   {
     "code": "KOI-UG-FOP",
     "name": "Foundation of Programming",
-    "level": "UG"
+    "level": "UG",
+    "area": "Software Engineering"
   },
   {
     "code": "KOI-UG-DB",
     "name": "Introduction to Databases",
-    "level": "UG"
+    "level": "UG",
+    "area": "Data & Systems"
   },
   {
     "code": "KOI-UG-NET",
     "name": "Networks Fundamentals",
-    "level": "UG"
+    "level": "UG",
+    "area": "Cybersecurity"
   },
   {
     "code": "KOI-UG-WEB",
     "name": "Developing Web Applications",
-    "level": "UG"
+    "level": "UG",
+    "area": "Software Engineering"
   },
   {
     "code": "KOI-UG-MOB",
     "name": "Mobile Computing",
-    "level": "UG"
+    "level": "UG",
+    "area": "Software Engineering"
   },
   {
     "code": "KOI-UG-WIN",
     "name": "Developing Windows Applications",
-    "level": "UG"
+    "level": "UG",
+    "area": "Software Engineering"
   },
   {
     "code": "KOI-UG-TEST",
     "name": "Software Testing",
-    "level": "UG"
+    "level": "UG",
+    "area": "Software Engineering"
   },
   {
     "code": "KOI-UG-CO",
     "name": "Computer Organization",
-    "level": "UG"
+    "level": "UG",
+    "area": "Architecture & Hardware"
   },
   {
     "code": "KOI-UG-DLD",
     "name": "Digital Logic Design",
-    "level": "UG"
+    "level": "UG",
+    "area": "Architecture & Hardware"
   },
   {
     "code": "KOI-UG-CABCT",
     "name": "Computer Architecture & Basic Circuit Theory",
-    "level": "UG"
+    "level": "UG",
+    "area": "Architecture & Hardware"
   },
   {
     "code": "KOI-UG-ITP",
     "name": "Information Technology Project",
-    "level": "UG"
+    "level": "UG",
+    "area": "Research & Capstone"
   },
   {
     "code": "KOI-UG-FT",
     "name": "Functional Thinking",
-    "level": "UG"
+    "level": "UG",
+    "area": "Software Engineering"
   },
   {
     "code": "KOI-UG-CSA",
     "name": "Computer Systems and Architecture",
-    "level": "UG"
+    "level": "UG",
+    "area": "Architecture & Hardware"
   },
   {
     "code": "KOI-UG-UDM",
     "name": "User and Data Modelling",
-    "level": "UG"
+    "level": "UG",
+    "area": "Data & Systems"
   },
   {
     "code": "VIT-PG-SEM",
     "name": "Software Engineering Methodologies",
-    "level": "PG"
+    "level": "PG",
+    "area": "Software Engineering"
   },
   {
     "code": "VIT-PG-CYB",
     "name": "Applied Cyber Security",
-    "level": "PG"
+    "level": "PG",
+    "area": "Cybersecurity"
   },
   {
     "code": "UNSW-UG-CA",
     "name": "Computer Architecture and Microprocessor Design and Interfacing",
-    "level": "UG"
+    "level": "UG",
+    "area": "Architecture & Hardware"
   }
 ]

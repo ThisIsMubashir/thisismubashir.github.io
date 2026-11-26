@@ -12,7 +12,7 @@ import { readFileSync, writeFileSync } from 'node:fs';
 const PUBLIC_FIELDS = {
   projects: ['slug', 'title', 'role', 'current', 'summary', 'body', 'tags', 'repoUrl', 'demoUrl', 'featured', 'relatedPublications', 'aiAssisted'],
   cpd: ['slug', 'kind', 'title', 'provider', 'year', 'logo', 'summary'],
-  courses: ['code', 'name', 'level'],
+  courses: ['code', 'name', 'level', 'area'],
 };
 
 const pick = (obj, keys) => Object.fromEntries(keys.filter((k) => obj[k] != null).map((k) => [k, obj[k]]));
