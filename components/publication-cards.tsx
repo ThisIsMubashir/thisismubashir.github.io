@@ -12,9 +12,9 @@ const typeLabels: Record<string, string> = {
 
 /**
  * One publication card. The title and "Read paper" go straight to the DOI (or publisher URL);
- * "Cite" opens APA / Harvard / BibTeX. `counter` shows "01 / 04" (home stack only).
+ * "Cite" opens APA / Harvard / BibTeX.
  */
-export function PublicationCard({ pub: p, counter }: { pub: Publication; counter?: string }) {
+export function PublicationCard({ pub: p }: { pub: Publication }) {
   const text = p.abstract ?? p.summary;
   const href = p.doi ? `https://doi.org/${p.doi}` : p.url;
   return (
@@ -26,11 +26,6 @@ export function PublicationCard({ pub: p, counter }: { pub: Publication; counter
           {p.status === 'submitted' && <Badge tone="warning">Submitted</Badge>}
           <Badge>{p.year}</Badge>
         </div>
-        {counter && (
-          <span className="font-serif text-sm tabular-nums text-ink-400 dark:text-ink-500">
-            {counter}
-          </span>
-        )}
       </div>
 
       <h3 className="card-title mt-4">
@@ -96,25 +91,5 @@ export function PublicationCards({ pubs }: { pubs: Publication[] }) {
         </li>
       ))}
     </ul>
-  );
-}
-
-/**
- * Card-stacking list (home page): each card is `sticky`, offset a little lower than the previous
- * one, so scrolling slides the next card over the last. The bottom padding gives the final card
- * room to travel up and close onto the stack before the list scrolls away. Pure CSS.
- */
-export function PublicationStack({ pubs }: { pubs: Publication[] }) {
-  const pad = (n: number) => String(n).padStart(2, '0');
-  return (
-    <ol className="relative">
-      {pubs.map((p, i) => (
-        <li key={p.slug} className="sticky pb-6" style={{ top: `${88 + i * 18}px` }}>
-          <PublicationCard pub={p} counter={`${pad(i + 1)} / ${pad(pubs.length)}`} />
-        </li>
-      ))}
-      {/* Spacer inside the list (sticky items can't travel into padding) so the last card closes the stack. */}
-      <li aria-hidden className="h-[max(2rem,calc(100vh-36rem))]" />
-    </ol>
   );
 }

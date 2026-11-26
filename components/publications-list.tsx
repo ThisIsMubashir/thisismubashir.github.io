@@ -3,7 +3,7 @@
 import { useMemo, useState } from 'react';
 import { Input } from '@/components/ui/form';
 import { ClearFilters, FilterChips } from '@/components/filter-chips';
-import { PublicationCards } from '@/components/publication-stack';
+import { PublicationCards } from '@/components/publication-cards';
 import type { Publication, PublicationType } from '@/lib/content';
 
 interface Props {

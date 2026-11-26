@@ -14,36 +14,40 @@ import {
 export const metadata = buildMetadata({
   title: 'CV',
   description:
-    'Curriculum vitae — experience, education, teaching, talks, projects and publications.',
+    'Curriculum vitae — experience, education, teaching, research contributions, projects and professional development.',
   path: '/cv',
 });
 
 const typeLabels: Record<string, string> = {
   journal: 'Journal',
   conference: 'Conference',
-  chapter: 'Chapter',
+  chapter: 'Book chapter',
   preprint: 'Preprint',
 };
 
-/** One collapsible row of the mini-CV. Native <details>: keyboard-accessible, no JS. */
+const item = 'text-sm text-ink-700 dark:text-ink-200';
+const muted = 'text-ink-500 dark:text-ink-400';
+const hideMarker = 'list-none [&::-webkit-details-marker]:hidden';
+
+/**
+ * One section of the mini-CV. Open by default so the CV can be scanned without clicking;
+ * the header still collapses it. Native <details>: keyboard-accessible, no JS.
+ */
 function Row({
   title,
-  count,
   href,
   linkLabel,
   children,
 }: {
   title: string;
-  count?: number;
   href: string;
   linkLabel: string;
   children: React.ReactNode;
 }) {
   return (
-    <details className="group border-t border-ink-100 dark:border-ink-800">
-      <summary className="flex cursor-pointer list-none items-center gap-3 py-4 [&::-webkit-details-marker]:hidden">
+    <details open className="group border-t border-ink-100 dark:border-ink-800">
+      <summary className={`flex cursor-pointer items-center gap-3 py-4 ${hideMarker}`}>
         <h2 className="subsection-title">{title}</h2>
-        {count !== undefined && <Badge>{count}</Badge>}
         <ChevronDown
           aria-hidden
           className="ml-auto h-5 w-5 text-ink-400 transition-transform group-open:rotate-180"
@@ -53,7 +57,7 @@ function Row({
         {children}
         <Link
           href={href}
-          className="mt-4 inline-block text-sm font-medium text-brand-700 hover:underline dark:text-brand-300"
+          className="mt-5 inline-block text-sm font-medium text-brand-700 hover:underline dark:text-brand-300"
         >
           {`${linkLabel} →`}
         </Link>
@@ -62,8 +66,38 @@ function Row({
   );
 }
 
-const item = 'text-sm text-ink-700 dark:text-ink-200';
-const muted = 'text-ink-500 dark:text-ink-400';
+/** Progressive disclosure: the first `show` items, then "Show full list" reveals the rest. */
+function Preview({
+  items,
+  show = 4,
+  className = 'space-y-1.5',
+}: {
+  items: React.ReactNode[];
+  show?: number;
+  className?: string;
+}) {
+  const rest = items.slice(show);
+  return (
+    <div>
+      <ul className={className}>{items.slice(0, show)}</ul>
+      {rest.length > 0 && (
+        <details className="group/more">
+          <summary
+            className={`mt-2 inline-flex cursor-pointer items-center gap-1 text-sm font-medium text-brand-700 dark:text-brand-300 ${hideMarker}`}
+          >
+            <span className="group-open/more:hidden">Show full list</span>
+            <span className="hidden group-open/more:inline">Show less</span>
+            <ChevronDown
+              aria-hidden
+              className="h-4 w-4 transition-transform group-open/more:rotate-180"
+            />
+          </summary>
+          <ul className={`mt-2 ${className}`}>{rest}</ul>
+        </details>
+      )}
+    </div>
+  );
+}
 
 export default async function CvPage() {
   const [publications, courses, cpd, projects] = await Promise.all([
@@ -72,11 +106,19 @@ export default async function CvPage() {
     getCpdEntries(),
     getProjects(),
   ]);
-  const of = (k: string) => cpd.filter((e) => e.kind === k);
 
-  const pg = [...new Map(courses.filter((c) => c.level === 'PG').map((c) => [c.name, c])).values()];
   // Same subject taught at several institutions → list it once.
-  const ug = [...new Map(courses.filter((c) => c.level === 'UG').map((c) => [c.name, c])).values()];
+  const byLevel = (level: 'UG' | 'PG') => [
+    ...new Map(courses.filter((c) => c.level === level).map((c) => [c.name, c])).values(),
+  ];
+  const teaching = [
+    { label: 'Undergraduate', rows: byLevel('UG') },
+    { label: 'Postgraduate', rows: byLevel('PG') },
+  ];
+  const featuredFirst = [
+    ...projects.filter((p) => p.featured),
+    ...projects.filter((p) => !p.featured),
+  ];
 
   return (
     <>
@@ -84,8 +126,8 @@ export default async function CvPage() {
         title="Curriculum vitae"
         description={
           <>
-            A one-page overview — open any section for detail. I share the full document on request
-            with employers, collaborators, and institutions; feel free to{' '}
+            A one-page overview. I share the full document on request with employers, collaborators,
+            and institutions; feel free to{' '}
             <Link
               href="/contact/"
               className="font-medium text-brand-700 hover:underline dark:text-brand-300"
@@ -126,56 +168,32 @@ export default async function CvPage() {
           </ul>
         </div>
 
-        {/* Expandable sections */}
-        <Row
-          title="Teaching"
-          count={pg.length + ug.length}
-          href="/teaching/"
-          linkLabel="Teaching philosophy & full list"
-        >
+        <Row title="Teaching" href="/teaching/" linkLabel="Teaching philosophy">
           <div className="grid gap-6 sm:grid-cols-2">
-            <div>
-              <p className="eyebrow mb-3">Postgraduate</p>
-              <ul className="space-y-1.5">
-                {pg.map((c) => (
-                  <li key={c.code} className={item}>
-                    {c.name}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <p className="eyebrow mb-3">Undergraduate</p>
-              <ul className="space-y-1.5">
-                {ug.map((c) => (
-                  <li key={c.code} className={item}>
-                    {c.name}
-                  </li>
-                ))}
-              </ul>
-            </div>
+            {teaching.map(({ label, rows }) => (
+              <div key={label}>
+                <h3 className="eyebrow mb-3">{label}</h3>
+                <Preview
+                  show={5}
+                  items={rows.map((c) => (
+                    <li key={c.code} className={item}>
+                      {c.name}
+                    </li>
+                  ))}
+                />
+              </div>
+            ))}
           </div>
         </Row>
 
-        <Row title="Projects" count={projects.length} href="/projects/" linkLabel="All projects">
-          <ul className="grid gap-x-6 gap-y-3 sm:grid-cols-2">
-            {projects.map((p) => (
-              <li key={p.slug}>
-                <p className="text-sm font-medium text-ink-900 dark:text-ink-50">{p.title}</p>
-                {p.summary && <p className={`text-sm ${muted}`}>{p.summary}</p>}
-              </li>
-            ))}
-          </ul>
-        </Row>
-
         <Row
-          title="Publications"
-          count={publications.length}
+          title="Research contributions"
           href="/publications/"
-          linkLabel="All publications with abstracts & citations"
+          linkLabel="Publications with abstracts & citations"
         >
-          <ul className="space-y-3">
-            {publications.map((p) => {
+          <Preview
+            className="space-y-3"
+            items={publications.map((p) => {
               const href = p.doi ? `https://doi.org/${p.doi}` : p.url;
               return (
                 <li key={p.slug} className="flex gap-3">
@@ -195,50 +213,51 @@ export default async function CvPage() {
                     ) : (
                       <span className="text-sm font-medium">{p.title}</span>
                     )}
-                    <p className={`text-sm italic ${muted}`}>
-                      {p.type && (
-                        <span className="not-italic">{typeLabels[p.type] ?? p.type} · </span>
-                      )}
-                      {p.venue}
+                    <p className={`text-sm ${muted}`}>
+                      {p.type && <>{typeLabels[p.type] ?? p.type} · </>}
+                      <span className="italic">{p.venue}</span>
                     </p>
                   </div>
                 </li>
               );
             })}
-          </ul>
+          />
+        </Row>
+
+        <Row title="Projects" href="/projects/" linkLabel="All projects">
+          <Preview
+            className="grid gap-x-6 gap-y-3 sm:grid-cols-2"
+            items={featuredFirst.map((p) => (
+              <li key={p.slug}>
+                <p className="text-sm font-medium text-ink-900 dark:text-ink-50">{p.title}</p>
+                {p.summary && <p className={`text-sm ${muted}`}>{p.summary}</p>}
+              </li>
+            ))}
+          />
         </Row>
 
         <Row
           title="Professional development & service"
-          count={cpd.length}
           href="/cpd/"
-          linkLabel="Full CPD record"
+          linkLabel="Full professional development record"
         >
-          <div className="divide-y divide-ink-100 rounded-xl border border-ink-100 dark:divide-ink-800 dark:border-ink-800">
+          <div className="grid gap-x-8 gap-y-6 sm:grid-cols-2">
             {CPD_CATEGORIES.map(({ kind, label }) => {
-              const rows = of(kind);
+              const rows = cpd.filter((e) => e.kind === kind);
               if (rows.length === 0) return null;
               return (
-                <details key={kind} className="group/sub px-4">
-                  <summary className="flex cursor-pointer list-none items-center gap-3 py-3 [&::-webkit-details-marker]:hidden">
-                    <h3 className="text-sm font-semibold text-ink-900 dark:text-ink-50">{label}</h3>
-                    <Badge>{rows.length}</Badge>
-                    <ChevronDown
-                      aria-hidden
-                      className="ml-auto h-4 w-4 text-ink-400 transition-transform group-open/sub:rotate-180"
-                    />
-                  </summary>
-                  <ul className="space-y-1.5 pb-4">
-                    {rows.map((r) => (
+                <div key={kind}>
+                  <h3 className="eyebrow mb-3">{label}</h3>
+                  <Preview
+                    show={3}
+                    items={rows.map((r) => (
                       <li key={r.slug} className={item}>
                         {r.title.replace(/^(Seminar|Workshop|Training|Industry talk): /, '')}{' '}
-                        <span className={muted}>
-                          · {r.provider} · {r.year}
-                        </span>
+                        <span className={muted}>· {r.year}</span>
                       </li>
                     ))}
-                  </ul>
-                </details>
+                  />
+                </div>
               );
             })}
           </div>

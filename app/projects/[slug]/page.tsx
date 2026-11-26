@@ -4,7 +4,7 @@ import { ArrowLeft, ExternalLink, Github } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { getProject, getProjectSlugs, resolvePublications } from '@/lib/content';
-import { PublicationCards } from '@/components/publication-stack';
+import { PublicationCards } from '@/components/publication-cards';
 import { buildMetadata } from '@/lib/seo';
 
 export const dynamicParams = false;
