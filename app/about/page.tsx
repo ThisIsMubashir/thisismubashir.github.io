@@ -97,7 +97,7 @@ export default function AboutPage() {
           capture-the-flag and no-code app challenges, hosting industry speakers on AI and
           cybersecurity, and introducing school students to computing. The full record of talks,
           outreach and professional development is on the{' '}
-          <a href="/teaching/cpd/">professional development &amp; service</a> page.
+          <a href="/cpd/">professional development &amp; service</a> page.
         </p>
       </article>
 

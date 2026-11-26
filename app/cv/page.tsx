@@ -14,7 +14,11 @@ export const metadata = buildMetadata({
 });
 
 export default async function CvPage() {
-  const [publications, courses, cpd] = await Promise.all([getPublications(), getCourses(), getCpdEntries()]);
+  const [publications, courses, cpd] = await Promise.all([
+    getPublications(),
+    getCourses(),
+    getCpdEntries(),
+  ]);
   const talks = cpd.filter((e) => e.kind === 'talk');
   const reviews = cpd.filter((e) => e.kind === 'review');
   const certs = cpd.filter((e) => e.kind === 'certification');
@@ -25,13 +29,15 @@ export default async function CvPage() {
   return (
     <>
       <SectionHeading
-       
         title="Curriculum vitae"
         description={
           <>
-            I share the full document on request with employers, collaborators, and institutions.
-            If you&apos;d like a copy, feel free to{' '}
-            <Link href="/contact/" className="font-medium text-brand-700 hover:underline dark:text-brand-300">
+            I share the full document on request with employers, collaborators, and institutions. If
+            you&apos;d like a copy, feel free to{' '}
+            <Link
+              href="/contact/"
+              className="font-medium text-brand-700 hover:underline dark:text-brand-300"
+            >
               get in touch &rarr;
             </Link>
           </>
@@ -39,28 +45,22 @@ export default async function CvPage() {
       />
 
       {/* Credential summary */}
-      <section className="mb-12 surface p-6">
+      <section className="surface mb-12 p-6">
         <ScrollReveal className="grid gap-6 sm:grid-cols-3">
           <div>
-            <p className="eyebrow">
-              Current role
-            </p>
+            <p className="eyebrow">Current role</p>
             <p className="mt-1 font-medium">Lecturer</p>
             <p className="text-sm text-ink-500 dark:text-ink-400">
               University of Strathclyde, Bahrain
             </p>
           </div>
           <div>
-            <p className="eyebrow">
-              Highest degree
-            </p>
+            <p className="eyebrow">Highest degree</p>
             <p className="mt-1 font-medium">PhD, Computer Engineering</p>
             <p className="text-sm text-ink-500 dark:text-ink-400">UNSW Sydney</p>
           </div>
           <div>
-            <p className="eyebrow">
-              Experience
-            </p>
+            <p className="eyebrow">Experience</p>
             <p className="mt-1 font-medium">10+ years</p>
             <p className="text-sm text-ink-500 dark:text-ink-400">
               Teaching, research, academic leadership
@@ -68,21 +68,16 @@ export default async function CvPage() {
           </div>
         </ScrollReveal>
         <div className="mt-6">
-          <p className="eyebrow">
-            Research areas
-          </p>
+          <p className="eyebrow">Research areas</p>
           <ScrollReveal as="ul" className="mt-2 flex flex-wrap gap-2" aria-label="Research areas">
-            {[
-              'Security',
-              'Artificial intelligence',
-              'Teaching & learning',
-            ].map((area) => (
+            {['Security', 'Artificial intelligence', 'Teaching & learning'].map((area) => (
               <li key={area}>
                 <Badge tone="neutral">{area}</Badge>
               </li>
             ))}
           </ScrollReveal>
         </div>
+        <CpdSummary compact className="mt-6 border-t border-ink-100 pt-6 dark:border-ink-800" />
       </section>
 
       {/* Teaching */}
@@ -98,9 +93,7 @@ export default async function CvPage() {
         </div>
         <ScrollReveal className="mt-4 grid gap-6 sm:grid-cols-2">
           <div>
-            <p className="eyebrow mb-3">
-              Postgraduate
-            </p>
+            <p className="eyebrow mb-3">Postgraduate</p>
             <ul className="space-y-1.5">
               {pgCourses.slice(0, 5).map((c) => (
                 <li key={c.code} className="text-sm text-ink-700 dark:text-ink-200">
@@ -110,9 +103,7 @@ export default async function CvPage() {
             </ul>
           </div>
           <div>
-            <p className="eyebrow mb-3">
-              Undergraduate
-            </p>
+            <p className="eyebrow mb-3">Undergraduate</p>
             <ul className="space-y-1.5">
               {ugCourses.slice(0, 5).map((c) => (
                 <li key={c.code} className="text-sm text-ink-700 dark:text-ink-200">
@@ -129,7 +120,7 @@ export default async function CvPage() {
         <div className="flex items-baseline justify-between gap-4">
           <h2 className="section-title">Talks &amp; peer review</h2>
           <Link
-            href="/teaching/cpd/"
+            href="/cpd/"
             className="text-sm font-medium text-brand-700 hover:underline dark:text-brand-300"
           >
             Full record &rarr;
@@ -137,21 +128,18 @@ export default async function CvPage() {
         </div>
         <ScrollReveal className="mt-4 grid gap-6 sm:grid-cols-2">
           <div>
-            <p className="eyebrow mb-3">
-              Talks &amp; workshops delivered
-            </p>
+            <p className="eyebrow mb-3">Talks &amp; workshops delivered</p>
             <ul className="space-y-1.5">
               {talks.slice(0, 5).map((t) => (
                 <li key={t.slug} className="text-sm text-ink-700 dark:text-ink-200">
-                  {t.title.replace(/^\w+: /, '')} <span className="text-ink-500 dark:text-ink-400">· {t.year}</span>
+                  {t.title.replace(/^\w+: /, '')}{' '}
+                  <span className="text-ink-500 dark:text-ink-400">· {t.year}</span>
                 </li>
               ))}
             </ul>
           </div>
           <div>
-            <p className="eyebrow mb-3">
-              Reviewer for
-            </p>
+            <p className="eyebrow mb-3">Reviewer for</p>
             <ul className="space-y-1.5">
               {reviews.map((r) => (
                 <li key={r.slug} className="text-sm text-ink-700 dark:text-ink-200">
@@ -160,7 +148,7 @@ export default async function CvPage() {
               ))}
             </ul>
             <Link
-              href="/teaching/cpd/#certification"
+              href="/cpd/#certification"
               className="mt-4 inline-block text-sm font-medium text-brand-700 hover:underline dark:text-brand-300"
             >
               {`${certs.length} certifications & microskills →`}
@@ -182,8 +170,6 @@ export default async function CvPage() {
         </div>
         <PublicationCards pubs={publications.slice(0, 5)} />
       </section>
-
-      <CpdSummary className="mb-12" />
     </>
   );
 }

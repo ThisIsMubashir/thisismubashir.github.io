@@ -2,7 +2,6 @@ import { SectionHeading } from '@/components/section-heading';
 import { ScrollReveal } from '@/components/scroll-reveal';
 import { buildMetadata } from '@/lib/seo';
 import { getCourses } from '@/lib/content';
-import { CpdSummary } from '@/components/cpd-summary';
 
 export const metadata = buildMetadata({
   title: 'Teaching',
@@ -98,7 +97,6 @@ export default async function TeachingPage() {
         </div>
       </section>
 
-      <CpdSummary className="mt-14" />
     </>
   );
 }

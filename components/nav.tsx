@@ -14,6 +14,7 @@ import {
   Mail,
   Github,
   Linkedin,
+  Award,
 } from 'lucide-react';
 import { useState } from 'react';
 import { cn, siteConfig } from '@/lib/utils';
@@ -25,6 +26,7 @@ const links = [
   { href: '/publications', label: 'Publications', icon: BookOpen },
   { href: '/projects', label: 'Projects', icon: Cpu },
   { href: '/teaching', label: 'Teaching', icon: GraduationCap },
+  { href: '/cpd', label: 'CPD', icon: Award },
   { href: '/cv', label: 'CV', icon: FileText },
   { href: '/contact', label: 'Contact', icon: Mail },
 ];

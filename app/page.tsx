@@ -112,7 +112,7 @@ export default async function HomePage() {
               Talks, outreach &amp; certifications
             </p>
             <Link
-              href="/teaching/cpd/"
+              href="/cpd/"
               className="inline-flex items-center gap-1 text-sm font-medium text-brand-700 dark:text-brand-300"
             >
               View all <ArrowRight className="h-4 w-4" />
