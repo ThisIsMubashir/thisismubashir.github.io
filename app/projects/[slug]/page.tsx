@@ -46,6 +46,7 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
           <div className="flex flex-wrap items-center gap-2">
             {project.role && <Badge tone="brand">{project.role}</Badge>}
             {project.current && <Badge tone="success">Current</Badge>}
+            {project.aiAssisted && <Badge tone="info">Built with AI assistance</Badge>}
           </div>
 
           <h1 className="mt-4 text-balance text-3xl tracking-tightish sm:text-4xl">

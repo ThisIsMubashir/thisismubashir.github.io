@@ -56,6 +56,7 @@ export function ProjectsList({ projects }: Props) {
                 current={p.current}
                 repoUrl={p.repoUrl}
                 demoUrl={p.demoUrl}
+                aiAssisted={p.aiAssisted}
               />
             </li>
           ))}

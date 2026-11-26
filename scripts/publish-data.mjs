@@ -10,7 +10,7 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 
 const PUBLIC_FIELDS = {
-  projects: ['slug', 'title', 'role', 'current', 'summary', 'body', 'tags', 'repoUrl', 'demoUrl', 'featured', 'relatedPublications'],
+  projects: ['slug', 'title', 'role', 'current', 'summary', 'body', 'tags', 'repoUrl', 'demoUrl', 'featured', 'relatedPublications', 'aiAssisted'],
   cpd: ['slug', 'kind', 'title', 'provider', 'year', 'logo', 'summary'],
   courses: ['code', 'name', 'level'],
 };

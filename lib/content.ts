@@ -74,6 +74,7 @@ export interface Project {
   demoUrl?: string;
   featured?: boolean;
   relatedPublications?: string[]; // publication slugs
+  aiAssisted?: boolean; // shows a "Built with AI assistance" label
 }
 
 const publications = publicationsData as unknown as Publication[];

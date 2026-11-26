@@ -190,6 +190,7 @@ export default async function HomePage() {
                   current={p.current}
                   repoUrl={p.repoUrl}
                   demoUrl={p.demoUrl}
+                  aiAssisted={p.aiAssisted}
                 />
               </li>
             ))}

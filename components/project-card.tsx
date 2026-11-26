@@ -1,4 +1,4 @@
-import { Github } from 'lucide-react';
+import { Github, Sparkles } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardBody, CardTitle, CardDescription } from '@/components/ui/card';
 
@@ -11,6 +11,8 @@ export interface ProjectCardProps {
   repoUrl?: string;
   demoUrl?: string;
   href?: string;
+  /** Shows a "Built with AI assistance" label. */
+  aiAssisted?: boolean;
 }
 
 /**
@@ -24,6 +26,7 @@ export function ProjectCard({
   current,
   repoUrl,
   demoUrl,
+  aiAssisted,
 }: ProjectCardProps) {
   const hasLinks = Boolean(repoUrl || demoUrl);
 
@@ -37,6 +40,12 @@ export function ProjectCard({
 
         {summary && (
           <CardDescription className="mt-2 text-sm sm:text-[0.95rem]">{summary}</CardDescription>
+        )}
+
+        {aiAssisted && (
+          <Badge tone="info" className="mt-3 w-fit gap-1">
+            <Sparkles className="h-3 w-3" aria-hidden /> Built with AI assistance
+          </Badge>
         )}
 
         {hasLinks && (
