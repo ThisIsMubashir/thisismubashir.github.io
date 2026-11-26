@@ -39,10 +39,10 @@ export default async function CvPage() {
       />
 
       {/* Credential summary */}
-      <section className="mb-12 rounded-xl border border-ink-100 bg-ink-50/50 p-6 dark:border-ink-800 dark:bg-ink-900/40">
+      <section className="mb-12 surface p-6">
         <ScrollReveal className="grid gap-6 sm:grid-cols-3">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-wider text-brand-700 dark:text-brand-300">
+            <p className="eyebrow">
               Current role
             </p>
             <p className="mt-1 font-medium">Lecturer</p>
@@ -51,14 +51,14 @@ export default async function CvPage() {
             </p>
           </div>
           <div>
-            <p className="text-xs font-semibold uppercase tracking-wider text-brand-700 dark:text-brand-300">
+            <p className="eyebrow">
               Highest degree
             </p>
             <p className="mt-1 font-medium">PhD, Computer Engineering</p>
             <p className="text-sm text-ink-500 dark:text-ink-400">UNSW Sydney</p>
           </div>
           <div>
-            <p className="text-xs font-semibold uppercase tracking-wider text-brand-700 dark:text-brand-300">
+            <p className="eyebrow">
               Experience
             </p>
             <p className="mt-1 font-medium">10+ years</p>
@@ -68,7 +68,7 @@ export default async function CvPage() {
           </div>
         </ScrollReveal>
         <div className="mt-6">
-          <p className="text-xs font-semibold uppercase tracking-wider text-brand-700 dark:text-brand-300">
+          <p className="eyebrow">
             Research areas
           </p>
           <ScrollReveal as="ul" className="mt-2 flex flex-wrap gap-2" aria-label="Research areas">
@@ -88,7 +88,7 @@ export default async function CvPage() {
       {/* Teaching */}
       <section className="mb-12">
         <div className="flex items-baseline justify-between gap-4">
-          <h2 className="text-xl font-medium">Teaching</h2>
+          <h2 className="section-title">Teaching</h2>
           <Link
             href="/teaching/"
             className="text-sm font-medium text-brand-700 hover:underline dark:text-brand-300"
@@ -98,7 +98,7 @@ export default async function CvPage() {
         </div>
         <ScrollReveal className="mt-4 grid gap-6 sm:grid-cols-2">
           <div>
-            <p className="mb-3 text-xs font-medium uppercase tracking-wider text-brand-700 dark:text-brand-300">
+            <p className="eyebrow mb-3">
               Postgraduate
             </p>
             <ul className="space-y-1.5">
@@ -110,7 +110,7 @@ export default async function CvPage() {
             </ul>
           </div>
           <div>
-            <p className="mb-3 text-xs font-medium uppercase tracking-wider text-brand-700 dark:text-brand-300">
+            <p className="eyebrow mb-3">
               Undergraduate
             </p>
             <ul className="space-y-1.5">
@@ -127,7 +127,7 @@ export default async function CvPage() {
       {/* Talks, peer review, certifications */}
       <section className="mb-12">
         <div className="flex items-baseline justify-between gap-4">
-          <h2 className="text-xl font-medium">Talks &amp; peer review</h2>
+          <h2 className="section-title">Talks &amp; peer review</h2>
           <Link
             href="/teaching/cpd/"
             className="text-sm font-medium text-brand-700 hover:underline dark:text-brand-300"
@@ -137,7 +137,7 @@ export default async function CvPage() {
         </div>
         <ScrollReveal className="mt-4 grid gap-6 sm:grid-cols-2">
           <div>
-            <p className="mb-3 text-xs font-medium uppercase tracking-wider text-brand-700 dark:text-brand-300">
+            <p className="eyebrow mb-3">
               Talks &amp; workshops delivered
             </p>
             <ul className="space-y-1.5">
@@ -149,7 +149,7 @@ export default async function CvPage() {
             </ul>
           </div>
           <div>
-            <p className="mb-3 text-xs font-medium uppercase tracking-wider text-brand-700 dark:text-brand-300">
+            <p className="eyebrow mb-3">
               Reviewer for
             </p>
             <ul className="space-y-1.5">
@@ -172,7 +172,7 @@ export default async function CvPage() {
       {/* Selected publications */}
       <section className="mb-12">
         <div className="mb-4 flex items-end justify-between gap-4">
-          <h2 className="text-xl font-medium">Selected publications</h2>
+          <h2 className="section-title">Selected publications</h2>
           <Link
             href="/publications/"
             className="text-sm font-medium text-brand-700 hover:underline dark:text-brand-300"

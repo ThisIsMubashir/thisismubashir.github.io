@@ -1,7 +1,7 @@
-import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import type { Publication } from '@/lib/content';
+import { CiteButton } from '@/components/cite-button';
 
 const typeLabels: Record<string, string> = {
   journal: 'Journal',
@@ -10,14 +10,15 @@ const typeLabels: Record<string, string> = {
   preprint: 'Preprint',
 };
 
-/** One publication as a card linking to its detail page. `counter` shows "01 / 04" (stack only). */
+/**
+ * One publication card. The title and "Read paper" go straight to the DOI (or publisher URL);
+ * "Cite" opens APA / Harvard / BibTeX. `counter` shows "01 / 04" (home stack only).
+ */
 export function PublicationCard({ pub: p, counter }: { pub: Publication; counter?: string }) {
   const text = p.abstract ?? p.summary;
+  const href = p.doi ? `https://doi.org/${p.doi}` : p.url;
   return (
-    <Link
-      href={`/publications/${p.slug}/`}
-      className="group block rounded-2xl border border-ink-100 bg-white p-6 no-underline shadow-[0_-8px_30px_-12px_rgba(0,0,0,0.25)] transition-colors hover:border-brand-300 dark:border-ink-800 dark:bg-ink-900 dark:hover:border-brand-700 sm:p-8"
-    >
+    <article className="surface surface-hover p-6 sm:p-8">
       <div className="flex items-start justify-between gap-4">
         <div className="flex flex-wrap items-center gap-2">
           {p.type && <Badge tone="brand">{typeLabels[p.type] ?? p.type}</Badge>}
@@ -25,29 +26,63 @@ export function PublicationCard({ pub: p, counter }: { pub: Publication; counter
           {p.status === 'submitted' && <Badge tone="warning">Submitted</Badge>}
           <Badge>{p.year}</Badge>
         </div>
-        {counter && <span className="font-serif text-sm tabular-nums text-ink-400 dark:text-ink-500">{counter}</span>}
+        {counter && (
+          <span className="font-serif text-sm tabular-nums text-ink-400 dark:text-ink-500">
+            {counter}
+          </span>
+        )}
       </div>
 
-      <h3 className="mt-4 text-balance font-serif text-xl font-bold leading-snug text-ink-900 dark:text-ink-50 sm:text-2xl">
-        {p.title}
+      <h3 className="card-title mt-4">
+        {href ? (
+          <a
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="no-underline hover:text-brand-700 dark:hover:text-brand-300"
+          >
+            {p.title}
+          </a>
+        ) : (
+          p.title
+        )}
       </h3>
       {p.venue && <p className="mt-2 text-sm italic text-ink-500 dark:text-ink-400">{p.venue}</p>}
-      {text && <p className="mt-4 line-clamp-3 text-sm leading-relaxed text-ink-600 dark:text-ink-300">{text}</p>}
+      {text && (
+        <p className="mt-4 line-clamp-3 text-sm leading-relaxed text-ink-600 dark:text-ink-300">
+          {text}
+        </p>
+      )}
 
-      <div className="mt-5 flex items-end justify-between gap-4">
-        <ul className="flex flex-wrap gap-1.5">
-          {p.keywords?.slice(0, 4).map((k) => (
+      {p.keywords && p.keywords.length > 0 && (
+        <ul className="mt-5 flex flex-wrap gap-1.5" aria-label="Keywords">
+          {p.keywords.slice(0, 4).map((k) => (
             <li key={k}>
               <Badge>{k}</Badge>
             </li>
           ))}
         </ul>
-        <span className="inline-flex shrink-0 items-center gap-1 text-sm font-medium text-brand-700 dark:text-brand-300">
-          Read
-          <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-        </span>
+      )}
+
+      <div className="mt-5 border-t border-ink-100 pt-4 dark:border-ink-800">
+        <CiteButton
+          pub={p}
+          action={
+            href && (
+              <a
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex shrink-0 items-center gap-1 text-sm font-medium text-brand-700 no-underline dark:text-brand-300"
+              >
+                {p.doi ? 'Read paper (DOI)' : 'Read paper'}
+                <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+              </a>
+            )
+          }
+        />
       </div>
-    </Link>
+    </article>
   );
 }
 

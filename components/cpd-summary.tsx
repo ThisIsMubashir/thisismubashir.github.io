@@ -12,7 +12,7 @@ export async function CpdSummary({ className }: { className?: string }) {
   return (
     <section className={className}>
       <div className="flex items-baseline justify-between gap-4">
-        <h2 className="font-serif text-xl font-bold text-ink-900 dark:text-ink-50">Professional development &amp; service</h2>
+        <h2 className="section-title">Professional development &amp; service</h2>
         <Link
           href="/teaching/cpd/"
           className="inline-flex shrink-0 items-center gap-1 text-sm font-medium text-brand-700 dark:text-brand-300"
@@ -25,7 +25,7 @@ export async function CpdSummary({ className }: { className?: string }) {
           <li key={kind}>
             <Link
               href={`/teaching/cpd/#${kind}`}
-              className="block h-full rounded-lg border border-ink-100 p-3 no-underline transition-colors hover:border-brand-300 dark:border-ink-800 dark:hover:border-brand-700"
+              className="block h-full surface surface-hover p-3 no-underline"
             >
               <span className="font-serif text-2xl font-bold text-ink-900 dark:text-ink-50">{n}</span>
               <span className="mt-1 block text-xs text-ink-600 dark:text-ink-300">{label}</span>

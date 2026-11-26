@@ -27,7 +27,7 @@ export function FilterChips<T extends string>({
 
   return (
     <div>
-      <p className="mb-2 text-xs font-medium uppercase tracking-wider text-ink-500 dark:text-ink-300">
+      <p className="eyebrow mb-2">
         {label}
       </p>
       <ul className="flex flex-wrap gap-1.5" role="listbox" aria-label={label}>

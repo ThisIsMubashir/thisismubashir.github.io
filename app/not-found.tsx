@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 export default function NotFound() {
   return (
     <div className="py-16">
-      <p className="font-mono text-xs uppercase tracking-wider text-brand-700 dark:text-brand-300">
+      <p className="eyebrow font-mono">
         404 · Page not found
       </p>
       <h1 className="mt-4 text-balance text-4xl tracking-tightish sm:text-5xl">
@@ -50,7 +50,7 @@ function Suggestion({
   return (
     <Link
       href={href}
-      className="block rounded-lg border border-ink-100 p-4 no-underline transition-colors hover:bg-ink-50 dark:border-ink-800 dark:hover:bg-ink-900"
+      className="block surface surface-hover p-4 no-underline"
     >
       <p className="flex items-center gap-2 text-sm font-medium">
         {icon} {title}

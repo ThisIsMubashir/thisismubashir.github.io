@@ -96,7 +96,7 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
 
         {project.tags && project.tags.length > 0 && (
           <section className="mt-10">
-            <h2 className="mb-3 text-sm font-medium uppercase tracking-wider text-ink-500">Tags</h2>
+            <h2 className="eyebrow mb-3">Tags</h2>
             <ul className="flex flex-wrap gap-2" aria-label="Tags">
               {project.tags.map((t) => (
                 <li key={t}>
@@ -109,7 +109,7 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
 
         {related.length > 0 && (
           <section className="mt-10">
-            <h2 className="text-lg font-medium">Related publications</h2>
+            <h2 className="subsection-title">Related publications</h2>
             <div className="mt-3">
               <PublicationCards pubs={related} />
             </div>

@@ -101,6 +101,30 @@
     @apply mx-auto w-[92%] sm:w-[88%] lg:w-[65%];
   }
 
+  /* ── Design tokens shared by every page ─────────────────────────────── */
+  /* One card surface for the whole site (publication cards set the look). */
+  .surface {
+    @apply rounded-2xl border border-ink-100 bg-white shadow-[0_6px_24px_-12px_rgba(15,23,42,0.18)] dark:border-ink-800 dark:bg-ink-900;
+  }
+  /* Add to a .surface that is itself a link or contains the primary action. */
+  .surface-hover {
+    @apply transition-colors hover:border-brand-300 dark:hover:border-brand-700;
+  }
+  /* Heading levels below the page <h1>. */
+  .section-title {
+    @apply font-serif text-2xl font-bold tracking-tight text-ink-900 dark:text-ink-50 sm:text-[1.75rem];
+  }
+  .subsection-title {
+    @apply font-serif text-lg font-semibold text-ink-900 dark:text-ink-50;
+  }
+  .card-title {
+    @apply text-balance font-serif text-xl font-bold leading-snug text-ink-900 dark:text-ink-50;
+  }
+  /* Small uppercase label above a group. */
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-widest text-brand-700 dark:text-brand-300;
+  }
+
   /* Skip link for screen-reader / keyboard users. */
   .skip-link {
     @apply absolute left-2 top-2 -translate-y-20 rounded bg-brand-600 px-3 py-2 text-white transition-transform focus:translate-y-0;
@@ -150,5 +174,34 @@
   .cv-printable h2 {
     margin-top: 1.5em !important;
     font-size: 13pt !important;
+  }
+}
+
+/* Reading-progress bar (pure CSS scroll-driven animation; no fade, no JS).
+   Browsers without scroll timelines simply don't show it. */
+.scroll-progress {
+  display: none;
+}
+@supports (animation-timeline: scroll()) {
+  .scroll-progress {
+    display: block;
+    position: fixed;
+    inset: 0 0 auto 0;
+    z-index: 50;
+    height: 2px;
+    transform-origin: 0 50%;
+    transform: scaleX(0);
+    animation: scroll-progress-grow linear both;
+    animation-timeline: scroll(root);
+  }
+  @keyframes scroll-progress-grow {
+    to {
+      transform: scaleX(1);
+    }
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .scroll-progress {
+    display: none;
   }
 }

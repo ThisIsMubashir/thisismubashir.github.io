@@ -31,7 +31,7 @@ export function ProjectCard({
     <Card variant="elevated" className="h-full">
       <CardBody className="flex h-full flex-col">
         <div className="flex items-start justify-between gap-3">
-          <CardTitle className="text-base sm:text-lg">{title}</CardTitle>
+          <CardTitle className="text-lg sm:text-xl">{title}</CardTitle>
           {current && <Badge tone="success">Current</Badge>}
         </div>
 

@@ -40,6 +40,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             Skip to content
           </a>
           <Nav />
+          <div aria-hidden className="scroll-progress bg-brand-600 dark:bg-brand-400" />
           <main
             id="main"
             data-pagefind-body

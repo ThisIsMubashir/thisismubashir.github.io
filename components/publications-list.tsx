@@ -56,7 +56,7 @@ export function PublicationsList({ publications }: Props) {
 
   return (
     <>
-      <div className="mb-6 space-y-4 rounded-lg border border-ink-100 bg-white p-4 dark:border-ink-800 dark:bg-ink-900">
+      <div className="mb-6 space-y-4 surface p-4">
         <Input
           aria-label="Search publications"
           placeholder="Search title, author, venue, keyword…"

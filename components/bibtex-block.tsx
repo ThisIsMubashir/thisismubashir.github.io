@@ -28,7 +28,7 @@ export function BibTexBlock({ bibtex }: Props) {
   };
 
   return (
-    <div className="rounded-lg border border-ink-100 dark:border-ink-800">
+    <div className="surface">
       <div className="flex items-center justify-between border-b border-ink-100 p-3 dark:border-ink-800">
         <button
           type="button"

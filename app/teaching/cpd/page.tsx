@@ -186,7 +186,7 @@ export default async function CpdPage() {
             <a
               key={kind}
               href={`#${kind}`}
-              className="group rounded-lg border border-ink-100 bg-white p-4 transition-colors hover:border-brand-300 dark:border-ink-800 dark:bg-ink-900 dark:hover:border-brand-700"
+              className="group surface surface-hover p-4"
             >
               <Icon className="h-5 w-5 text-brand-700 dark:text-brand-300" aria-hidden />
               <p className="mt-3 font-serif text-3xl font-bold text-ink-900 dark:text-ink-50">{rows.length}</p>
@@ -202,7 +202,7 @@ export default async function CpdPage() {
         const Body = RENDER[kind];
         const heading = (
           <>
-            <h2 className="font-serif text-xl font-bold text-ink-900 dark:text-ink-50 sm:text-2xl">{label}</h2>
+            <h2 className="section-title">{label}</h2>
             <p className="mt-2 text-sm text-ink-600 dark:text-ink-300">{intro}</p>
           </>
         );

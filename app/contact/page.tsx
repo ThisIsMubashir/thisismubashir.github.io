@@ -75,7 +75,7 @@ export default function ContactPage() {
           </dd>
         </dl>
 
-        <div className="rounded-lg border border-ink-100 bg-ink-50/50 p-5 text-sm text-ink-700 dark:border-ink-800 dark:bg-ink-900/50 dark:text-ink-200">
+        <div className="surface p-5 text-sm text-ink-700 dark:text-ink-200">
           <p className="font-medium">A note on what I&apos;m available for</p>
           <p className="mt-2">
             Research collaboration · supervision queries · talks &amp; workshops · industry projects

@@ -65,14 +65,14 @@ export default async function TeachingPage() {
       </section>
 
       <section className="mt-14">
-        <h2 className="text-2xl font-medium">Courses</h2>
+        <h2 className="section-title">Courses</h2>
         <p className="mt-1 max-w-2xl text-sm text-ink-500 dark:text-ink-300">
           All courses taught at undergraduate and postgraduate level, by institution.
         </p>
 
         <div className="mt-8 grid gap-10 sm:grid-cols-2">
           <div>
-            <p className="mb-3 text-xs font-medium uppercase tracking-wider text-brand-700 dark:text-brand-300">
+            <p className="eyebrow mb-3">
               Postgraduate
             </p>
             <ScrollReveal as="ul" className="space-y-1.5">
@@ -84,7 +84,7 @@ export default async function TeachingPage() {
             </ScrollReveal>
           </div>
           <div>
-            <p className="mb-3 text-xs font-medium uppercase tracking-wider text-brand-700 dark:text-brand-300">
+            <p className="eyebrow mb-3">
               Undergraduate
             </p>
             <ScrollReveal as="ul" className="space-y-1.5">

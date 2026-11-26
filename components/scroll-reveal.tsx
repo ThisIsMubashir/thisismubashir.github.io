@@ -16,7 +16,10 @@ import { cn } from '@/lib/utils';
 
 const ENTER_ZONE = 0.54; // fraction of vh over which entry plays
 const EXIT_ZONE  = 0.46; // fraction of vh over which exit plays
-const STAGGER_PX = 34;   // px shift per child for horizontal grids
+const STAGGER_PX = 34;
+
+/** Scroll fade/tilt is switched off for now — flip to true to bring it back. */
+const ENABLED = false;   // px shift per child for horizontal grids
 
 export function ScrollReveal({
   children,
@@ -31,7 +34,7 @@ export function ScrollReveal({
 
   useEffect(() => {
     const container = ref.current;
-    if (!container) return;
+    if (!ENABLED || !container) return;
 
     // Respect user motion preferences — show everything immediately
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
@@ -111,5 +114,5 @@ export function ScrollReveal({
   }, []);
 
   // data-reveal="false" keeps children hidden via CSS until JS takes over
-  return createElement(as, { ref, 'data-reveal': 'false', className: cn(className) }, children);
+  return createElement(as, { ref, 'data-reveal': ENABLED ? 'false' : undefined, className: cn(className) }, children);
 }

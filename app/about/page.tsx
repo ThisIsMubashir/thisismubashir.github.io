@@ -103,7 +103,7 @@ export default function AboutPage() {
 
 
       <section className="mt-16">
-        <h2 className="font-medium text-2xl">Technical arsenal</h2>
+        <h2 className="section-title">Technical arsenal</h2>
         <p className="mt-2 max-w-2xl text-ink-500 dark:text-ink-300">
           What I&apos;m proficient in or actively practising. The last row is what I&apos;m investing
           time in right now — listed honestly, not aspirationally.
@@ -111,7 +111,7 @@ export default function AboutPage() {
         <ScrollReveal className="mt-6 space-y-5">
           {arsenal.map((row) => (
             <div key={row.layer} className="grid gap-3 sm:grid-cols-[160px_1fr] sm:items-baseline">
-              <p className="text-xs font-medium uppercase tracking-wider text-brand-700 dark:text-brand-300">
+              <p className="eyebrow">
                 {row.layer}
               </p>
               <ul className="flex flex-wrap gap-1.5">

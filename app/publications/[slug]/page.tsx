@@ -123,7 +123,7 @@ export default async function PublicationDetail({
 
         {(pub.abstract ?? pub.summary) && (
           <section className="mt-10">
-            <h2 className="text-lg font-medium">{pub.abstract ? 'Abstract' : 'Summary'}</h2>
+            <h2 className="subsection-title">{pub.abstract ? 'Abstract' : 'Summary'}</h2>
             <p className="mt-2 text-pretty leading-relaxed text-ink-700 dark:text-ink-200">
               {pub.abstract ?? pub.summary}
             </p>
@@ -145,14 +145,14 @@ export default async function PublicationDetail({
 
         {pub.bibtex && (
           <section className="mt-10">
-            <h2 className="mb-3 text-lg font-medium">Cite</h2>
+            <h2 className="subsection-title mb-3">Cite</h2>
             <BibTexBlock bibtex={pub.bibtex} />
           </section>
         )}
 
         {relatedProjects.length > 0 && (
           <section className="mt-10">
-            <h2 className="text-lg font-medium">Related projects</h2>
+            <h2 className="subsection-title">Related projects</h2>
             <ul className="mt-3 space-y-2">
               {relatedProjects.map((p) => (
                 <li key={p.slug}>

@@ -11,8 +11,9 @@ interface CardProps extends React.HTMLAttributes<HTMLElement> {
 
 const variants: Record<CardVariant, string> = {
   plain:    'bg-transparent',
-  outlined: 'border border-ink-100 bg-white dark:border-ink-800 dark:bg-ink-900',
-  elevated: 'border border-ink-100 bg-white shadow-sm hover:shadow-md dark:border-ink-800 dark:bg-ink-900',
+  // Both map to the site-wide .surface token (globals.css) so every card matches.
+  outlined: 'surface',
+  elevated: 'surface surface-hover',
 };
 
 export function Card({
@@ -28,7 +29,7 @@ export function Card({
   const Component = Tag as React.ElementType;
   return (
     <Component
-      className={cn('rounded-lg transition-shadow', variants[variant], className)}
+      className={cn(variants[variant], className)}
       {...props}
     >
       {children}
@@ -58,7 +59,7 @@ export function CardFooter({ className, ...props }: React.HTMLAttributes<HTMLDiv
 
 export function CardTitle({ className, children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) {
   return (
-    <h3 className={cn('text-lg font-medium', className)} {...props}>
+    <h3 className={cn('card-title', className)} {...props}>
       {children}
     </h3>
   );

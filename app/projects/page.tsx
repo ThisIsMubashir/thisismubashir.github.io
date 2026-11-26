@@ -18,8 +18,8 @@ export default async function ProjectsPage() {
       <SectionHeading title="Projects" />
 
       {/* Live GitHub contribution graph — fetched fresh by the browser on every load */}
-      <div className="mb-10 overflow-hidden rounded-xl border border-ink-100 bg-white p-5 dark:border-ink-800 dark:bg-ink-900/40">
-        <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-ink-400 dark:text-ink-500">
+      <div className="mb-10 overflow-hidden surface p-5">
+        <p className="eyebrow mb-4">
           GitHub activity
         </p>
         {/* Light mode graph */}

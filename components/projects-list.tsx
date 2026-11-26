@@ -28,7 +28,7 @@ export function ProjectsList({ projects }: Props) {
 
   return (
     <>
-      <div className="mb-6 space-y-3 rounded-lg border border-ink-100 bg-white p-4 dark:border-ink-800 dark:bg-ink-900">
+      <div className="mb-6 space-y-3 surface p-4">
         <FilterChips label="Tag" options={tags} selected={tag} onChange={setTag} />
         <div className="flex items-center justify-between">
           <p className="text-xs text-ink-500 dark:text-ink-300">

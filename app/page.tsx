@@ -80,14 +80,14 @@ export default async function HomePage() {
 
         {/* Academic journey — static logo cards at the bottom of the hero */}
         <div className="mt-12 w-full">
-          <p className="mb-5 text-xs font-semibold uppercase tracking-widest text-ink-400 dark:text-ink-500">
+          <p className="eyebrow mb-5">
             Academic journey
           </p>
           <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
             {academicLogos.map((logo) => (
               <li
                 key={logo.name}
-                className="flex items-center gap-2.5 rounded-xl border border-ink-100/70 bg-white/70 p-2.5 backdrop-blur dark:border-ink-800/70 dark:bg-ink-900/50"
+                className="flex items-center gap-2.5 surface p-2.5"
               >
                 <Image
                   src={logo.src}
@@ -108,7 +108,7 @@ export default async function HomePage() {
       {highlights.length > 0 && (
         <section className="border-t border-ink-100/60 pb-8 pt-6 dark:border-ink-800/60">
           <div className="mb-4 flex items-end justify-between gap-4">
-            <p className="text-xs font-semibold uppercase tracking-widest text-ink-400 dark:text-ink-500">
+            <p className="eyebrow">
               Talks, outreach &amp; certifications
             </p>
             <Link
@@ -127,7 +127,7 @@ export default async function HomePage() {
                 <li
                   key={i}
                   aria-hidden={i >= highlights.length || undefined}
-                  className="flex w-72 shrink-0 items-center gap-3 rounded-xl border border-ink-100/70 bg-white/70 p-3 backdrop-blur dark:border-ink-800/70 dark:bg-ink-900/50"
+                  className="flex w-72 shrink-0 items-center gap-3 surface p-3"
                 >
                   <Image
                     src={h.logo!}
@@ -172,7 +172,7 @@ export default async function HomePage() {
       {featuredProjects.length > 0 && (
         <section className="border-t border-ink-100 py-12 dark:border-ink-800">
           <div className="mb-6 flex items-end justify-between gap-4">
-            <h2 className="text-2xl">Selected projects</h2>
+            <h2 className="section-title">Selected projects</h2>
             <Link
               href="/projects/"
               className="inline-flex items-center gap-1 text-sm font-medium text-brand-700 dark:text-brand-300"
@@ -200,7 +200,7 @@ export default async function HomePage() {
       {featuredPubs.length > 0 && (
         <section className="border-t border-ink-100 py-12 dark:border-ink-800">
           <div className="mb-6 flex items-end justify-between gap-4">
-            <h2 className="text-2xl">Selected publications</h2>
+            <h2 className="section-title">Selected publications</h2>
             <Link
               href="/publications/"
               className="inline-flex items-center gap-1 text-sm font-medium text-brand-700 dark:text-brand-300"
@@ -227,8 +227,8 @@ function Currently({
   detail: string;
 }) {
   return (
-    <div className="rounded-2xl border border-ink-100/70 bg-white/70 p-5 backdrop-blur dark:border-ink-800/70 dark:bg-ink-900/50">
-      <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-brand-600 dark:text-brand-400">
+    <div className="surface p-5">
+      <p className="eyebrow flex items-center gap-2">
         {icon} {label}
       </p>
       <p className="mt-2 font-serif text-lg font-medium text-ink-900 dark:text-ink-50">{title}</p>
