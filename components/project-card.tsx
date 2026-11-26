@@ -28,7 +28,7 @@ export function ProjectCard({
   demoUrl,
   aiAssisted,
 }: ProjectCardProps) {
-  const hasLinks = Boolean(repoUrl || demoUrl);
+  const hasFooter = Boolean(repoUrl || demoUrl || aiAssisted);
 
   return (
     <Card variant="elevated" className="h-full">
@@ -42,14 +42,13 @@ export function ProjectCard({
           <CardDescription className="mt-2 text-sm sm:text-[0.95rem]">{summary}</CardDescription>
         )}
 
-        {aiAssisted && (
-          <Badge tone="info" className="mt-3 w-fit gap-1">
-            <Sparkles className="h-3 w-3" aria-hidden /> Built with AI assistance
-          </Badge>
-        )}
-
-        {hasLinks && (
+        {hasFooter && (
           <div className="mt-auto flex items-center gap-3 pt-4 text-sm">
+            {aiAssisted && (
+              <Badge tone="info" className="gap-1">
+                <Sparkles className="h-3 w-3" aria-hidden /> Built with AI assistance
+              </Badge>
+            )}
             {repoUrl && (
               <a
                 href={repoUrl}

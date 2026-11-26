@@ -2,9 +2,14 @@ import Link from 'next/link';
 import { ChevronDown } from 'lucide-react';
 import { SectionHeading } from '@/components/section-heading';
 import { Badge } from '@/components/ui/badge';
-import { CpdSummary } from '@/components/cpd-summary';
 import { buildMetadata } from '@/lib/seo';
-import { getCourses, getCpdEntries, getProjects, getPublications } from '@/lib/content';
+import {
+  CPD_CATEGORIES,
+  getCourses,
+  getCpdEntries,
+  getProjects,
+  getPublications,
+} from '@/lib/content';
 
 export const metadata = buildMetadata({
   title: 'CV',
@@ -68,10 +73,6 @@ export default async function CvPage() {
     getProjects(),
   ]);
   const of = (k: string) => cpd.filter((e) => e.kind === k);
-  const talks = of('talk');
-  const outreach = of('outreach');
-  const reviews = of('review');
-  const certs = of('certification');
 
   const pg = [...new Map(courses.filter((c) => c.level === 'PG').map((c) => [c.name, c])).values()];
   // Same subject taught at several institutions → list it once.
@@ -156,67 +157,6 @@ export default async function CvPage() {
           </div>
         </Row>
 
-        <Row
-          title="Talks & outreach"
-          count={talks.length + outreach.length}
-          href="/cpd/#talk"
-          linkLabel="All talks & outreach"
-        >
-          <div className="grid gap-6 sm:grid-cols-2">
-            <div>
-              <p className="eyebrow mb-3">Talks &amp; workshops delivered</p>
-              <ul className="space-y-1.5">
-                {talks.map((t) => (
-                  <li key={t.slug} className={item}>
-                    {t.title.replace(/^\w+: /, '')} <span className={muted}>· {t.year}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <p className="eyebrow mb-3">Student engagement &amp; outreach</p>
-              <ul className="space-y-1.5">
-                {outreach.map((o) => (
-                  <li key={o.slug} className={item}>
-                    {o.title.replace(/^Industry talk: /, '')}{' '}
-                    <span className={muted}>· {o.year}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </Row>
-
-        <Row
-          title="Peer review & certifications"
-          count={reviews.length + certs.length}
-          href="/cpd/#review"
-          linkLabel="Full record"
-        >
-          <div className="grid gap-6 sm:grid-cols-2">
-            <div>
-              <p className="eyebrow mb-3">Reviewer for</p>
-              <ul className="space-y-1.5">
-                {reviews.map((r) => (
-                  <li key={r.slug} className={item}>
-                    {r.title}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <p className="eyebrow mb-3">Certifications &amp; microskills</p>
-              <ul className="space-y-1.5">
-                {certs.map((c) => (
-                  <li key={c.slug} className={item}>
-                    {c.title} <span className={muted}>· {c.year}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </Row>
-
         <Row title="Projects" count={projects.length} href="/projects/" linkLabel="All projects">
           <ul className="grid gap-x-6 gap-y-3 sm:grid-cols-2">
             {projects.map((p) => (
@@ -274,7 +214,34 @@ export default async function CvPage() {
           href="/cpd/"
           linkLabel="Full CPD record"
         >
-          <CpdSummary />
+          <div className="divide-y divide-ink-100 rounded-xl border border-ink-100 dark:divide-ink-800 dark:border-ink-800">
+            {CPD_CATEGORIES.map(({ kind, label }) => {
+              const rows = of(kind);
+              if (rows.length === 0) return null;
+              return (
+                <details key={kind} className="group/sub px-4">
+                  <summary className="flex cursor-pointer list-none items-center gap-3 py-3 [&::-webkit-details-marker]:hidden">
+                    <h3 className="text-sm font-semibold text-ink-900 dark:text-ink-50">{label}</h3>
+                    <Badge>{rows.length}</Badge>
+                    <ChevronDown
+                      aria-hidden
+                      className="ml-auto h-4 w-4 text-ink-400 transition-transform group-open/sub:rotate-180"
+                    />
+                  </summary>
+                  <ul className="space-y-1.5 pb-4">
+                    {rows.map((r) => (
+                      <li key={r.slug} className={item}>
+                        {r.title.replace(/^(Seminar|Workshop|Training|Industry talk): /, '')}{' '}
+                        <span className={muted}>
+                          · {r.provider} · {r.year}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </details>
+              );
+            })}
+          </div>
         </Row>
       </article>
     </>
