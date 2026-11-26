@@ -162,7 +162,7 @@ export default async function CvPage() {
         </div>
 
         <Row title="Teaching" href="/teaching/" linkLabel="Teaching philosophy">
-          <TeachingAreas courses={courses} />
+          <TeachingAreas courses={courses} collapsible />
         </Row>
 
         <Row
